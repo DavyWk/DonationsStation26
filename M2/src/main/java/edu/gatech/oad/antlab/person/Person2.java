@@ -1,5 +1,8 @@
 package edu.gatech.oad.antlab.person;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *  A simple class for person 2
  *  returns their name and a
@@ -39,7 +42,7 @@ public class Person2 {
 	  StringBuilder output = new StringBuilder(input.length());
 	  while (characters.size() != 0) {
 		  int randPicker = (int) (Math.random() * characters.size());
-		  output.append(character.remove(randPicker));
+		  output.append(characters.remove(randPicker));
 	  }
 	  return output.toString();
 	}

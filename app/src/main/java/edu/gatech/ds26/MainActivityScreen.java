@@ -1,5 +1,6 @@
 package edu.gatech.ds26;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,8 @@ public class MainActivityScreen extends AppCompatActivity {
      */
     public void onLogoutPressed(View view) {
         Log.d("Main Screen", "Logout");
+        Intent intent = new Intent(this, WelcomeActivityScreen.class);
+        view.getContext().startActivity(intent);
         finish();
     }
 }

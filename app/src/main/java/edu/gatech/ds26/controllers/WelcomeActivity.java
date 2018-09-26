@@ -1,4 +1,4 @@
-package edu.gatech.ds26;
+package edu.gatech.ds26.controllers;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-public class WelcomeActivityScreen extends AppCompatActivity {
+import edu.gatech.ds26.R;
+import edu.gatech.ds26.controllers.LoginActivity;
+
+public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class WelcomeActivityScreen extends AppCompatActivity {
      */
     public void onFirstLoginPressed(View view) {
         Log.d("Welcome Screen", "Login");
-        Intent intent = new Intent(this, LoginActivityScreen.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

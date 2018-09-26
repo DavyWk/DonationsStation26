@@ -1,4 +1,4 @@
-package edu.gatech.ds26;
+package edu.gatech.ds26.controllers;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-public class MainActivityScreen extends AppCompatActivity {
+import edu.gatech.ds26.R;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,7 @@ public class MainActivityScreen extends AppCompatActivity {
      */
     public void onLogoutPressed(View view) {
         Log.d("Main Screen", "Logout");
-        Intent intent = new Intent(this, WelcomeActivityScreen.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

@@ -1,4 +1,4 @@
-package edu.gatech.ds26;
+package edu.gatech.ds26.controllers;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivityScreen extends AppCompatActivity {
+import edu.gatech.ds26.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,7 @@ public class LoginActivityScreen extends AppCompatActivity {
         setContentView(R.layout.activity_login_screen);
 
         //making it so that it looks like a password is being entered
-        EditText pw = (EditText)findViewById(R.id.password_input);
+        EditText pw = findViewById(R.id.password_input);
         pw.setTypeface(Typeface.DEFAULT);
         pw.setTransformationMethod(new PasswordTransformationMethod());
     }
@@ -30,14 +32,14 @@ public class LoginActivityScreen extends AppCompatActivity {
     public void onSecondLoginPressed(View view) {
         Log.d("Login Screen", "Login");
         //TODO implement auth logic
-        EditText user = (EditText) findViewById(R.id.username_input);
-        EditText pw = (EditText)findViewById(R.id.password_input);
+        EditText user = findViewById(R.id.username_input);
+        EditText pw = findViewById(R.id.password_input);
         if (user.getText().toString().equals("admin") && pw.getText().toString().equals("2340")) {
-            Intent intent = new Intent(this, MainActivityScreen.class);
+            Intent intent = new Intent(this, MainActivity.class);
             view.getContext().startActivity(intent);
             finish();
         } else {
-            TextView txt = (TextView) findViewById(R.id.txtInvalid);
+            TextView txt = findViewById(R.id.txtInvalid);
             txt.setVisibility(View.VISIBLE);
         }
     }
@@ -49,7 +51,7 @@ public class LoginActivityScreen extends AppCompatActivity {
      */
     public void onCancelPressed(View view) {
         Log.d("Login Screen", "Cancel");
-        Intent intent = new Intent(this, WelcomeActivityScreen.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

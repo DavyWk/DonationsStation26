@@ -2,13 +2,13 @@ package edu.gatech.ds26.model;
 
 class Manager extends LocationEmployee {
 
-    Manager(String loginName, String password, AccountType type, AccountState state) {
-        super(loginName, password, type, state);
+    Manager(String name, String loginId, String password, AccountType type, AccountState state) {
+        super(name, loginId, password, type, state);
     }
-    Manager(String loginName, String password, AccountState state) {
-        this(loginName, password, AccountType.MANAGER, state);
+    Manager(String name, String loginId, String password, AccountState state) {
+        this(name, loginId, password, AccountType.MANAGER, state);
     }
-    Manager(String loginName, String password) {
-        this(loginName, password, AccountType.MANAGER, AccountState.UNLOCKED);
+    Manager(String name, String loginId, String password) {
+        this(name, loginId, password, AccountType.MANAGER, AccountState.UNLOCKED);
     }
 }

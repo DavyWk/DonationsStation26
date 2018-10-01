@@ -11,8 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import edu.gatech.ds26.R;
+import edu.gatech.ds26.model.UserList;
 
 public class LoginActivity extends AppCompatActivity {
+
+    EditText loginId;
+    EditText password;
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +36,19 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void onSecondLoginPressed(View view) {
         Log.d("Login Screen", "Login");
+        UserList userList = UserList.getInstance();
+
         //TODO implement auth logic
-        EditText user = findViewById(R.id.username_input);
-        EditText pw = findViewById(R.id.password_input);
-        if (user.getText().toString().equals("admin") && pw.getText().toString().equals("2340")) {
+        loginId = findViewById(R.id.loginId_input);
+        password = findViewById(R.id.password_input);
+        text = findViewById(R.id.txtInvalid);
+
+        if (loginId.getText().toString().matches("") || password.getText().toString().matches("") || !userList.authenticateUser(loginId.getText().toString(), password.getText().toString())) {
+            text.setVisibility(View.VISIBLE);
+        } else {
             Intent intent = new Intent(this, MainActivity.class);
             view.getContext().startActivity(intent);
             finish();
-        } else {
-            TextView txt = findViewById(R.id.txtInvalid);
-            txt.setVisibility(View.VISIBLE);
         }
     }
 

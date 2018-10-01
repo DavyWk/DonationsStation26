@@ -33,9 +33,10 @@ public class WelcomeActivity extends AppCompatActivity {
      *
      * @param view the button pressed
      */
-    public void onRegisterPressed(View view) {
+    public void onFirstRegisterPressed(View view) {
         Log.d("Welcome Screen", "Register");
-        Log.d("No register screen yet", "Register");
-        //finish();
+        Intent intent = new Intent(this, RegisterActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
     }
 }

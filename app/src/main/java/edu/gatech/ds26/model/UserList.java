@@ -14,8 +14,8 @@ public class UserList {
 
     private UserList() {
         userList = new ArrayList<>();
-        userList.add(new User("user", "user1", "1", AccountType.USER));
-        userList.add(new User("admin", "admin1,", "1", AccountType.ADMIN));
+        userList.add(new User("user", "user1", "1"));
+        userList.add(new Admin("admin", "admin1,", "1")); // Admin is-a User
     }
 
     public boolean authenticateUser(String loginId, String password) {

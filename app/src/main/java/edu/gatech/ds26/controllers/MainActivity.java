@@ -22,8 +22,15 @@ public class MainActivity extends AppCompatActivity {
      * @param view the button
      */
     public void onLogoutPressed(View view) {
-        Log.d("Main Screen", "Logout");
+        Log.d("Main Screen", "Logout Button");
         Intent intent = new Intent(this, WelcomeActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
+
+    public void onLocationListPressed(View view) {
+        Log.d("Main Screen", "Location List Button");
+        Intent intent = new Intent(this, LocationListActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

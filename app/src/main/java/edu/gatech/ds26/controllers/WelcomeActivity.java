@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 
 import edu.gatech.ds26.R;
-import edu.gatech.ds26.controllers.LoginActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
 

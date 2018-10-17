@@ -46,4 +46,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
         view.getContext().startActivity(intent);
         finish();
     }
+
+    public void onViewDonationsButtonPressed(View view) {
+        Log.d("Location Details Screen", "View Donations Button");
+        Intent intent = new Intent(this, DonationListActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
 }

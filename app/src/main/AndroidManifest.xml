@@ -21,6 +21,9 @@
         <activity android:name=".controllers.MainActivity"/>
         <activity android:name=".controllers.LocationDetailsActivity"/>
         <activity android:name=".controllers.LocationListActivity"/>
+        <activity android:name=".controllers.DonationListActivity"/>
+        <activity android:name=".controllers.DonationDetailsActivity"/>
+        <activity android:name=".controllers.AddDonationActivity"/>
     </application>
 
 </manifest>

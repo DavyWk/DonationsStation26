@@ -16,7 +16,6 @@ public class Location {
 
     public Location(int key, String name, double longitude, double latitude, String address,
                      String city, String state, int zip, String type, String phone, String website){
-
         this.key = key;
         this.name = name;
         this.latitude = latitude;
@@ -28,6 +27,20 @@ public class Location {
         this.type = type;
         this.phone = phone;
         this.website = website;
+    }
+
+    public Location(){
+        this.key = 4;
+        this.name = "Liana";
+        this.latitude = 500;
+        this.longitude = 2;
+        this.address = "GATECH station";
+        this.city = "Atlanta";
+        this.state = "GA";
+        this.zip = 30332;
+        this.type = "idk";
+        this.phone = "123456789";
+        this.website = "www.lol";
     }
 
     private void setAll(int key, String name, double latitude, double longitude, String address,
@@ -48,7 +61,6 @@ public class Location {
     public int getKey() {
         return key;
     }
-
     public void setKey(int key) {
         this.key = key;
     }
@@ -56,7 +68,6 @@ public class Location {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -64,7 +75,6 @@ public class Location {
     public double getLatitude() {
         return latitude;
     }
-
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
@@ -72,7 +82,6 @@ public class Location {
     public double getLongitude() {
         return longitude;
     }
-
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
@@ -80,7 +89,6 @@ public class Location {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -88,7 +96,6 @@ public class Location {
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
@@ -96,7 +103,6 @@ public class Location {
     public String getState() {
         return state;
     }
-
     public void setState(String state) {
         this.state = state;
     }
@@ -104,7 +110,6 @@ public class Location {
     public int getZip() {
         return zip;
     }
-
     public void setZip(int zip) {
         this.zip = zip;
     }
@@ -112,7 +117,6 @@ public class Location {
     public String getType() {
         return type;
     }
-
     public void setType(String type) {
         this.type = type;
     }
@@ -120,7 +124,6 @@ public class Location {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -128,7 +131,6 @@ public class Location {
     public String getWebsite() {
         return website;
     }
-
     public void setWebsite(String website) {
         this.website = website;
     }

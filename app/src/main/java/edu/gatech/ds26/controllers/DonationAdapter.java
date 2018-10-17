@@ -12,45 +12,47 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import edu.gatech.ds26.R;
-import edu.gatech.ds26.model.Location;
+import edu.gatech.ds26.model.Donation;
 
-public class LocationAdapter extends
-        RecyclerView.Adapter<LocationAdapter.ViewHolder> {
+public class DonationAdapter extends
+        RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private ArrayList<Location> mLocations;
+    private ArrayList<Donation> mDonations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View locationView = inflater.inflate(R.layout.location_adapter_recycler_view, parent, false);
+        View donationView = inflater.inflate(R.layout.donation_adapter_recycler_view, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(locationView);
+
+
+        ViewHolder viewHolder = new ViewHolder(donationView);
         return viewHolder;
     }
 
-    public LocationAdapter(ArrayList<Location> locations) {
-        if(locations == null){
-            mLocations = new ArrayList<>();
+    public DonationAdapter(ArrayList<Donation> donations) {
+        if(donations == null){
+            mDonations = new ArrayList<>();
         }else {
-            mLocations = locations;
+            mDonations = donations;
         }
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        Location location = mLocations.get(position);
+        Donation donation = mDonations.get(position);
 
-        TextView nameView = viewHolder.nameTextView;
-        nameView.setText(location.getName());
+        TextView shortDescriptionView = viewHolder.shortDescriptionTextView;
+        shortDescriptionView.setText(donation.getShortDescription());
         Button moreInfoButton = viewHolder.detailsButton;
         moreInfoButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Log.d("Location Adapter", "Clicked on " + position);
-                Intent intent = new Intent (context, LocationDetailsActivity.class);
+                Log.d("Donation Adapter", "Clicked on " + position);
+                Intent intent = new Intent (context, DonationDetailsActivity.class);
                 intent.putExtra("key", position + 1);
 
                 context.startActivity(intent);
@@ -60,16 +62,16 @@ public class LocationAdapter extends
 
     @Override
     public int getItemCount() {
-        return mLocations.size();
+        return mDonations.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameTextView;
+        public TextView shortDescriptionTextView;
         public Button detailsButton;
 
         public ViewHolder(View view) {
             super(view);
-            nameTextView = (TextView) view.findViewById(R.id.text_name);
+            shortDescriptionTextView = (TextView) view.findViewById(R.id.text_short_description);
             detailsButton = (Button) view.findViewById(R.id.button_details);
         }
     }

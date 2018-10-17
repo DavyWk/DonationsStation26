@@ -48,8 +48,9 @@ public class LocationListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         LocationList locList = LocationList.getInstance();
-        if (locList.get().isEmpty())
+        if (locList.get().isEmpty()) {
             readSDFile();
+        }
         locations = locList.get();
 
         adapter = new LocationAdapter(locations);

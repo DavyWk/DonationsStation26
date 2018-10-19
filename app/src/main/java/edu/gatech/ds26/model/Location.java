@@ -10,7 +10,7 @@ public class Location {
     private String address;
     private String state;
     private int zip;
-    private String type;
+    private String type; //TODO: Change this to LocationType
     private String phone;
     private String website;
 
@@ -132,4 +132,5 @@ public class Location {
     public void setWebsite(String website) {
         this.website = website;
     }
+
 }

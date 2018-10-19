@@ -14,14 +14,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.ds26.R;
+import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
 public class LocationListActivity extends AppCompatActivity {
 
-    ArrayList<Location> locations;
+    List<Location> locations;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -42,7 +44,7 @@ public class LocationListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_list);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewLocation);
+        recyclerView = findViewById(R.id.recyclerViewLocation);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -52,7 +54,7 @@ public class LocationListActivity extends AppCompatActivity {
             readSDFile();
         locations = locList.get();
 
-        adapter = new LocationAdapter(locations);
+        adapter = new LocationAdapter((ArrayList<Location>)locations);
         recyclerView.setAdapter(adapter);
     }
 
@@ -72,7 +74,7 @@ public class LocationListActivity extends AppCompatActivity {
 
             String line;
             br.readLine(); //get rid of header line
-
+//TODO: The code to parse/tokenize the locations should be moved to another class so that we can reuse it.
             while ((line = br.readLine()) != null) {
                 Log.d("LocationList", line);
                 String[] tokens = line.split(",");

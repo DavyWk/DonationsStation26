@@ -36,8 +36,51 @@ public class DonationList {
         }
         return list;
     }
+    
     public List<Donation> getDonations(Location l) {
         List<Donation> ret = map.get(l);
         return ret == null ? new ArrayList<Donation>() : ret;
     }
+
+    public List<Donation> searchItem(String itemName) {
+        List<Donation> ret = new ArrayList<>();
+        for (List<Donation> l : map.values()) {
+            for (Donation d : l) {
+                if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
+                    ret.add(d);
+                }
+            }
+        }
+        return ret;
+    }
+
+    //This implements the extra credit for partial match
+    public List<Donation> searchIemAtLocation(Location loc, String itemName) {
+        List<Donation> ret = new ArrayList<>();
+        for (Donation d : getDonations(loc)) {
+            if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
+                ret.add(d);
+            }
+        }
+        return ret;
+    }
+
+    public List<Donation> searchItemByCategory(ItemCategory cat) {
+        List<Donation> ret = new ArrayList<>();
+        for (Location l: map.keySet()) {
+            ret.addAll(searchItemByCategoryAtLocation(l, cat));
+        }
+        return ret;
+    }
+
+    public List<Donation> searchItemByCategoryAtLocation(Location loc, ItemCategory cat) {
+        List<Donation> ret = new ArrayList<>();
+        for (Donation d : getDonations(loc)) {
+            if (d.getCategory() == cat) {
+                ret.add(d);
+            }
+        }
+        return ret;
+    }
+
 }

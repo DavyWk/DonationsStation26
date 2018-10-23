@@ -10,28 +10,13 @@ public class Location {
     private String address;
     private String state;
     private int zip;
-    private String type; //TODO: Change this to LocationType
+    private LocationType type;
     private String phone;
     private String website;
 
     public Location(int key, String name, double longitude, double latitude, String address,
-                     String city, String state, int zip, String type, String phone, String website){
+                     String city, String state, int zip, LocationType type, String phone, String website){
 
-        this.key = key;
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.type = type;
-        this.phone = phone;
-        this.website = website;
-    }
-
-    private void setAll(int key, String name, double latitude, double longitude, String address,
-                        String city, String state, int zip, String type, String phone, String website){
         this.key = key;
         this.name = name;
         this.latitude = latitude;
@@ -109,11 +94,11 @@ public class Location {
         this.zip = zip;
     }
 
-    public String getType() {
+    public LocationType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(LocationType type) {
         this.type = type;
     }
 
@@ -133,4 +118,38 @@ public class Location {
         this.website = website;
     }
 
+    public String toString() {
+        return String.format(" Name: %s\n\n" + " Latitude: %s\n\n" +
+                        " Longitude: %s\n\n" + " Street Address: %s\n\n" + " City: %s\n\n" +
+                        " State: %s\n\n" + " Zip: %s\n\n" + " Type: %s\n\n" +
+                        " Phone: %s\n\n" + " Website: %s\n\n",
+                name, latitude, longitude,
+                address, city, state,
+                zip, type, phone,
+                website);
+    }
+
+    public static Location parseLocation(String loc) {
+        final int KEY = 0;
+        final int NAME = 1;
+        final int LATITUDE = 2;
+        final int LONGITUDE = 3;
+        final int STREET_ADDRESS = 4;
+        final int CITY = 5;
+        final int STATE = 6;
+        final int ZIP = 7;
+        final int TYPE = 8;
+        final int PHONE = 9;
+        final int WEBSITE = 10;
+
+        String[] tokens = loc.split(",");
+
+        int key = Integer.parseInt(tokens[KEY]);
+        float latitude = Float.parseFloat(tokens[LATITUDE]);
+        float longitude = Float.parseFloat(tokens[LONGITUDE]);
+        int zip = Integer.parseInt(tokens[ZIP]);
+
+        return new Location(key, tokens[NAME], longitude, latitude, tokens[STREET_ADDRESS],
+                tokens[CITY], tokens[STATE], zip, LocationType.get(tokens[TYPE]), tokens[PHONE], tokens[WEBSITE]);
+    }
 }

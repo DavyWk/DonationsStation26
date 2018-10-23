@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class LocationList {
 
+    //Should be a set since locations can't be duplicated
     private static final LocationList _instance = new LocationList();
     public static LocationList getInstance() { return _instance; }
 
@@ -25,4 +26,7 @@ public class LocationList {
     public List<Location> get() {
         return locationList;
     }
+
+
+
 }

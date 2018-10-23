@@ -17,15 +17,11 @@ public enum AccountType {
             return "A";
         }
     }
-    public String toString(AccountType type) {
-        if (type == USER) {
-            return "User";
-        } else if (type == LOCATIONEMPLOYEE) {
+    public String toString() {
+
+        if(name().equalsIgnoreCase("locationemployee")) {
             return "Location Employee";
-        } else if (type == MANAGER) {
-            return "Manager";
-        } else {
-            return "Administrator";
         }
+        return name().charAt(0) + name().substring(1).toLowerCase();
     }
 }

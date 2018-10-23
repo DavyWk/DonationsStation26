@@ -12,7 +12,7 @@ public class User {
     private String password;
     private AccountType type;
     private AccountState state;
-    private String id; // UXX, LXX, MXX, AXX
+    //private String id; // UXX, LXX, MXX, AXX
     protected static int IDCOUNTER;
 
     public User(String name, String loginId, String password, AccountType type, AccountState state) {
@@ -32,9 +32,16 @@ public class User {
     }
 
     public User() {
-        this("Enter name", "Enter login Id", "Enter password", AccountType.USER, AccountState.UNLOCKED);
+        this("Enter name", "Enter login Id", "Enter password");
     }
 
+    public boolean login(String pw) {
+        return this.password.equals(pw);
+    }
+
+    public boolean checkID(String id) {
+        return this.loginId.equals(id);
+    }
     public void setName(String name) {
         this.name = name;
     }

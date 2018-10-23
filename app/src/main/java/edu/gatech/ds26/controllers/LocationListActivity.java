@@ -20,6 +20,7 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
+import edu.gatech.ds26.model.LocationType;
 
 public class LocationListActivity extends AppCompatActivity {
 
@@ -27,18 +28,6 @@ public class LocationListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    private static final int KEY = 0;
-    private static final int NAME = 1;
-    private static final int LATITUDE = 2;
-    private static final int LONGITUDE = 3;
-    private static final int STREET_ADDRESS = 4;
-    private static final int CITY = 5;
-    private static final int STATE = 6;
-    private static final int ZIP = 7;
-    private static final int TYPE = 8;
-    private static final int PHONE = 9;
-    private static final int WEBSITE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,18 +63,9 @@ public class LocationListActivity extends AppCompatActivity {
 
             String line;
             br.readLine(); //get rid of header line
-//TODO: The code to parse/tokenize the locations should be moved to another class so that we can reuse it.
             while ((line = br.readLine()) != null) {
                 Log.d("LocationList", line);
-                String[] tokens = line.split(",");
-
-                int key = Integer.parseInt(tokens[KEY]);
-                float latitude = Float.parseFloat(tokens[LATITUDE]);
-                float longitude = Float.parseFloat(tokens[LONGITUDE]);
-                int zip = Integer.parseInt(tokens[ZIP]);
-
-                locationList.addLocation(new Location(key, tokens[NAME], longitude, latitude, tokens[STREET_ADDRESS],
-                        tokens[CITY], tokens[STATE], zip, tokens[TYPE], tokens[PHONE], tokens[WEBSITE]));
+                locationList.addLocation(Location.parseLocation(line));
             }
             br.close();
         } catch (IOException e) {

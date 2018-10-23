@@ -1,16 +1,20 @@
 package edu.gatech.ds26.model;
 
+import java.util.Date;
+
 public class Donation {
-    private String timeStamp;
+    private Date timestamp;
     private Location location;
     private String shortDescription;
     private String fullDescription;
-    private double value;
-    private Category category;
+    private float value;
+    private ItemCategory category;
+    //private String comments;
+    //private photo//
 
-    public Donation(String timeStamp, Location location, String shortDescription,
-                    String fullDescription, double value, Category category) {
-        this.timeStamp = timeStamp;
+    public Donation(Date timestamp, Location location, String shortDescription, String fullDescription,
+                    float value, ItemCategory category/*, String comments*/) {
+        this.timestamp = timestamp;
         this.location = location;
         this.shortDescription = shortDescription;
         this.fullDescription = fullDescription;
@@ -18,29 +22,10 @@ public class Donation {
         this.category = category;
     }
 
-    public Donation() {
-        this.timeStamp = "10 am";
-        this.location = new Location();
-        this.shortDescription = "This is my short description";
-        this.fullDescription = "This is my full description";
-        this.value = 2.4;
-        this.category = Category.HOUSEHOLD;
-    }
-
-    private void setAll(String timeStamp, Location location, String shortDescription,
-                    String fullDescription, double value, Category category) {
-        this.timeStamp = timeStamp;
-        this.location = location;
-        this.shortDescription = shortDescription;
-        this.fullDescription = fullDescription;
-        this.value = value;
-        this.category = category;
-    }
-
-    public String getTimeStamp() {
+    public Date getTimeStamp() {
         return timeStamp;
     }
-    public void setTimeStamp(String timeStamp) {
+    public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
     }
 
@@ -65,17 +50,20 @@ public class Donation {
         this.fullDescription = fullDescription;
     }
 
-    public double getValue() {
+    public float getValue() {
         return value;
     }
-    public void setValue(double value) {
+    public void setValue(float value) {
         this.value = value;
     }
 
-    public Category getCategory() {
+    public ItemCategory getCategory() {
         return category;
     }
-    public void setCategory(Category category) {
+    public void setCategory(ItemCategory category) {
         this.category = category;
     }
+  
+    /*public void setComment(String comment) { this.comment = comment; }
+    public String getComment() { return comment; }*/
 }

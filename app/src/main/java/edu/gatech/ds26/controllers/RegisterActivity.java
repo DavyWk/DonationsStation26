@@ -19,6 +19,7 @@ import edu.gatech.ds26.model.UserList;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    //TODO: rename unclear elements
     private User _user;
     EditText name;
     EditText loginId;
@@ -32,18 +33,16 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_screen);
 
-        //making it so that it looks like a password is being entered
-        EditText pw = findViewById(R.id.password_input);
-        pw.setTypeface(Typeface.DEFAULT);
-        pw.setTransformationMethod(new PasswordTransformationMethod());
-
-        //TODO implement auth logic
         name = findViewById(R.id.username_input);
         loginId = findViewById(R.id.id_input);
         password = findViewById(R.id.password_input);
-        typeSpinner = (Spinner) findViewById(R.id.spinner);
+        typeSpinner = findViewById(R.id.spinner);
         text1 = findViewById(R.id.txtInvalid);
         text2 = findViewById(R.id.txtInvalid2);
+
+        //making it so that it looks like a password is being entered
+        password.setTypeface(Typeface.DEFAULT);
+        password.setTransformationMethod(new PasswordTransformationMethod());
 
         /*
           Set up the adapter to display the allowable account types in the spinner
@@ -75,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
             text2.setVisibility(View.INVISIBLE);
         } else {
 
-            if (userList.verifyUser(loginId.getText().toString())) {
+            if (userList.verifyUser(loginId.getText().toString())) { //if there's already a user with this ID
                 text2.setVisibility(View.VISIBLE);
                 text1.setVisibility(View.INVISIBLE);
             } else {

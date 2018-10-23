@@ -3,7 +3,7 @@ package edu.gatech.ds26.model;
 import java.util.Date;
 
 public class Donation {
-    private Date timestamp;
+    private Date timeStamp;
     private Location location;
     private String shortDescription;
     private String fullDescription;
@@ -14,7 +14,7 @@ public class Donation {
 
     public Donation(Date timestamp, Location location, String shortDescription, String fullDescription,
                     float value, ItemCategory category/*, String comments*/) {
-        this.timestamp = timestamp;
+        this.timeStamp = timestamp;
         this.location = location;
         this.shortDescription = shortDescription;
         this.fullDescription = fullDescription;

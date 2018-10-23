@@ -39,13 +39,13 @@ public class Location {
         this.city = "Atlanta";
         this.state = "GA";
         this.zip = 30332;
-        this.type = "idk";
+        this.type = LocationType.Dropoff;
         this.phone = "123456789";
         this.website = "www.lol";
     }
 
     private void setAll(int key, String name, double latitude, double longitude, String address,
-                        String city, String state, int zip, String type, String phone, String website){
+                        String city, String state, int zip, LocationType type, String phone, String website){
         this.key = key;
         this.name = name;
         this.latitude = latitude;

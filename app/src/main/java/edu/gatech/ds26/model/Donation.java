@@ -22,24 +22,48 @@ public class Donation {
         this.category = category;
     }
 
-    public Date getTimestamp() { return timestamp; }
-    public void setTimeStamp(Date timestamp) { this.timestamp = timestamp; }
+    public Date getTimeStamp() {
+        return timeStamp;
+    }
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
+    }
 
-    public void setLocation(Location location) { this.location = location; }
-    public Location getLocation() { return location; }
+    public Location getLocation() {
+        return location;
+    }
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
-    public void setShortDescription(String shortDescription) { this.shortDescription = shortDescription; }
-    public String getShortDescription() { return this.shortDescription; }
+    public String getShortDescription() {
+        return shortDescription;
+    }
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
 
-    public void setFullDescription(String fullDescription) { this.fullDescription = fullDescription; }
-    public String getFullDescription() { return this.fullDescription; }
+    public String getFullDescription() {
+        return fullDescription;
+    }
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
+    }
 
-    public void setValue(float value) { this.value = value; }
-    public float getValue() { return value; }
+    public float getValue() {
+        return value;
+    }
+    public void setValue(float value) {
+        this.value = value;
+    }
 
-    public void setCategory(ItemCategory category) { this.category = category; }
-    public ItemCategory getCategory() { return category; }
-
+    public ItemCategory getCategory() {
+        return category;
+    }
+    public void setCategory(ItemCategory category) {
+        this.category = category;
+    }
+  
     /*public void setComment(String comment) { this.comment = comment; }
     public String getComment() { return comment; }*/
 }

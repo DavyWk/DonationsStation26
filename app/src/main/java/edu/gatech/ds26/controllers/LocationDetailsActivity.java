@@ -19,6 +19,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_details);
 
         final int key = (int) getIntent().getSerializableExtra("key");
+        getIntent().
         LocationList locationList = LocationList.getInstance();
 
         String details = "";

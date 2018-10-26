@@ -1,6 +1,9 @@
 package edu.gatech.ds26.model;
 
-public class Location {
+import android.os.Parcelable;
+import android.os.Parcel;
+
+public class Location implements Parcelable {
 
     private int key;
     private String name;
@@ -13,6 +16,7 @@ public class Location {
     private LocationType type;
     private String phone;
     private String website;
+    private int mData; //This is so we can implement parcelable and pass between activities.
 
     public Location(int key, String name, double longitude, double latitude, String address,
                      String city, String state, int zip, LocationType type, String phone, String website) {
@@ -43,6 +47,32 @@ public class Location {
         this.phone = "123456789";
         this.website = "www.lol";
     }
+
+    protected Location(Parcel in) {
+        key = in.readInt();
+        name = in.readString();
+        longitude = in.readDouble();
+        latitude = in.readDouble();
+        city = in.readString();
+        address = in.readString();
+        state = in.readString();
+        zip = in.readInt();
+        phone = in.readString();
+        website = in.readString();
+        mData = in.readInt();
+    }
+
+    public static final Creator<Location> CREATOR = new Creator<Location>() {
+        @Override
+        public Location createFromParcel(Parcel in) {
+            return new Location(in);
+        }
+
+        @Override
+        public Location[] newArray(int size) {
+            return new Location[size];
+        }
+    };
 
     private void setAll(int key, String name, double latitude, double longitude, String address,
                         String city, String state, int zip, LocationType type, String phone, String website){
@@ -146,6 +176,16 @@ public class Location {
                 address, city, state,
                 zip, type, phone,
                 website);
+    }
+    //Parcelable method that is stubbed out so it won't disturb anything
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeInt(mData);
     }
 
     public static Location parseLocation(String loc) {

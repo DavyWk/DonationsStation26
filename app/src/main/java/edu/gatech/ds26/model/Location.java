@@ -16,7 +16,6 @@ public class Location implements Parcelable {
     private LocationType type;
     private String phone;
     private String website;
-    private int mData; //This is so we can implement parcelable and pass between activities.
 
     public Location(int key, String name, double longitude, double latitude, String address,
                      String city, String state, int zip, LocationType type, String phone, String website) {
@@ -59,7 +58,7 @@ public class Location implements Parcelable {
         zip = in.readInt();
         phone = in.readString();
         website = in.readString();
-        mData = in.readInt();
+        type = LocationType.get(in.readString());
     }
 
     public static final Creator<Location> CREATOR = new Creator<Location>() {
@@ -185,7 +184,17 @@ public class Location implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        out.writeInt(mData);
+        out.writeInt(key);
+        out.writeString(name);
+        out.writeDouble(longitude);
+        out.writeDouble(latitude);
+        out.writeString(city);
+        out.writeString(address);
+        out.writeString(state);
+        out.writeInt(zip);
+        out.writeString(phone);
+        out.writeString(website);
+        out.writeString(type.name());
     }
 
     public static Location parseLocation(String loc) {

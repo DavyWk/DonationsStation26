@@ -21,7 +21,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_details);
 
         final int key = (int) getIntent().getSerializableExtra("key");
+<<<<<<< HEAD
         getIntent();
+=======
+>>>>>>> parent of f816695... Controlleer additions
         LocationList locationList = LocationList.getInstance();
 
         String details = "";

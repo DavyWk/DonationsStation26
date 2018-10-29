@@ -2,6 +2,7 @@ package edu.gatech.ds26.model;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -13,7 +14,7 @@ public class DonationList {
         map = new HashMap<>();
     }
 
-    public static DonationList getInstance() { return instance; }
+    public static DonationList getInstnace() { return instance; }
 
     public boolean addDonation(Donation d) {
         if (d == null) { return false; }

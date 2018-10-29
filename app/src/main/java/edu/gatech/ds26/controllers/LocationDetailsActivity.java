@@ -12,6 +12,8 @@ import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
 public class LocationDetailsActivity extends AppCompatActivity {
+    //We need to fix this later
+    Location specificLoc = new Location();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_details);
 
         final int key = (int) getIntent().getSerializableExtra("key");
-        getIntent().
+<<<<<<< HEAD
+        getIntent();
+=======
+>>>>>>> parent of f816695... Controlleer additions
         LocationList locationList = LocationList.getInstance();
 
         String details = "";
@@ -28,6 +33,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         for (Location location : locationList.get()){
             if (location.getKey() == key) {
                 details = location.toString();
+                specificLoc = location;
             }
         }
         TextView textView = findViewById(R.id.textView);
@@ -44,6 +50,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
     public void onViewDonationsButtonPressed(View view) {
         Log.d("Location Details Screen", "View Donations Button");
         Intent intent = new Intent(this, DonationListActivity.class);
+        intent.putExtra("Location", specificLoc);
         view.getContext().startActivity(intent);
         finish();
     }

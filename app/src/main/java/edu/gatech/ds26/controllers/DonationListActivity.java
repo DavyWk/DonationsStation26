@@ -11,8 +11,13 @@ import android.view.View;
 import java.util.ArrayList;
 
 import edu.gatech.ds26.R;
+import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Donation;
+<<<<<<< HEAD
 import edu.gatech.ds26.model.DonationList;
+=======
+>>>>>>> parent of f816695... Controlleer additions
+import edu.gatech.ds26.model.Location;
 
 public class DonationListActivity extends AppCompatActivity {
 
@@ -30,8 +35,14 @@ public class DonationListActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        donations = DonationList.getInstance().getDonations();
+<<<<<<< HEAD
+        //Pull out the donations for a passed in location
+        Intent i = getIntent();
+        Location loc = (Location) i.getParcelableExtra("Location");
+        donations = DonationList.getInstance().getDonations(loc);
 
+=======
+>>>>>>> parent of f816695... Controlleer additions
         adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }

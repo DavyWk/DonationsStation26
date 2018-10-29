@@ -10,6 +10,8 @@ import edu.gatech.ds26.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private View view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,24 @@ public class MainActivity extends AppCompatActivity {
     public void onLocationListPressed(View view) {
         Log.d("Main Screen", "Location List Button");
         Intent intent = new Intent(this, LocationListActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
+    public void onItemAllPressed(View view) {
+        Log.d("Main Screen", "All Item Button");
+        Intent intent = new Intent(this, ItemAllActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
+    public void onItemLocationPressed(View view) {
+        Log.d("Main Screen", "All Item By Location Button");
+        Intent intent = new Intent(this, ItemLocationItem.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
+    public void onCategoryButtonPressed(View view) {
+        Log.d("Main Screen", "Category Item Button");
+        Intent intent = new Intent(this, ItemCategoryActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

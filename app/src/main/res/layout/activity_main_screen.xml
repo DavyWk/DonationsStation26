@@ -27,6 +27,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="124dp"
         android:background="@drawable/clothing"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/clothing" />
 
     <ImageButton
@@ -37,6 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="124dp"
         android:background="@drawable/hat"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/hat" />
 
     <ImageButton
@@ -48,6 +50,7 @@
         android:layout_marginTop="125dp"
         android:layout_toEndOf="@+id/imageButton2"
         android:background="@drawable/kitchen"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/kitchen" />
 
     <ImageButton
@@ -58,6 +61,7 @@
         android:layout_marginTop="225dp"
         android:layout_marginEnd="4dp"
         android:background="@drawable/elec"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/elec" />
 
     <ImageButton
@@ -66,8 +70,13 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageButton4"
         android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="149dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="248dp"
         android:background="@drawable/house"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/house" />
 
     <ImageButton
@@ -79,6 +88,7 @@
         android:layout_marginTop="-5dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/others"
+        android:onClick="onCategoryButtonPressed"
         app:srcCompat="@drawable/others" />
 
     <TextView
@@ -115,17 +125,49 @@
         android:text="Item Selection" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="365dp"
-        android:layout_height="188dp"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="63dp"
-        android:background="@drawable/navegate"
-        android:onClick="onLocationListPressed" />
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/adddonations"
+        android:onClick="onLocationListPressed"
+        android:text="Navegate Locations"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="114dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="195dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="121dp"
+        android:background="@drawable/adddonations"
+        android:onClick="onItemAllPressed"
+        android:text="All Items"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="199dp"
+        android:layout_height="123dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/adddonations"
+        android:onClick="onItemLocationPressed"
+        android:text="Location's Items"
+        android:textColor="@android:color/white" />
 
 
 </RelativeLayout>

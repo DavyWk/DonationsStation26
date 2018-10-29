@@ -42,6 +42,7 @@
         android:layout_marginTop="456dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/back"
+        android:onClick="onBackButtonPressed"
         android:text="Back"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"

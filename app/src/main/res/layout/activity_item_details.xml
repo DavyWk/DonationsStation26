@@ -87,7 +87,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onViewDonationsButtonPressed"/>
 
     <Button
         android:id="@+id/back_Button"
@@ -97,6 +98,7 @@
         android:layout_marginTop="432dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/back"
+        android:onClick="onBackButtonPressed"
         android:text="Back"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"

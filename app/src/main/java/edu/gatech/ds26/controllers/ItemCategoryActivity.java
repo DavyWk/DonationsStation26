@@ -38,10 +38,9 @@ public class ItemCategoryActivity extends AppCompatActivity {
     }
 
     public void onBackButtonPressed(View view) {
-        Log.d("Location List Screen", "Back Button");
+        Log.d("Item Category List Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }
-
 }

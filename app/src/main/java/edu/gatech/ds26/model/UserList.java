@@ -20,7 +20,7 @@ public class UserList {
 
     public boolean authenticateUser(String loginId, String password) {
         for (User user: userList) {
-            if (user.getLoginId().equals(loginId) && user.login(password)) {
+            if (user.checkID(loginId) && user.login(password)) {
                 currentUser = user;
                 return true;
             }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
@@ -32,11 +33,11 @@ public class DonationAdapter extends
         return viewHolder;
     }
 
-    public DonationAdapter(ArrayList<Donation> donations) {
+    public DonationAdapter(List<Donation> donations) {
         if(donations == null){
             mDonations = new ArrayList<>();
         }else {
-            mDonations = donations;
+            mDonations = (ArrayList) donations;
         }
     }
 

@@ -14,7 +14,7 @@ public class DonationList {
         map = new HashMap<>();
     }
 
-    public static DonationList getInstnace() { return instance; }
+    public static DonationList getInstance() { return instance; }
 
     public boolean addDonation(Donation d) {
         if (d == null) { return false; }

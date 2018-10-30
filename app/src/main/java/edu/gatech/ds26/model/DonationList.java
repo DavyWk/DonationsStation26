@@ -11,6 +11,7 @@ public class DonationList {
     private DonationList() {
         map = new HashMap<>();
     }
+    public int index;
 
     public static DonationList getInstance() { return instance; }
 

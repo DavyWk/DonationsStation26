@@ -33,7 +33,7 @@ public class ItemLocationItem extends AppCompatActivity {
 
         donations = DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter(donations);
+        adapter = new DonationAdapter();
         recyclerView.setAdapter(adapter);
     }
 

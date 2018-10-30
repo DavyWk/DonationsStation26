@@ -13,6 +13,9 @@ import java.util.ArrayList;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
+import edu.gatech.ds26.model.DonationList;
+import edu.gatech.ds26.model.Location;
+import edu.gatech.ds26.model.LocationList;
 
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
@@ -32,18 +35,18 @@ public class DonationAdapter extends
         return viewHolder;
     }
 
-    public DonationAdapter(ArrayList<Donation> donations) {
-        if(donations == null){
-            mDonations = new ArrayList<>();
-        }else {
-            mDonations = donations;
-        }
+    public DonationAdapter() {
+        DonationList donations = DonationList.getInstance();
+        LocationList locations = LocationList.getInstance();
+        Location current = locations.getCurrent();
+        mDonations = donations.getDonations(current);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Donation donation = mDonations.get(position);
-
+        DonationList donations = DonationList.getInstance();
+        donations.index = position;
         TextView shortDescriptionView = viewHolder.shortDescriptionTextView;
         shortDescriptionView.setText(donation.getShortDescription());
         Button moreInfoButton = viewHolder.detailsButton;
@@ -53,11 +56,13 @@ public class DonationAdapter extends
                 Context context = v.getContext();
                 Log.d("Donation Adapter", "Clicked on " + position);
                 Intent intent = new Intent (context, ItemDetailsActivity.class);
-                intent.putExtra("key", position + 1);
+                intent.putExtra("index", position);
 
                 context.startActivity(intent);
             }
         });
+    }
+    public void onDetailsButtonPressed(View view){
     }
 
     @Override
@@ -72,7 +77,7 @@ public class DonationAdapter extends
         public ViewHolder(View view) {
             super(view);
             shortDescriptionTextView = (TextView) view.findViewById(R.id.text_short_description);
-            detailsButton = (Button) view.findViewById(R.id.button_details);
+            detailsButton = (Button) view.findViewById(R.id.button_detailsDonate);
         }
     }
 }

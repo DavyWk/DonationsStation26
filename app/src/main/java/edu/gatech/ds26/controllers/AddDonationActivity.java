@@ -12,11 +12,13 @@ import android.widget.Spinner;
 import java.sql.Date;
 
 import edu.gatech.ds26.R;
+import edu.gatech.ds26.model.AccountType;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 import edu.gatech.ds26.model.ItemCategory;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
+import edu.gatech.ds26.model.UserList;
 
 public class AddDonationActivity extends AppCompatActivity {
 
@@ -63,7 +65,9 @@ public class AddDonationActivity extends AppCompatActivity {
 
     public void onAddDonationButtonPressed(View view) {
         Log.d("Add Donation Screen", "Add Donation Button");
-
+        if (UserList.getInstance().getCurrentUser().getType() != AccountType.LOCATIONEMPLOYEE) {
+            return;
+        }
         donation.setLocation((Location) location.getSelectedItem());
         donation.setTimeStamp(timeStamp.getText().toString());
         donation.setShortDescription(shortDescription.getText().toString());

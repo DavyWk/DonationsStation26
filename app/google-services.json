@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1059588785837",
+    "firebase_url": "https://donationstation26.firebaseio.com",
+    "project_id": "donationstation26",
+    "storage_bucket": "donationstation26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059588785837:android:ed4c8a5cb6230aaa",
+        "android_client_info": {
+          "package_name": "edu.gatech.ds26"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059588785837-oe9ifoia95ou545hojef3eaesbm422g6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.gatech.ds26",
+            "certificate_hash": "25f72797c98986b0950b506a1d35d8c27059731a"
+          }
+        },
+        {
+          "client_id": "1059588785837-vr923kdf85in2kfo6lpb1dnov0qmoq1t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArBjfFfBfozOZxHWfU5cJUEZgMY83jh1I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059588785837-vr923kdf85in2kfo6lpb1dnov0qmoq1t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

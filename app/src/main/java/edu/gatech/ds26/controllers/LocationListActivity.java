@@ -44,7 +44,7 @@ public class LocationListActivity extends AppCompatActivity {
         }
         locations = locList.get();
 
-        adapter = new LocationAdapter((ArrayList<Location>)locations);
+        adapter = new LocationAdapter(locations);
         recyclerView.setAdapter(adapter);
     }
 

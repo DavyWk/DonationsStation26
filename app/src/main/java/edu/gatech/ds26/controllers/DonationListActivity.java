@@ -9,14 +9,16 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
+import edu.gatech.ds26.model.Location;
 
 public class DonationListActivity extends AppCompatActivity {
 
-    ArrayList<Donation> donations;
+    List<Donation> donations;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -25,12 +27,14 @@ public class DonationListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDonation);
+        recyclerView = findViewById(R.id.recyclerViewDonation);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        donations = DonationList.getInstance().getDonations();
+        Intent i = getIntent();
+        Location loc = (Location) i.getParcelableExtra("Location");
+        donations = DonationList.getInstance().getDonations(loc);
 
         adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);

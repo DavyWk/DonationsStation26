@@ -36,21 +36,21 @@ public class MainActivity extends AppCompatActivity {
         view.getContext().startActivity(intent);
         finish();
     }
-    public void onItemAllPressed(View view) {
+    public void onDonationAllPressed(View view) {
         Log.d("Main Screen", "All Item Button");
-        Intent intent = new Intent(this, ItemAllActivity.class);
+        Intent intent = new Intent(this, DonationAllActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }
-    public void onItemLocationPressed(View view) {
+    public void onDonationLocationPressed(View view) {
         Log.d("Main Screen", "All Item By Location Button");
-        Intent intent = new Intent(this, ItemLocationItem.class);
+        Intent intent = new Intent(this, DonationLocationItem.class);
         view.getContext().startActivity(intent);
         finish();
     }
     public void onCategoryButtonPressed(View view) {
         Log.d("Main Screen", "Category Item Button");
-        Intent intent = new Intent(this, ItemCategoryActivity.class);
+        Intent intent = new Intent(this, DonationCategoryActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

@@ -3,7 +3,6 @@ package edu.gatech.ds26.model;
 import android.util.Log;
 
 import java.io.PrintWriter;
-import java.util.Date;
 
 public class Donation {
     private String timeStamp;
@@ -11,12 +10,12 @@ public class Donation {
     private String shortDescription;
     private String fullDescription;
     private float value;
-    private ItemCategory category;
+    private Category category;
     //private String comments;
     //private photo//
 
     public Donation(String timestamp, Location location, String shortDescription, String fullDescription,
-                    float value, ItemCategory category/*, String comments*/) {
+                    float value, Category category/*, String comments*/) {
         this.timeStamp = timestamp;
         this.location = location;
         this.shortDescription = shortDescription;
@@ -31,14 +30,14 @@ public class Donation {
         this.shortDescription = "short";
         this.fullDescription = "full description";
         this.value = 1.23f;
-        this.category = ItemCategory.CLOTHING;
+        this.category = Category.CLOTHING;
     }
 
     public String toString() {
         return String.format(" Time Stamp: %s\n\n" + " Location: %s\n\n" +
                         " Short Description: %s\n\n" + " Full Description: %s\n\n" +
                         " Value: %s\n\n" + " Category: %s\n\n",
-                timeStamp, location, shortDescription, fullDescription, value, category);
+                timeStamp, location.getName(), shortDescription, fullDescription, value, category);
     }
 
     public String getTimeStamp() {
@@ -76,10 +75,10 @@ public class Donation {
         this.value = value;
     }
 
-    public ItemCategory getCategory() {
+    public Category getCategory() {
         return category;
     }
-    public void setCategory(ItemCategory category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
   
@@ -97,6 +96,6 @@ public class Donation {
         Log.d("Donation", "Retrieving donation");
         String[] tokens = line.split("\t");
         return new Donation(tokens[1], Location.parseLocation(tokens[2]), tokens[3], tokens[4],
-                Float.parseFloat(tokens[5]), ItemCategory.get(tokens[6]));
+                Float.parseFloat(tokens[5]), Category.get(tokens[6]));
     }
 }

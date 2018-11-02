@@ -14,7 +14,7 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 
-public class ItemAllActivity extends AppCompatActivity {
+public class DonationLocationItem extends AppCompatActivity {
 
     ArrayList<Donation> donations;
     private RecyclerView recyclerView;
@@ -25,7 +25,7 @@ public class ItemAllActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_items_all);
+        setContentView(R.layout.activity_donation_location_items);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDonation);
 
         layoutManager = new LinearLayoutManager(this);
@@ -38,7 +38,7 @@ public class ItemAllActivity extends AppCompatActivity {
     }
 
     public void onBackButtonPressed(View view) {
-        Log.d("Location List Screen", "Back Button");
+        Log.d("Item Location Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
         view.getContext().startActivity(intent);
         finish();

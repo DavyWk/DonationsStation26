@@ -1,6 +1,6 @@
 package edu.gatech.ds26.model;
 
-public enum ItemCategory {
+public enum Category {
     CLOTHING,
     HAT,
     KITCHEN,
@@ -8,8 +8,8 @@ public enum ItemCategory {
     HOUSEHOLD,
     OTHER;
 
-    public static ItemCategory get(String s) {
-        return ItemCategory.valueOf(s.toUpperCase());
+    public static Category get(String s) {
+        return Category.valueOf(s.toUpperCase());
     }
     public String toString() {
         return name().charAt(0) + name().substring(1).toLowerCase();

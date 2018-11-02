@@ -69,7 +69,7 @@ public class DonationList {
         return ret;
     }
 
-    public ArrayList<Donation> searchItemByCategory(ItemCategory cat) {
+    public ArrayList<Donation> searchItemByCategory(Category cat) {
         ArrayList<Donation> ret = new ArrayList<>();
         for (Location l: map.keySet()) {
             ret.addAll(searchItemByCategoryAtLocation(l, cat));
@@ -77,7 +77,7 @@ public class DonationList {
         return ret;
     }
 
-    public ArrayList<Donation> searchItemByCategoryAtLocation(Location loc, ItemCategory cat) {
+    public ArrayList<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
         ArrayList<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getCategory() == cat) {

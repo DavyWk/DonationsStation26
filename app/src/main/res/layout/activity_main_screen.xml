@@ -136,7 +136,7 @@
         android:layout_marginBottom="120dp"
         android:background="@drawable/adddonations"
         android:onClick="onLocationListPressed"
-        android:text="Navegate Locations"
+        android:text="Navigate Locations"
         android:textColor="@android:color/white" />
 
     <Button

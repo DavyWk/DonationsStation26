@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
@@ -16,7 +17,7 @@ import edu.gatech.ds26.model.DonationList;
 
 public class DonationListActivity extends AppCompatActivity {
 
-    ArrayList<Donation> donations;
+    List<Donation> donations;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -32,7 +33,7 @@ public class DonationListActivity extends AppCompatActivity {
 
         donations = DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter();
+        adapter = new DonationAdapter((ArrayList<Donation>) donations);
         recyclerView.setAdapter(adapter);
     }
 

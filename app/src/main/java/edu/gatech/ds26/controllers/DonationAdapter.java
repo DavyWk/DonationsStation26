@@ -37,7 +37,7 @@ public class DonationAdapter extends
         if(donations == null){
             mDonations = new ArrayList<>();
         }else {
-            mDonations = (ArrayList) donations;
+            mDonations = donations;
         }
     }
 

@@ -3,16 +3,16 @@ package edu.gatech.ds26.model;
 import java.util.Date;
 
 public class Donation {
-    private Date timeStamp;
+    private String timeStamp;
     private Location location;
     private String shortDescription;
     private String fullDescription;
     private float value;
     private ItemCategory category;
     //private String comments;
-    //private photo//
+    //private photo;
 
-    public Donation(Date timestamp, Location location, String shortDescription, String fullDescription,
+    public Donation(String timestamp, Location location, String shortDescription, String fullDescription,
                     float value, ItemCategory category/*, String comments*/) {
         this.timeStamp = timestamp;
         this.location = location;
@@ -22,10 +22,26 @@ public class Donation {
         this.category = category;
     }
 
-    public Date getTimeStamp() {
+    public Donation() {
+        timeStamp = "12 pm";
+        location = new Location();
+        shortDescription = "This is a short description.";
+        fullDescription = "This is a full description";
+        value = 24;
+        category = ItemCategory.CLOTHING;
+    }
+
+    public String toString() {
+        return String.format(" Location: %s\n\n" + " Time Stamp: %s\n\n" +
+                        " Short Description: %s\n\n" + " Full Description: %s\n\n" +
+                        " Value: %s\n\n" + " Category: %s\n\n",
+                location, timeStamp, shortDescription, fullDescription, value, category);
+    }
+
+    public String getTimeStamp() {
         return timeStamp;
     }
-    public void setTimeStamp(Date timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 

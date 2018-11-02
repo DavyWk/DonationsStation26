@@ -18,7 +18,7 @@ import edu.gatech.ds26.model.Donation;
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private ArrayList<Donation> mDonations;
+    private List<Donation> mDonations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

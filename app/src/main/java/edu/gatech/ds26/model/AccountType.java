@@ -17,6 +17,14 @@ public enum AccountType {
             return "A";
         }
     }
+
+    public static AccountType get(String s) {
+        if (s.equals("Location Employee")) {
+            return LOCATIONEMPLOYEE;
+        } else {
+            return AccountType.valueOf(s.toUpperCase());
+        }
+    }
     public String toString() {
 
         if(name().equalsIgnoreCase("locationemployee")) {

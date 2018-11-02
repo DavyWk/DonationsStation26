@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.AccountType;
+import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.User;
 import edu.gatech.ds26.model.UserList;
 
@@ -79,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                 text1.setVisibility(View.INVISIBLE);
             } else {
                 userList.addUser(new User(name.getText().toString(), loginId.getText().toString(), password.getText().toString(), (AccountType) typeSpinner.getSelectedItem()));
+                Facade.saveUserList(this);
                 Intent intent = new Intent(this, LoginActivity.class);
                 view.getContext().startActivity(intent);
                 finish();

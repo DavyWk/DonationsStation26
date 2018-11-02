@@ -1,5 +1,10 @@
 package edu.gatech.ds26.model;
 
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,5 +51,28 @@ public class UserList {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public void saveAsText(PrintWriter writer) {
+        Log.d("UserList", "Saving list to text");
+        for (User s : userList) {
+            s.saveAsText(writer);
+        }
+    }
+
+    //there will be one file per thing we have to save, this should load "students.txt"
+    public void loadFromText(BufferedReader reader) {
+        userList.clear();
+        Log.d("UserList", "Retrieving user list");
+        try {
+            String line = reader.readLine();
+            while (line != null) {
+                userList.add(User.loadFromText(line));
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

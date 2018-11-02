@@ -80,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
                 text1.setVisibility(View.INVISIBLE);
             } else {
                 userList.addUser(new User(name.getText().toString(), loginId.getText().toString(), password.getText().toString(), (AccountType) typeSpinner.getSelectedItem()));
-                Facade.saveUserList(this);
+                Facade.saveUserList(this); //no need to relaod data since it's in the current instance of UserList
                 Intent intent = new Intent(this, LoginActivity.class);
                 view.getContext().startActivity(intent);
                 finish();

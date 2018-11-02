@@ -8,6 +8,9 @@ public enum ItemCategory {
     HOUSEHOLD,
     OTHER;
 
+    public static ItemCategory get(String s) {
+        return ItemCategory.valueOf(s.toUpperCase());
+    }
     public String toString() {
         return name().charAt(0) + name().substring(1).toLowerCase();
     }

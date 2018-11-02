@@ -148,6 +148,12 @@ public class Location {
                 website);
     }
 
+    public String toStringEx() {
+        String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," + city +
+                "," + state + "," + zip + "," + type + "," + phone + "," + website;
+        return ret.toUpperCase();
+    }
+
     public static Location parseLocation(String loc) {
         final int KEY = 0;
         final int NAME = 1;

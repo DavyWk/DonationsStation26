@@ -14,6 +14,7 @@ import java.sql.Date;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
+import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.ItemCategory;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
@@ -72,6 +73,7 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setCategory((ItemCategory) category.getSelectedItem());
 
         donationList.addDonation(donation);
+        Facade.saveDonationList(this);
 
         Intent intent = new Intent(this, DonationListActivity.class);
         view.getContext().startActivity(intent);

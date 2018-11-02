@@ -1,5 +1,8 @@
 package edu.gatech.ds26.model;
 
+import android.util.Log;
+
+import java.io.PrintWriter;
 import java.util.Date;
 
 public class Donation {
@@ -32,10 +35,10 @@ public class Donation {
     }
 
     public String toString() {
-        return String.format(" Location: %s\n\n" + " Time Stamp: %s\n\n" +
+        return String.format(" Time Stamp: %s\n\n" + " Location: %s\n\n" +
                         " Short Description: %s\n\n" + " Full Description: %s\n\n" +
                         " Value: %s\n\n" + " Category: %s\n\n",
-                location, timeStamp, shortDescription, fullDescription, value, category);
+                timeStamp, location, shortDescription, fullDescription, value, category);
     }
 
     public String getTimeStamp() {
@@ -82,4 +85,18 @@ public class Donation {
   
     /*public void setComment(String comment) { this.comment = comment; }
     public String getComment() { return comment; }*/
+
+    void saveAsText(PrintWriter writer) { //this follows the CSV format, for easy conversion
+        Log.d("Donation", "Saving donation");
+        //TODO: We need to check that Donation descriptions don't contain tabs
+        writer.println("Donation:" + "\t" + timeStamp + "\t" + location.toStringEx() + "\t" + shortDescription + "\t" + fullDescription
+        + "\t" + value + "\t" + category);
+    }
+
+    public static Donation loadFromText(String line) {
+        Log.d("Donation", "Retrieving donation");
+        String[] tokens = line.split("\t");
+        return new Donation(tokens[1], Location.parseLocation(tokens[2]), tokens[3], tokens[4],
+                Float.parseFloat(tokens[5]), ItemCategory.get(tokens[6]));
+    }
 }

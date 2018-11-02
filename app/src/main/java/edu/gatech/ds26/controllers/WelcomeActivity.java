@@ -20,6 +20,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //here all the values should be getting loaded
         Facade.loadUserList(this);
+        Facade.loadDonationList(this);
     }
 
     /**

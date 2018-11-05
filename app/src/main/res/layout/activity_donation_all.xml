@@ -22,16 +22,15 @@
         app:layout_constraintVertical_bias="0.408" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/textSearchItem"
         android:layout_width="311dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:onClick="onSearchLocationButtonPressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.877"
@@ -40,25 +39,27 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/buttonSearchDonation"
         android:layout_width="42dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="520dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:background="?android:attr/actionModeWebSearchDrawable"
+        android:contentDescription="SEARCH"
+        android:onClick="onSearchButtonPressed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/back_Button2"
+        android:id="@+id/buttonBackFromSearch"
         android:layout_width="105dp"
         android:layout_height="137dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="456dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/back"
         android:onClick="onBackButtonPressed"
         android:text="Back"

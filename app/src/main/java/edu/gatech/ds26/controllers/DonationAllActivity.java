@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -28,24 +30,26 @@ public class DonationAllActivity extends AppCompatActivity {
     private DonationList donationList = DonationList.getInstance();
     EditText itemName;
     String stringItemName;
-    private Map<Location, ArrayList<Donation>> map;
+    ImageButton btSearch;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_all);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDonation);
+        recyclerView = findViewById(R.id.recyclerViewDonation);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        itemName = (EditText) findViewById(R.id.itemNameX);
+        itemName = findViewById(R.id.itemNameX);
 
         donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
 
         adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
+
+        btSearch = findViewById(R.id.buttonSearchDonation);
     }
 
     public void onBackButtonPressed(View view) {
@@ -56,9 +60,9 @@ public class DonationAllActivity extends AppCompatActivity {
     }
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
-        donationList.searchItem(itemName.getText().toString());
-        Intent intent = new Intent(this, DonationListActivity.class);
-        view.getContext().startActivity(intent);
-        finish();
+        donationList = DonationList.getInstance();
+        List<Donation> result = donationList.searchItem(itemName.getText().toString());
+        Log.d("Search screen", result.size() + " donations found");
+        recyclerView.setAdapter(new DonationAdapter(result));
     }
 }

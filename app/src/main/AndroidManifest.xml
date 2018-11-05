@@ -24,6 +24,9 @@
         <activity android:name=".controllers.DonationListActivity"/>
         <activity android:name=".controllers.DonationDetailsActivity"/>
         <activity android:name=".controllers.AddDonationActivity"/>
+        <activity android:name=".controllers.ItemAllActivity"/>
+        <activity android:name=".controllers.DonationLocationItem"/>
+        <activity android:name=".controllers.DonationCategoryActivity"/>
     </application>
 
 </manifest>

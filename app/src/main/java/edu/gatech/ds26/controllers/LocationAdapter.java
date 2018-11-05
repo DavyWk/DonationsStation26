@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Location;
@@ -17,7 +18,7 @@ import edu.gatech.ds26.model.Location;
 public class LocationAdapter extends
         RecyclerView.Adapter<LocationAdapter.ViewHolder> {
 
-    private ArrayList<Location> mLocations;
+    private List<Location> mLocations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -30,7 +31,7 @@ public class LocationAdapter extends
         return viewHolder;
     }
 
-    public LocationAdapter(ArrayList<Location> locations) {
+    public LocationAdapter(List<Location> locations) {
         if(locations == null){
             mLocations = new ArrayList<>();
         }else {

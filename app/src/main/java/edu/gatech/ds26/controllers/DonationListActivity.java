@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.gatech.ds26.R;
-import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 import edu.gatech.ds26.model.Location;
@@ -28,12 +27,11 @@ public class DonationListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDonation);
+        recyclerView = findViewById(R.id.recyclerViewDonation);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //Pull out the donations for a passed in location
         Intent i = getIntent();
         Location loc = (Location) i.getParcelableExtra("Location");
         donations = DonationList.getInstance().getDonations(loc);

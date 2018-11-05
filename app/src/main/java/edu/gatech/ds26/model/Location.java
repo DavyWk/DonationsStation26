@@ -1,9 +1,6 @@
 package edu.gatech.ds26.model;
 
-import android.os.Parcelable;
-import android.os.Parcel;
-
-public class Location implements Parcelable {
+public class Location {
 
     private int key;
     private String name;
@@ -46,32 +43,6 @@ public class Location implements Parcelable {
         this.phone = "123456789";
         this.website = "www.lol";
     }
-
-    protected Location(Parcel in) {
-        key = in.readInt();
-        name = in.readString();
-        longitude = in.readDouble();
-        latitude = in.readDouble();
-        city = in.readString();
-        address = in.readString();
-        state = in.readString();
-        zip = in.readInt();
-        phone = in.readString();
-        website = in.readString();
-        type = LocationType.get(in.readString());
-    }
-
-    public static final Creator<Location> CREATOR = new Creator<Location>() {
-        @Override
-        public Location createFromParcel(Parcel in) {
-            return new Location(in);
-        }
-
-        @Override
-        public Location[] newArray(int size) {
-            return new Location[size];
-        }
-    };
 
     private void setAll(int key, String name, double latitude, double longitude, String address,
                         String city, String state, int zip, LocationType type, String phone, String website){
@@ -176,25 +147,11 @@ public class Location implements Parcelable {
                 zip, type, phone,
                 website);
     }
-    //Parcelable method that is stubbed out so it won't disturb anything
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel out, int flags) {
-        out.writeInt(key);
-        out.writeString(name);
-        out.writeDouble(longitude);
-        out.writeDouble(latitude);
-        out.writeString(city);
-        out.writeString(address);
-        out.writeString(state);
-        out.writeInt(zip);
-        out.writeString(phone);
-        out.writeString(website);
-        out.writeString(type.name());
+    public String toStringEx() {
+        String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," + city +
+                "," + state + "," + zip + "," + type + "," + phone + "," + website;
+        return ret.toUpperCase();
     }
 
     public static Location parseLocation(String loc) {

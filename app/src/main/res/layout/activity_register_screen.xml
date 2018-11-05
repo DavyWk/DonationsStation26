@@ -9,118 +9,91 @@
 
     <Button
         android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtInvalid"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:onClick="onSecondRegisterPressed"
-        android:text="Register" />
+        android:layout_width="364dp"
+        android:layout_height="191dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/register"
+        android:onClick="onSecondRegisterPressed" />
 
     <Button
         android:id="@+id/buttonCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtInvalid"
-        android:layout_marginBottom="234dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginTop="32dp"
-        android:onClick="onCancelPressed"
-        android:text="Cancel" />
+        android:layout_width="25dp"
+        android:layout_height="17dp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/backawrrow"
+        android:onClick="onCancelPressed" />
 
     <EditText
         android:id="@+id/username_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/spinner"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="78dp"
+        android:background="@drawable/name"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/id_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/username_input"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="159dp"
+        android:background="@drawable/username"
         android:ems="10"
-        android:hint="Login Id"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/password_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView3"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/username_input"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/username_input"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Login Id" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/id_input"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Password" />
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="238dp"
+        android:background="@drawable/password"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/password_input"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Account Type" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="35dp"
+        android:text="Account Type"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/textView4"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="4dp" />
 
     <TextView
         android:id="@+id/txtInvalid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinner"
-        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/txtInvalid2"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="42dp"
         android:text="Invalid username, login id, or password"
         android:textColor="@android:color/holo_red_light"
         android:visibility="invisible" />
@@ -129,9 +102,9 @@
         android:id="@+id/txtInvalid2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/spinner"
-        android:layout_marginTop="24dp"
+        android:layout_alignEnd="@+id/buttonCancel"
+        android:layout_marginTop="238dp"
         android:text="Invalid username, login id, or password"
         android:textColor="@android:color/holo_red_light"
         android:visibility="invisible" />

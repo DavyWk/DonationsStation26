@@ -1,6 +1,6 @@
 package edu.gatech.ds26.model;
 
-class Admin extends Manager {
+class Admin extends Manager { //TODO: Admin should be it's own class, not extend Manager
 
     Admin(String name, String loginId, String password, AccountType type, AccountState state) {
         super(name, loginId, password, type, state);

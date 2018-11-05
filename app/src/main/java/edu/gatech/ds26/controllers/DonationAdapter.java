@@ -18,7 +18,7 @@ import edu.gatech.ds26.model.Donation;
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private ArrayList<Donation> mDonations;
+    private List<Donation> mDonations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -26,8 +26,6 @@ public class DonationAdapter extends
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View donationView = inflater.inflate(R.layout.donation_adapter_recycler_view, parent, false);
-
-
 
         ViewHolder viewHolder = new ViewHolder(donationView);
         return viewHolder;
@@ -37,7 +35,7 @@ public class DonationAdapter extends
         if(donations == null){
             mDonations = new ArrayList<>();
         }else {
-            mDonations = (ArrayList) donations;
+            mDonations = donations;
         }
     }
 

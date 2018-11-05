@@ -1,7 +1,12 @@
 package edu.gatech.ds26.model;
 
-import java.util.List;
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -84,4 +89,27 @@ public class DonationList {
         return ret;
     }
 
+    public void saveAsText(PrintWriter writer) {
+        Log.d("DonationList", "Saving list to text");
+        for (Donation d : this.getDonations()) {
+            d.saveAsText(writer);
+        }
+    }
+
+    public void loadFromText(BufferedReader reader) {
+        map.clear();
+        Log.d("DonationList", "Retrieving donation list");
+        try {
+            String line = reader.readLine();
+            while (line != null) {
+                Donation d = Donation.loadFromText(line);
+                map.putIfAbsent(d.getLocation(), new ArrayList<Donation>());
+                map.get(d.getLocation()).add(d);
+                line = reader.readLine();
+            }
+        } catch (IOException e) {
+            Log.d("DonationList", "Error reading from donations.txt");
+            e.printStackTrace();
+        }
+    }
 }

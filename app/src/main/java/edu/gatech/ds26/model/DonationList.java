@@ -31,7 +31,7 @@ public class DonationList {
 
     public boolean removeDonation(Donation d) {
         if (d == null) { return false; }
-        List<Donation> l = map.get(d);
+        List<Donation> l = map.get(d.getLocation());
         return l == null ? false : l.remove(d);
     }
 
@@ -71,7 +71,7 @@ public class DonationList {
         return ret;
     }
 
-    public List<Donation> searchItemByCategory(ItemCategory cat) {
+    public List<Donation> searchItemByCategory(Category cat) {
         List<Donation> ret = new ArrayList<>();
         for (Location l: map.keySet()) {
             ret.addAll(searchItemByCategoryAtLocation(l, cat));
@@ -79,7 +79,7 @@ public class DonationList {
         return ret;
     }
 
-    public List<Donation> searchItemByCategoryAtLocation(Location loc, ItemCategory cat) {
+    public List<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
         List<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getCategory() == cat) {

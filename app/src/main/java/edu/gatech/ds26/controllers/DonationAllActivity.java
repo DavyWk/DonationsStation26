@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import edu.gatech.ds26.R;
@@ -20,7 +19,7 @@ import edu.gatech.ds26.model.Location;
 
 public class DonationAllActivity extends AppCompatActivity {
 
-    List<Donation> donations;
+    ArrayList<Donation> donations;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -41,9 +40,9 @@ public class DonationAllActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        itemName = (EditText) findViewById(R.id.itemName);
+        itemName = (EditText) findViewById(R.id.itemNameX);
 
-        donations = DonationList.getInstance().getDonations();
+        donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
 
         adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);

@@ -3,7 +3,6 @@ package edu.gatech.ds26.controllers;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -46,16 +45,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        /* Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney)); // moves the camera to
+        */
         //where we want to point to (need to pass in a Location)
         List<Location> locList = LocationList.getInstance().get();
         for (Location loc : locList) {
             LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(pos).title(loc.getName()));
-            //no need to move the camera
+            MarkerOptions marker = new MarkerOptions();
+            marker.position(pos);
+            marker.title(loc.getName());
+            marker.snippet(loc.getPhone());
+            mMap.addMarker(marker);
         }
     }
 

@@ -2,10 +2,6 @@ package edu.gatech.ds26.model;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.IOException;
-import android.util.Log;
 
 public class LocationList {
 
@@ -25,6 +21,13 @@ public class LocationList {
         }
         locationList.add(loc);
         return true;
+    }
+
+    public boolean removeLocation(Location loc) {
+        if (loc == null) {
+            return false;
+        }
+        return locationList.remove(loc);
     }
 
     public List<Location> get() {

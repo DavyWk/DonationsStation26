@@ -1,9 +1,8 @@
 package edu.gatech.ds26.model;
 
-import android.util.Log;
-
 import java.io.PrintWriter;
 
+//TODO: Add comment and Photo
 public class Donation {
     private String timeStamp;
     private Location location;
@@ -14,8 +13,8 @@ public class Donation {
     //private String comments;
     //private photo//
 
-    public Donation(String timestamp, Location location, String shortDescription, String fullDescription,
-                    float value, Category category/*, String comments*/) {
+    public Donation(String timestamp, Location location, String shortDescription,
+                    String fullDescription, float value, Category category/*, String comments*/) {
         this.timeStamp = timestamp;
         this.location = location;
         this.shortDescription = shortDescription;
@@ -33,6 +32,8 @@ public class Donation {
         this.category = Category.CLOTHING;
     }
 
+    //TODO: Move formatting to Activity that uses it, replace "\n\n" with ","
+    @Override
     public String toString() {
         return String.format(" Time Stamp: %s\n\n" + " Location: %s\n\n" +
                         " Short Description: %s\n\n" + " Full Description: %s\n\n" +
@@ -86,14 +87,11 @@ public class Donation {
     public String getComment() { return comment; }*/
 
     void saveAsText(PrintWriter writer) { //this follows the CSV format, for easy conversion
-        Log.d("Donation", "Saving donation");
-        //TODO: We need to check that Donation descriptions don't contain tabs
-        writer.println("Donation:" + "\t" + timeStamp + "\t" + location.toStringEx() + "\t" + shortDescription + "\t" + fullDescription
-        + "\t" + value + "\t" + category);
+        writer.println("Donation:" + "\t" + timeStamp + "\t" + location.toStringEx() + "\t"
+                + shortDescription + "\t" + fullDescription + "\t" + value + "\t" + category);
     }
 
     public static Donation loadFromText(String line) {
-        Log.d("Donation", "Retrieving donation");
         String[] tokens = line.split("\t");
         return new Donation(tokens[1], Location.parseLocation(tokens[2]), tokens[3], tokens[4],
                 Float.parseFloat(tokens[5]), Category.get(tokens[6]));

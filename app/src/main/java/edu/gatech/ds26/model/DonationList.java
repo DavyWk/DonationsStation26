@@ -99,8 +99,9 @@ public class DonationList {
         String line = reader.readLine();
         while (line != null) {
             Donation d = Donation.loadFromText(line);
-            map.putIfAbsent(d.getLocation(), new ArrayList<Donation>());
-            map.get(d.getLocation()).add(d);
+            Location dLoc = d.getLocation();
+            map.putIfAbsent(dLoc, new ArrayList<Donation>());
+            map.get(dLoc).add(d);
             line = reader.readLine();
         }
     }

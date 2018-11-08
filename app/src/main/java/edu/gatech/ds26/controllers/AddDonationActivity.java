@@ -22,7 +22,7 @@ import edu.gatech.ds26.model.LocationList;
  */
 public class AddDonationActivity extends AppCompatActivity {
 
-    private Donation donation;
+    private Donation myDonation;
     private final LocationList locationList = LocationList.getInstance();
     private final DonationList donationList = DonationList.getInstance();
     Spinner location;
@@ -53,7 +53,7 @@ public class AddDonationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter2);
 
-        donation = new Donation();
+        myDonation = new Donation();
     }
 
     /**
@@ -76,14 +76,14 @@ public class AddDonationActivity extends AppCompatActivity {
     public void onAddDonationButtonPressed(View view) {
         Log.d("Add Donation Screen", "Add Donation Button");
 
-        donation.setLocation((Location) location.getSelectedItem());
-        donation.setTimeStamp(timeStamp.getText().toString());
-        donation.setShortDescription(shortDescription.getText().toString());
-        donation.setFullDescription(fullDescription.getText().toString());
-        donation.setValue(Float.parseFloat(value.getText().toString()));
-        donation.setCategory((Category) category.getSelectedItem());
+        myDonation.setLocation((Location) location.getSelectedItem());
+        myDonation.setTimeStamp(timeStamp.getText().toString());
+        myDonation.setShortDescription(shortDescription.getText().toString());
+        myDonation.setFullDescription(fullDescription.getText().toString());
+        myDonation.setValue(Float.parseFloat(value.getText().toString()));
+        myDonation.setCategory((Category) category.getSelectedItem());
 
-        donationList.addDonation(donation);
+        donationList.addDonation(myDonation);
         Facade.saveDonationList(this);
 
         Intent intent = new Intent(this, DonationListActivity.class);

@@ -15,7 +15,8 @@ public class Location {
     private String website;
 
     public Location(int key, String name, double longitude, double latitude, String address,
-                     String city, String state, int zip, LocationType type, String phone, String website) {
+                     String city, String state, int zip, LocationType type, String phone,
+                     String website) {
         this.key = key;
         this.name = name;
         this.latitude = latitude;
@@ -32,7 +33,7 @@ public class Location {
 
     public Location(){
         this.key = 4;
-        this.name = "Liana";
+        this.name = "NotMyName";
         this.latitude = 500;
         this.longitude = 2;
         this.address = "GATECH station";
@@ -44,21 +45,6 @@ public class Location {
         this.website = "www.lol";
     }
 
-    private void setAll(int key, String name, double latitude, double longitude, String address,
-                        String city, String state, int zip, LocationType type, String phone, String website){
-        this.key = key;
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.type = type;
-        this.phone = phone;
-        this.website = website;
-    }
-  
     public int getKey() {
         return key;
     }
@@ -137,6 +123,8 @@ public class Location {
         this.website = website;
     }
 
+    //TODO: toString should not include formatting
+    @Override
     public String toString() {
         return String.format(" Name: %s\n\n" + " Latitude: %s\n\n" +
                         " Longitude: %s\n\n" + " Street Address: %s\n\n" + " City: %s\n\n" +
@@ -149,8 +137,8 @@ public class Location {
     }
 
     public String toStringEx() {
-        String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," + city +
-                "," + state + "," + zip + "," + type + "," + phone + "," + website;
+        String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," +
+                city + "," + state + "," + zip + "," + type + "," + phone + "," + website;
         return ret.toUpperCase();
     }
 
@@ -175,6 +163,7 @@ public class Location {
         int zip = Integer.parseInt(tokens[ZIP]);
 
         return new Location(key, tokens[NAME], longitude, latitude, tokens[STREET_ADDRESS],
-                tokens[CITY], tokens[STATE], zip, LocationType.get(tokens[TYPE]), tokens[PHONE], tokens[WEBSITE]);
+                tokens[CITY], tokens[STATE], zip, LocationType.get(tokens[TYPE]), tokens[PHONE],
+                tokens[WEBSITE]);
     }
 }

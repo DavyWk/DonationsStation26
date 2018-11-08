@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     public void onDonationAllPressed(View view) {
-        Log.d("Main Screen", "All Item Button");
+        Log.d("Main Screen", "All Donation Button");
         Intent intent = new Intent(this, DonationAllActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }
     public void onDonationLocationPressed(View view) {
-        Log.d("Main Screen", "All Item By Location Button");
+        Log.d("Main Screen", "All Donation By Location Button");
         Intent intent = new Intent(this, DonationLocationItem.class);
         view.getContext().startActivity(intent);
         finish();

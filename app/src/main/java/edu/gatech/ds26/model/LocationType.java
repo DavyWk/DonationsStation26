@@ -3,18 +3,21 @@ package edu.gatech.ds26.model;
 public enum LocationType {
     Dropoff,
     Store,
-    Warehouse;
+    WAREHOUSE;
 
     public static LocationType get(String s) {
+        s = s.toUpperCase();
         if (s.equals("Drop Off")) {
             return Dropoff;
-        } else if (s.equals("Store")) {
+        } else if (s.equals("STORE")) {
             return Store;
-        } else if (s.equals("Warehouse")) {
-            return Warehouse;
+        } else if (s.equals("WAREHOUSE")) {
+            return WAREHOUSE;
         }
         return null;
     }
+
+    @Override
     public String toString() {
         if (name().equals("Dropoff")) {
             return "Drop Off";

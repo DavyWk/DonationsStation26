@@ -6,25 +6,15 @@ public enum AccountType {
     MANAGER,
     ADMIN;
 
-    public String getLetter(AccountType type) {
-        if (type == USER) {
-            return "U";
-        } else if (type == LOCATIONEMPLOYEE) {
-            return "L";
-        } else if (type == MANAGER) {
-            return "M";
-        } else {
-            return "A";
-        }
-    }
-
     public static AccountType get(String s) {
-        if (s.equals("Location Employee")) {
+        if (s.toLowerCase().equals("location employee")) {
             return LOCATIONEMPLOYEE;
         } else {
             return AccountType.valueOf(s.toUpperCase());
         }
     }
+
+    @Override
     public String toString() {
 
         if(name().equalsIgnoreCase("locationemployee")) {

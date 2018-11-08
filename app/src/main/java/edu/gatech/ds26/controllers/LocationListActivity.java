@@ -64,9 +64,11 @@ public class LocationListActivity extends AppCompatActivity {
 
             String line;
             br.readLine(); //get rid of header line
-            while ((line = br.readLine()) != null) {
+            line = br.readLine();
+            while (line != null) {
                 Log.d("LocationList", line);
                 locationList.addLocation(Location.parseLocation(line));
+                line = br.readLine();
             }
             br.close();
         } catch (IOException e) {

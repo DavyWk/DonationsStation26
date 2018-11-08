@@ -6,12 +6,12 @@ public enum LocationType {
     WAREHOUSE;
 
     public static LocationType get(String s) {
-        s = s.toUpperCase();
-        if (s.equals("Drop Off")) {
+        String str = s.toUpperCase();
+        if (str.equals("Drop Off")) {
             return Dropoff;
-        } else if (s.equals("STORE")) {
+        } else if (str.equals("STORE")) {
             return Store;
-        } else if (s.equals("WAREHOUSE")) {
+        } else if (str.equals("WAREHOUSE")) {
             return WAREHOUSE;
         }
         return null;

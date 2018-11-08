@@ -17,9 +17,6 @@ import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
-/**
- * This is the activity for adding a specific donation
- */
 public class AddDonationActivity extends AppCompatActivity {
 
     private Donation donation;
@@ -56,10 +53,6 @@ public class AddDonationActivity extends AppCompatActivity {
         donation = new Donation();
     }
 
-    /**
-     * A script that runs when a button is pressed, that takes users back to the previous activity
-     * @param view The current view that the user is in
-     */
     public void onBackButtonPressed(View view) {
         Log.d("Add Donation Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);

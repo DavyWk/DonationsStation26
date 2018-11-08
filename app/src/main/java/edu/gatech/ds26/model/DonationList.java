@@ -34,22 +34,22 @@ public class DonationList {
         return l != null && l.remove(d);
     }
 
-    public ArrayList<Donation> getDonations() {
-        ArrayList<Donation> list = new ArrayList<>();
-        for (ArrayList<Donation> l : map.values()) {
+    public List<Donation> getDonations() {
+        List<Donation> list = new ArrayList<>();
+        for (List<Donation> l : map.values()) {
             list.addAll(l);
         }
         return list;
     }
 
-    public ArrayList<Donation> getDonations(Location l) {
-        ArrayList<Donation> ret = map.get(l);
+    public List<Donation> getDonations(Location l) {
+        List<Donation> ret = map.get(l);
         return ret == null ? new ArrayList<Donation>() : ret;
     }
 
-    public ArrayList<Donation> searchItem(String itemName) {
-        ArrayList<Donation> ret = new ArrayList<>();
-        for (ArrayList<Donation> l : map.values()) {
+    public List<Donation> searchItem(String itemName) {
+        List<Donation> ret = new ArrayList<>();
+        for (List<Donation> l : map.values()) {
             for (Donation d : l) {
                 if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
                     ret.add(d);

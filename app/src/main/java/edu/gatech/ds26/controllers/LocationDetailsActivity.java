@@ -47,4 +47,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
         view.getContext().startActivity(intent);
         finish();
     }
+
+    public void onOpenMapsButtonPressed(View view) {
+        Log.d("Location Details Screen", "Open Maps Button");
+        Intent intent = new Intent(this, MapsActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
 }

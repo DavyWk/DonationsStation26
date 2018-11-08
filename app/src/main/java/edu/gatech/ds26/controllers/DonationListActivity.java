@@ -14,6 +14,7 @@ import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
+import edu.gatech.ds26.model.Location;
 
 public class DonationListActivity extends AppCompatActivity {
 

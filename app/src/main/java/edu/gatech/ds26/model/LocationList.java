@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class LocationList {
+    Location current;
 
     //Should be a set since locations can't be duplicated
     private static final LocationList _instance = new LocationList();

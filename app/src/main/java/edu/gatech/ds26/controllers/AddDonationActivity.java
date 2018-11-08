@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
+import java.sql.Date;
+
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;

@@ -17,6 +17,7 @@ public class DonationList {
     private DonationList() {
         map = new HashMap<>();
     }
+    public int index;
 
     public static DonationList getInstance() { return instance; }
 
@@ -41,7 +42,7 @@ public class DonationList {
         }
         return list;
     }
-    
+
     public List<Donation> getDonations(Location l) {
         List<Donation> ret = map.get(l);
         return ret == null ? new ArrayList<Donation>() : ret;
@@ -60,8 +61,8 @@ public class DonationList {
     }
 
     //This implements the extra credit for partial match
-    public List<Donation> searchIemAtLocation(Location loc, String itemName) {
-        List<Donation> ret = new ArrayList<>();
+    public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
+        ArrayList<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
                 ret.add(d);

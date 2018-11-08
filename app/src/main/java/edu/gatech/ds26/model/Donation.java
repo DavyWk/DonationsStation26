@@ -15,7 +15,7 @@ public class Donation {
     private float value;
     private Category category;
     //private String comments;
-    //private photo//
+    //private photo;
 
     /**
      * A constructor for a donation object

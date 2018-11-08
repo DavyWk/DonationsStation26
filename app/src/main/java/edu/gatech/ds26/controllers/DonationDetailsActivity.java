@@ -32,6 +32,11 @@ public class DonationDetailsActivity extends AppCompatActivity {
         textView.setText(details);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Donation Details Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);

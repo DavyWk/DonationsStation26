@@ -32,7 +32,7 @@ public class DonationListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         Intent i = getIntent();
-        Location loc = (Location) i.getParcelableExtra("Location");
+        Location loc = i.getParcelableExtra("Location");
         donations = DonationList.getInstance().getDonations(loc);
 
         adapter = new DonationAdapter((ArrayList<Donation>) donations);

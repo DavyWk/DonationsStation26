@@ -15,10 +15,13 @@ import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 
+/**
+ * This class creates the views for how the donations are show in the view list
+ */
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private List<Donation> mDonations;
+    private final List<Donation> mDonations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -31,6 +34,10 @@ public class DonationAdapter extends
         return viewHolder;
     }
 
+    /**
+     * A constructor for creating a list view from a list of donations
+     * @param donations A list donations
+     */
     public DonationAdapter(List<Donation> donations) {
         if(donations == null){
             mDonations = new ArrayList<>();
@@ -68,10 +75,14 @@ public class DonationAdapter extends
         public TextView shortDescriptionTextView;
         public Button detailsButton;
 
+        /**
+         * A constructor for a view holder
+         * @param view The current view
+         */
         public ViewHolder(View view) {
             super(view);
-            shortDescriptionTextView = (TextView) view.findViewById(R.id.text_short_description);
-            detailsButton = (Button) view.findViewById(R.id.button_details);
+            shortDescriptionTextView = view.findViewById(R.id.text_short_description);
+            detailsButton = view.findViewById(R.id.button_details);
         }
     }
 }

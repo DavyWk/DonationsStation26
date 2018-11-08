@@ -1,11 +1,20 @@
 package edu.gatech.ds26.model;
 
+/**
+ * This is a enum class that contains the type of each user. Each level has different access to the
+ * application's features
+ */
 public enum AccountType {
     USER,
     LOCATIONEMPLOYEE,
     MANAGER,
     ADMIN;
 
+    /**
+     * Returns the type associated with a given user
+     * @param s A string that represents the user's type
+     * @return The enum type of the user
+     */
     public static AccountType get(String s) {
         if (s.toLowerCase().equals("location employee")) {
             return LOCATIONEMPLOYEE;

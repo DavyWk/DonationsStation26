@@ -18,7 +18,7 @@ import edu.gatech.ds26.model.Location;
 public class LocationAdapter extends
         RecyclerView.Adapter<LocationAdapter.ViewHolder> {
 
-    private List<Location> mLocations;
+    private final List<Location> mLocations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -70,8 +70,8 @@ public class LocationAdapter extends
 
         public ViewHolder(View view) {
             super(view);
-            nameTextView = (TextView) view.findViewById(R.id.text_name);
-            detailsButton = (Button) view.findViewById(R.id.button_details);
+            nameTextView = view.findViewById(R.id.text_name);
+            detailsButton = view.findViewById(R.id.button_details);
         }
     }
 }

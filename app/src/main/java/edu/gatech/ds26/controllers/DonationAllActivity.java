@@ -19,6 +19,10 @@ import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 import edu.gatech.ds26.model.Location;
 
+/**
+ * Creates an activity displays all the donations available in a recycler view when the all option
+ * is chosen in the search results
+ */
 public class DonationAllActivity extends AppCompatActivity {
 
     ArrayList<Donation> donations;
@@ -52,12 +56,21 @@ public class DonationAllActivity extends AppCompatActivity {
         btSearch = findViewById(R.id.buttonSearchDonation);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Item all Activity Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }
+    /**
+     * Sends the user to the search results of the params they chose
+     * @param view The current view that the user is in.
+     */
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
         donationList = DonationList.getInstance();

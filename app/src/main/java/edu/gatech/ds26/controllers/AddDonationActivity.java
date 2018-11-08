@@ -19,11 +19,14 @@ import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
+/**
+ * This creates an activity where users can se the fields for a new donation
+ */
 public class AddDonationActivity extends AppCompatActivity {
 
-    private Donation donation;
-    private LocationList locationList = LocationList.getInstance();
-    private DonationList donationList = DonationList.getInstance();
+    private Donation myDonation;
+    private final LocationList locationList = LocationList.getInstance();
+    private final DonationList donationList = DonationList.getInstance();
     Spinner location;
     EditText timeStamp;
     EditText shortDescription;
@@ -52,9 +55,14 @@ public class AddDonationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter2);
 
-        donation = new Donation();
+        myDonation = new Donation();
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Add Donation Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);
@@ -62,17 +70,22 @@ public class AddDonationActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Adds the donation to the screen
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onAddDonationButtonPressed(View view) {
         Log.d("Add Donation Screen", "Add Donation Button");
 
-        donation.setLocation((Location) location.getSelectedItem());
-        donation.setTimeStamp(timeStamp.getText().toString());
-        donation.setShortDescription(shortDescription.getText().toString());
-        donation.setFullDescription(fullDescription.getText().toString());
-        donation.setValue(Float.parseFloat(value.getText().toString()));
-        donation.setCategory((Category) category.getSelectedItem());
+        myDonation.setLocation((Location) location.getSelectedItem());
+        myDonation.setTimeStamp(timeStamp.getText().toString());
+        myDonation.setShortDescription(shortDescription.getText().toString());
+        myDonation.setFullDescription(fullDescription.getText().toString());
+        myDonation.setValue(Float.parseFloat(value.getText().toString()));
+        myDonation.setCategory((Category) category.getSelectedItem());
 
-        donationList.addDonation(donation);
+        donationList.addDonation(myDonation);
         Facade.saveDonationList(this);
 
         Intent intent = new Intent(this, DonationListActivity.class);

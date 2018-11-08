@@ -53,7 +53,7 @@ public class LocationAdapter extends
                 Log.d("Location Adapter", "Clicked on " + position);
                 Intent intent = new Intent (context, LocationDetailsActivity.class);
                 intent.putExtra("key", position + 1);
-
+                //this should use viewHolder.getAdapterPosition()
                 context.startActivity(intent);
             }
         });

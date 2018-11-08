@@ -16,7 +16,7 @@ public class LocationList {
     }
 
     public boolean addLocation(Location loc) {
-        if (loc == null) {
+        if (loc == null || locationList.contains(loc)) {
             return  false;
         }
         locationList.add(loc);

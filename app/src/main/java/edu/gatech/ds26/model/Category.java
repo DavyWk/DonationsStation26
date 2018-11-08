@@ -1,7 +1,7 @@
 package edu.gatech.ds26.model;
 
 /**
- * An enum asscoiated with donations that represents the varying types of categories
+ * An enum associated with donations that represents the varying types of categories
  */
 public enum Category {
     CLOTHING,

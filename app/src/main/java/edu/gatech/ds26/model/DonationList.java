@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collection;
 
 public class DonationList {
     private static final DonationList instance = new DonationList();
@@ -77,8 +78,8 @@ public class DonationList {
         return ret;
     }
 
-    public List<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
-        List<Donation> ret = new ArrayList<>();
+    public Collection<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
+        Collection<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getCategory() == cat) {
                 ret.add(d);
@@ -95,11 +96,12 @@ public class DonationList {
 
     public void loadFromText(BufferedReader reader) throws IOException {
         map.clear();
-
+        LocationList locList = LocationList.getInstance();
         String line = reader.readLine();
         while (line != null) {
             Donation d = Donation.loadFromText(line);
             Location dLoc = d.getLocation();
+            //locList.addLocation(dLoc); //TODO: ideally this would fill up the location list on load
             map.putIfAbsent(dLoc, new ArrayList<Donation>());
             map.get(dLoc).add(d);
             line = reader.readLine();

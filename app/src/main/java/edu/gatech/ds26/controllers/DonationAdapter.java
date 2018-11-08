@@ -59,7 +59,7 @@ public class DonationAdapter extends
                 Context context = v.getContext();
                 Log.d("Donation Adapter", "Clicked on " + position);
                 Intent intent = new Intent (context, DonationDetailsActivity.class);
-                intent.putExtra("key", position + 1);
+                intent.putExtra("key", position + 1); //this should use viewHolder.getAdapterPosition()
 
                 context.startActivity(intent);
             }

@@ -30,7 +30,7 @@ public class Location {
         this.website = website;
     }
 
-
+    /*
     public Location(){
         this.key = 4;
         this.name = "NotMyName";
@@ -43,7 +43,7 @@ public class Location {
         this.type = LocationType.Dropoff;
         this.phone = "123456789";
         this.website = "www.lol";
-    }
+    }*/
 
     public int getKey() {
         return key;
@@ -126,6 +126,10 @@ public class Location {
     //TODO: toString should not include formatting
     @Override
     public String toString() {
+        return name;
+    }
+
+    public String getDetails() {
         return String.format(" Name: %s\n\n" + " Latitude: %s\n\n" +
                         " Longitude: %s\n\n" + " Street Address: %s\n\n" + " City: %s\n\n" +
                         " State: %s\n\n" + " Zip: %s\n\n" + " Type: %s\n\n" +
@@ -136,6 +140,7 @@ public class Location {
                 website);
     }
 
+    //used by reading/saving functions
     public String toStringEx() {
         String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," +
                 city + "," + state + "," + zip + "," + type + "," + phone + "," + website;

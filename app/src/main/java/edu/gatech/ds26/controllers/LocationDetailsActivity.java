@@ -27,7 +27,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         //TODO: Learn how to bold the detail headers when it prints on the detail screen.
         for (Location location : locationList.get()){
             if (location.getKey() == key) {
-                details = location.toString();
+                details = location.getDetails(); //this is wrong
             }
         }
         TextView textView = findViewById(R.id.textView);

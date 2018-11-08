@@ -39,14 +39,14 @@ public class Donation {
     /**
      * A no-arg constructor for Donation
      */
-    public Donation() {
+    /*public Donation() {
         this.timeStamp = "now";
         this.location = new Location();
         this.shortDescription = "short";
         this.fullDescription = "full description";
         this.value = 1.23f;
         this.category = Category.CLOTHING;
-    }
+    }*/
 
     //TODO: Move formatting to Activity that uses it, replace "\n\n" with ","
     @Override

@@ -17,11 +17,14 @@ import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
+/**
+ * This creates an activity where users can se the fields for a new donation
+ */
 public class AddDonationActivity extends AppCompatActivity {
 
     private Donation donation;
-    private LocationList locationList = LocationList.getInstance();
-    private DonationList donationList = DonationList.getInstance();
+    private final LocationList locationList = LocationList.getInstance();
+    private final DonationList donationList = DonationList.getInstance();
     Spinner location;
     EditText timeStamp;
     EditText shortDescription;
@@ -53,6 +56,11 @@ public class AddDonationActivity extends AppCompatActivity {
         donation = new Donation();
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Add Donation Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);
@@ -60,6 +68,11 @@ public class AddDonationActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Adds the donation to the screen
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onAddDonationButtonPressed(View view) {
         Log.d("Add Donation Screen", "Add Donation Button");
 

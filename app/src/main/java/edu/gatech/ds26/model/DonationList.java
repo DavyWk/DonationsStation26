@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class DonationList {
     private static final DonationList instance = new DonationList();
-    private Map<Location, List<Donation>> map;
+    private final Map<Location, List<Donation>> map;
 
     private DonationList() {
         map = new HashMap<>();
@@ -30,7 +30,7 @@ public class DonationList {
     public boolean removeDonation(Donation d) {
         if (d == null) { return false; }
         List<Donation> l = map.get(d.getLocation());
-        return l == null ? false : l.remove(d);
+        return l != null && l.remove(d);
     }
 
     public List<Donation> getDonations() {

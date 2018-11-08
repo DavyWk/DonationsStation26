@@ -12,7 +12,7 @@ public class UserList {
     public static UserList getInstance() { return _instance; }
 
     /** holds the list of all users */
-    private List<User> userList;
+    private final List<User> userList;
     private User currentUser;
 
     private UserList() {

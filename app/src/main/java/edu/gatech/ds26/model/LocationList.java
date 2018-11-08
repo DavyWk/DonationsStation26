@@ -9,7 +9,7 @@ public class LocationList {
     private static final LocationList _instance = new LocationList();
     public static LocationList getInstance() { return _instance; }
 
-    private List<Location> locationList;
+    private final List<Location> locationList;
 
     private LocationList() {
         locationList = new ArrayList<>();

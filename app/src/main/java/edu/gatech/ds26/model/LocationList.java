@@ -24,14 +24,19 @@ public class LocationList {
         return true;
     }
 
+    public boolean removeLocation(Location loc) {
+        if (loc == null) {
+            return false;
+        }
+        return locationList.remove(loc);
+    }
+
     public List<Location> get() {
         return locationList;
     }
 
-    public Location getCurrent() {
-        return current;
-    }
-    public void setCurrent(Location loc) {
-        current = loc;
-    }
+
+
+
+
 }

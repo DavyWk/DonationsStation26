@@ -1,10 +1,7 @@
 package edu.gatech.ds26.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.io.PrintWriter;
 
-// A user is anyone who wants to use the system to view inventory or locations.
-// They cannot actually alter any information
 public class User {
 
     private String name;
@@ -12,8 +9,6 @@ public class User {
     private String password;
     private AccountType type;
     private AccountState state;
-    //private String id; // UXX, LXX, MXX, AXX
-    protected static int IDCOUNTER;
 
     public User(String name, String loginId, String password, AccountType type, AccountState state) {
         this.name = name;
@@ -73,5 +68,17 @@ public class User {
     }
     public AccountState getState() {
         return state;
+    }
+
+    void saveAsText(PrintWriter writer) {
+        writer.println("User:" + "\t" + name + "\t" + loginId+ "\t" + password + "\t" + type + "\t"
+                + state);
+    }
+
+    public static User loadFromText(String line) {
+        String[] tokens = line.split("\t");
+        return new User(tokens[1], tokens[2], tokens[3], AccountType.get(tokens[4]),
+                AccountState.get(tokens[5]));
+
     }
 }

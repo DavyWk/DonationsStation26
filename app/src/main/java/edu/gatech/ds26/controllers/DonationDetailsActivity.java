@@ -11,8 +11,6 @@ import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
-import edu.gatech.ds26.model.Location;
-import edu.gatech.ds26.model.LocationList;
 
 
 public class DonationDetailsActivity extends AppCompatActivity {
@@ -22,40 +20,21 @@ public class DonationDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_details);
 
-        getIntent();
         DonationList donationList = DonationList.getInstance();
 
         String details = "";
 
         //TODO: Learn how to bold the detail headers when it prints on the detail screen.
-        DonationList donations = DonationList.getInstance();
-        LocationList locations = LocationList.getInstance();
-        Location current = locations.getCurrent();
-        List<Donation> mDonations = donations.getDonations(current);
-        Donation ourDonation = mDonations.get(donations.index);
-        details = current.getName();
-        TextView textView = findViewById(R.id.location);
+        for (Donation donation : donationList.getDonations()){
+            details = donation.toString();
+        }
+        TextView textView = findViewById(R.id.textView);
         textView.setText(details);
-        details = ourDonation.getTimeStamp();
-        TextView aView = findViewById(R.id.timeStamp);
-        aView.setText(details);
-        TextView bView = findViewById(R.id.category);
-        details = ourDonation.getCategory().toString();
-        bView.setText(details);
-        TextView cView = findViewById(R.id.value);
-        details = String.valueOf(ourDonation.getValue());
-        cView.setText(details);
-        TextView dView = findViewById(R.id.shortDescription);
-        details = ourDonation.getShortDescription();
-        dView.setText(details);
-        TextView eView = findViewById(R.id.fullDescription);
-        details = ourDonation.getFullDescription();
-        eView.setText(details);
     }
 
     public void onBackButtonPressed(View view) {
-        Log.d("Location Details Screen", "Back Button");
-        Intent intent = new Intent(this, LocationListActivity.class);
+        Log.d("Donation Details Screen", "Back Button");
+        Intent intent = new Intent(this, DonationListActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

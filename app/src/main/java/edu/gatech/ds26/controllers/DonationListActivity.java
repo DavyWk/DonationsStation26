@@ -26,12 +26,14 @@ public class DonationListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewDonation);
+        recyclerView = findViewById(R.id.recyclerViewDonation);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        donations = DonationList.getInstance().getDonations();
+        Intent i = getIntent();
+        Location loc = (Location) i.getParcelableExtra("Location");
+        donations = DonationList.getInstance().getDonations(loc);
 
         adapter = new DonationAdapter((ArrayList<Donation>) donations);
         recyclerView.setAdapter(adapter);

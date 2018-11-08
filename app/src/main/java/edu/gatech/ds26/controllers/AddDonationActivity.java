@@ -14,7 +14,8 @@ import java.sql.Date;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
-import edu.gatech.ds26.model.ItemCategory;
+import edu.gatech.ds26.model.Facade;
+import edu.gatech.ds26.model.Category;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
@@ -29,6 +30,7 @@ public class AddDonationActivity extends AppCompatActivity {
     EditText fullDescription;
     EditText value;
     Spinner category;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class AddDonationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         location.setAdapter(adapter);
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, ItemCategory.values());
+        ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Category.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter2);
 
@@ -68,9 +70,10 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setShortDescription(shortDescription.getText().toString());
         donation.setFullDescription(fullDescription.getText().toString());
         donation.setValue(Float.parseFloat(value.getText().toString()));
-        donation.setCategory((ItemCategory) category.getSelectedItem());
+        donation.setCategory((Category) category.getSelectedItem());
 
         donationList.addDonation(donation);
+        Facade.saveDonationList(this);
 
         Intent intent = new Intent(this, DonationListActivity.class);
         view.getContext().startActivity(intent);

@@ -51,6 +51,17 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
     }
+    /**
+     * Button handler for the register button
+     *
+     * @param view the button pressed
+     */
+    public void onFirstRegisterPressed(View view) {
+        Log.d("Welcome Screen", "Register");
+        Intent intent = new Intent(this, RegisterActivity.class);
+        view.getContext().startActivity(intent);
+        finish();
+    }
 
     /**
      * Button handler for cancel

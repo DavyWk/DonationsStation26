@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import edu.gatech.ds26.model.Facade;
+import edu.gatech.ds26.model.UserList;
+
 import edu.gatech.ds26.R;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -14,6 +17,10 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
+
+        //here all the values should be getting loaded
+        Facade.loadUserList(this);
+        Facade.loadDonationList(this);
     }
 
     /**

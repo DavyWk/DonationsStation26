@@ -8,35 +8,12 @@ public enum Category {
     HOUSEHOLD,
     OTHER;
 
-    public String getLetter(Category category) {
-        if (category == CLOTHING) {
-            return "C";
-        } else if (category == HAT) {
-            return "A";
-        } else if (category == KITCHEN) {
-            return "K";
-        } else if (category == ELECTRONICS) {
-            return  "E";
-        } else if (category == HOUSEHOLD) {
-            return "H";
-        } else {
-            return "O";
-        }
+    public static Category get(String s) {
+        return Category.valueOf(s.toUpperCase());
     }
 
-    public String toString(Category category) {
-        if (category == CLOTHING) {
-            return "Clothing";
-        } else if (category == HAT) {
-            return "Hat";
-        } else if (category == KITCHEN) {
-            return "Kitchen";
-        } else if (category == ELECTRONICS) {
-            return  "Electronics";
-        } else if (category == HOUSEHOLD) {
-            return "Household";
-        } else {
-            return "Other";
-        }
+    @Override
+    public String toString() {
+        return name().charAt(0) + name().substring(1).toLowerCase();
     }
 }

@@ -28,7 +28,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
         for (Location location : locationList.get()){
             if (location.getKey() == key) {
                 details = location.toString();
-                locationList.setCurrent(location);
             }
         }
         TextView textView = findViewById(R.id.textView);

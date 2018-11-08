@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">DonationsStation26</string>
+    <string-array name="array_country"></string-array>
     <string name="title_activity_list_inventory_">ListInventory_Activity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -90,4 +91,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_maps">Map</string>
 </resources>

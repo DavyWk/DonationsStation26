@@ -1,5 +1,8 @@
 package edu.gatech.ds26.model;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +23,7 @@ public class UserList {
 
     public boolean authenticateUser(String loginId, String password) {
         for (User user: userList) {
-            if (user.getLoginId().equals(loginId) && user.login(password)) {
+            if (user.checkID(loginId) && user.login(password)) {
                 currentUser = user;
                 return true;
             }
@@ -46,5 +49,23 @@ public class UserList {
 
     public User getCurrentUser() {
         return currentUser;
+    }
+
+    public void saveAsText(PrintWriter writer) {
+        for (User s : userList) {
+            s.saveAsText(writer);
+        }
+    }
+
+    //there will be one file per thing we have to save, this should load "students.txt"
+    public void loadFromText(BufferedReader reader) throws IOException {
+        userList.clear();
+
+        String line = reader.readLine();
+        while (line != null) {
+            userList.add(User.loadFromText(line));
+            line = reader.readLine();
+        }
+        reader.close();
     }
 }

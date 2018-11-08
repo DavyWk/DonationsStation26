@@ -27,8 +27,6 @@ public class DonationAdapter extends
 
         View donationView = inflater.inflate(R.layout.donation_adapter_recycler_view, parent, false);
 
-
-
         ViewHolder viewHolder = new ViewHolder(donationView);
         return viewHolder;
     }

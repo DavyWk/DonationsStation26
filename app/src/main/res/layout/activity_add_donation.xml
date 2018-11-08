@@ -2,20 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".controllers.AddDonationActivity"
-    tools:layout_editor_absoluteY="25dp" >
+    tools:layout_editor_absoluteY="25dp">
 
     <Button
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_width="134dp"
+        android:layout_height="109dp"
         android:layout_alignTop="@+id/add_donation_button"
-        android:layout_marginEnd="57dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/back"
         android:onClick="onBackButtonPressed"
         android:text="Back"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.850"
@@ -23,13 +28,18 @@
 
     <Button
         android:id="@+id/add_donation_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_width="135dp"
+        android:layout_height="107dp"
         android:layout_alignStart="@+id/location_spinner"
-        android:layout_marginBottom="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="447dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/back"
         android:onClick="onAddDonationButtonPressed"
         android:text="Add Donation"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.150"
@@ -43,122 +53,88 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:text="Location" />
+        android:text="Location"
+        android:textColor="@android:color/darker_gray" />
 
     <Spinner
         android:id="@+id/location_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/locationTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp" />
-
-    <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/location_spinner"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Date" />
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/date_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/dateTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Date"
-        android:inputType="textPersonName"/>
-
-    <TextView
-        android:id="@+id/shortTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/date_input"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Short Description" />
+        android:layout_marginTop="85dp"
+        android:background="@drawable/date"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
 
     <EditText
         android:id="@+id/shortDescriptionInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/shortTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Short Description" />
-
-    <TextView
-        android:id="@+id/fullTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/shortDescriptionInput"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Full Description" />
+        android:layout_marginTop="164dp"
+        android:background="@drawable/short_des"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/fullDescriptionInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/fullTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="245dp"
+        android:background="@drawable/full_des"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Full Description" />
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/valueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/fullDescriptionInput"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Value" />
 
     <EditText
         android:id="@+id/valueInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/valueTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="191dp"
+        android:background="@drawable/value"
         android:ems="10"
-        android:inputType="numberDecimal"
-        android:hint="Value" />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/categoryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/valueInput"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Category" />
+        android:layout_marginBottom="146dp"
+        android:text="Category"
+        android:textColor="@android:color/darker_gray" />
 
     <Spinner
         android:id="@+id/category_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/categoryTextView"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/categoryTextView"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="-29dp" />
 
 </RelativeLayout>
+

@@ -1,5 +1,10 @@
 package edu.gatech.ds26.model;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
@@ -25,7 +30,7 @@ public class DonationList {
 
     public boolean removeDonation(Donation d) {
         if (d == null) { return false; }
-        ArrayList<Donation> l = map.get(d);
+        List<Donation> l = map.get(d.getLocation());
         return l == null ? false : l.remove(d);
     }
 
@@ -65,16 +70,16 @@ public class DonationList {
         return ret;
     }
 
-    public ArrayList<Donation> searchItemByCategory(ItemCategory cat) {
-        ArrayList<Donation> ret = new ArrayList<>();
+    public List<Donation> searchItemByCategory(Category cat) {
+        List<Donation> ret = new ArrayList<>();
         for (Location l: map.keySet()) {
             ret.addAll(searchItemByCategoryAtLocation(l, cat));
         }
         return ret;
     }
 
-    public ArrayList<Donation> searchItemByCategoryAtLocation(Location loc, ItemCategory cat) {
-        ArrayList<Donation> ret = new ArrayList<>();
+    public List<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
+        List<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getCategory() == cat) {
                 ret.add(d);
@@ -83,4 +88,21 @@ public class DonationList {
         return ret;
     }
 
+    public void saveAsText(PrintWriter writer) {
+        for (Donation d : this.getDonations()) {
+            d.saveAsText(writer);
+        }
+    }
+
+    public void loadFromText(BufferedReader reader) throws IOException {
+        map.clear();
+
+        String line = reader.readLine();
+        while (line != null) {
+            Donation d = Donation.loadFromText(line);
+            map.putIfAbsent(d.getLocation(), new ArrayList<Donation>());
+            map.get(d.getLocation()).add(d);
+            line = reader.readLine();
+        }
+    }
 }

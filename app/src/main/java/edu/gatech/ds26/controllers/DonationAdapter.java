@@ -76,8 +76,8 @@ public class DonationAdapter extends
         public Button detailsButton;
 
         /**
-         * A constructor for the current view
-         * @param view
+         * A constructor for a view holder
+         * @param view The current view
          */
         public ViewHolder(View view) {
             super(view);

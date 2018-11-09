@@ -35,7 +35,9 @@ public class LocationList {
         return locationList;
     }
 
-
+    /*boolean equals(Object o) {
+        if (o is )
+    }*/
 
 
 

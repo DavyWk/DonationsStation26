@@ -102,7 +102,7 @@ public class DonationList {
         while (line != null) {
             Donation d = Donation.loadFromText(line);
             Location dLoc = d.getLocation();
-            //locList.addLocation(dLoc); //TODO: ideally this would fill up the location list on load
+            locList.addLocation(dLoc); //TODO: ideally this would fill up the location list on load
             map.putIfAbsent(dLoc, new ArrayList<Donation>());
             map.get(dLoc).add(d);
             line = reader.readLine();

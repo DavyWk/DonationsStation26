@@ -36,7 +36,7 @@ public class DonationListActivity extends AppCompatActivity {
         Location loc = i.getParcelableExtra("Location");
         donations = DonationList.getInstance().getDonations(loc);
 
-        adapter = new DonationAdapter((ArrayList<Donation>) donations);
+        adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }
 

@@ -2,31 +2,51 @@ package edu.gatech.ds26.model;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.IOException;
-import android.util.Log;
 
+/**
+ * This class gives the access to control the location's list in the database
+ */
 public class LocationList {
+    Location current;
 
     //Should be a set since locations can't be duplicated
     private static final LocationList _instance = new LocationList();
     public static LocationList getInstance() { return _instance; }
 
-    private List<Location> locationList;
+    private final List<Location> locationList;
 
     private LocationList() {
         locationList = new ArrayList<>();
     }
 
+    /**
+     * Adding location to the database.
+     * @param loc location
+     * @return boolean to confirm addition
+     */
     public boolean addLocation(Location loc) {
-        if (loc == null) {
+        if (loc == null || locationList.contains(loc)) {
             return  false;
         }
         locationList.add(loc);
         return true;
     }
+    /**
+     * Removing location to the database.
+     * @param loc location
+     * @return boolean to confirm removal
+     */
+    public boolean removeLocation(Location loc) {
+        if (loc == null) {
+            return false;
+        }
+        return locationList.remove(loc);
+    }
 
+    /**
+     * Get location's info.
+     * @return location list
+     */
     public List<Location> get() {
         return locationList;
     }

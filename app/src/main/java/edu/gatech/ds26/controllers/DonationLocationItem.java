@@ -14,6 +14,9 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 
+/**
+ * This class contains the item's by location that were donated.
+ */
 public class DonationLocationItem extends AppCompatActivity {
 
     List<Donation> donations;
@@ -23,6 +26,10 @@ public class DonationLocationItem extends AppCompatActivity {
     private View view;
 
     @Override
+    /**
+     * Initialize activity for Donations by Location.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_location_items);
@@ -37,6 +44,11 @@ public class DonationLocationItem extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Item Location Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);

@@ -16,6 +16,9 @@ import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 import edu.gatech.ds26.model.Location;
 
+/**
+ * This class creates the donation list within locations.
+ */
 public class DonationListActivity extends AppCompatActivity {
 
     List<Donation> donations;
@@ -24,6 +27,10 @@ public class DonationListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
+    /**
+     * Initialize activity for Donation List.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
@@ -33,13 +40,17 @@ public class DonationListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         Intent i = getIntent();
-        Location loc = (Location) i.getParcelableExtra("Location");
+        Location loc = i.getParcelableExtra("Location");
         donations = DonationList.getInstance().getDonations(loc);
 
-        adapter = new DonationAdapter(donations);
+        adapter = new DonationAdapter((ArrayList<Donation>) donations);
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Redirects to the Add Donation Screen.
+     * @param view The current view that the user is in.
+     */
     public void onAddDonationButtonPressed(View view) {
         Log.d("Donation List Screen", "Add Donation Button");
         Intent intent = new Intent(this, AddDonationActivity.class);
@@ -47,6 +58,11 @@ public class DonationListActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Donation List Screen", "Back Button");
         Intent intent = new Intent(this, LocationDetailsActivity.class);

@@ -22,6 +22,9 @@ import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 import edu.gatech.ds26.model.LocationType;
 
+/**
+ * This class creates the location list within the app.
+ */
 public class LocationListActivity extends AppCompatActivity {
 
     List<Location> locations;
@@ -30,6 +33,10 @@ public class LocationListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
+    /**
+     * Initialize activity for Location List.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_list);
@@ -48,6 +55,11 @@ public class LocationListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Location List Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
@@ -55,6 +67,9 @@ public class LocationListActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Reads the raw data to obtain the locations.
+     */
     private void readSDFile() {
         LocationList locationList = LocationList.getInstance();
 
@@ -64,9 +79,11 @@ public class LocationListActivity extends AppCompatActivity {
 
             String line;
             br.readLine(); //get rid of header line
-            while ((line = br.readLine()) != null) {
+            line = br.readLine();
+            while (line != null) {
                 Log.d("LocationList", line);
                 locationList.addLocation(Location.parseLocation(line));
+                line = br.readLine();
             }
             br.close();
         } catch (IOException e) {

@@ -18,10 +18,12 @@ import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.User;
 import edu.gatech.ds26.model.UserList;
 
+/**
+ * In this class newcomers can register to create their accounts.
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     //TODO: rename unclear elements
-    private User _user;
     EditText name;
     EditText loginId;
     EditText password;
@@ -30,6 +32,10 @@ public class RegisterActivity extends AppCompatActivity {
     TextView text2;
 
     @Override
+    /**
+     * Initialize activity for Registrating Users.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_screen);
@@ -48,27 +54,21 @@ public class RegisterActivity extends AppCompatActivity {
         /*
           Set up the adapter to display the allowable account types in the spinner
          */
+        //problem here due to how types are translated
         ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, AccountType.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter);
 
-        _user = new User();
-        typeSpinner.setSelection(_user.getType().ordinal());
+        typeSpinner.setSelection(AccountType.USER.ordinal());
     }
 
     /**
      * Button handler for register
-     *
      * @param view the button
      */
     public void onSecondRegisterPressed(View view) {
         Log.d("Register Screen", "Register");
         UserList userList = UserList.getInstance();
-
-        _user.setName(name.getText().toString());
-        _user.setLoginId(loginId.getText().toString());
-        _user.setPassword(password.getText().toString());
-        _user.setType((AccountType) typeSpinner.getSelectedItem());
 
         if (name.getText().toString().matches(  "") || loginId.getText().toString().matches("") || password.getText().toString().matches("")) {
             text1.setVisibility(View.VISIBLE);
@@ -79,8 +79,11 @@ public class RegisterActivity extends AppCompatActivity {
                 text2.setVisibility(View.VISIBLE);
                 text1.setVisibility(View.INVISIBLE);
             } else {
-                userList.addUser(new User(name.getText().toString(), loginId.getText().toString(), password.getText().toString(), (AccountType) typeSpinner.getSelectedItem()));
-                Facade.saveUserList(this); //no need to relaod data since it's in the current instance of UserList
+                userList.addUser(new User(name.getText().toString(), loginId.getText().toString(),
+                        password.getText().toString(), (AccountType) typeSpinner.getSelectedItem()));
+
+                Facade.saveUserList(this); //no need to reload data since it's in the current instance of UserList
+
                 Intent intent = new Intent(this, LoginActivity.class);
                 view.getContext().startActivity(intent);
                 finish();
@@ -90,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     /**
      * Button handler for cancel
-     *
      * @param view the button pressed
      */
     public void onCancelPressed(View view) {

@@ -14,6 +14,9 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 
+/**
+ * This creates the list view of the donations
+ */
 public class DonationCategoryActivity extends AppCompatActivity {
 
     List<Donation> donations;
@@ -23,6 +26,10 @@ public class DonationCategoryActivity extends AppCompatActivity {
     private View view;
 
     @Override
+    /**
+     * Initialize activity for Donations by Category.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_category);
@@ -37,6 +44,11 @@ public class DonationCategoryActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Item Category Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);

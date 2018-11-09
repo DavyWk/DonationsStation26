@@ -13,6 +13,9 @@ import android.widget.TextView;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.UserList;
 
+/**
+ * This class is the place where user's go to enter their account's information to gain access.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     EditText loginId;
@@ -20,6 +23,10 @@ public class LoginActivity extends AppCompatActivity {
     TextView text;
 
     @Override
+    /**
+     * Initialize activity for Login.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
@@ -53,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
     }
     /**
      * Button handler for the register button
-     *
      * @param view the button pressed
      */
     public void onFirstRegisterPressed(View view) {
@@ -65,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Button handler for cancel
-     *
      * @param view the button pressed
      */
     public void onCancelPressed(View view) {

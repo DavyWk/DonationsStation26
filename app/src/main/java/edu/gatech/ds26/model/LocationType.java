@@ -1,20 +1,35 @@
 package edu.gatech.ds26.model;
 
+/**
+ * This enum gives the location type and tracks the delivery action.
+ */
 public enum LocationType {
     Dropoff,
     Store,
-    Warehouse;
+    WAREHOUSE;
 
+    /**
+     * A switch for the location's type to decide the action for the donation.
+     * @param s location type
+     * @return enum of the location type
+     */
     public static LocationType get(String s) {
-        if (s.equals("Drop Off")) {
+        String str = s.toUpperCase();
+        if (str.equals("Drop Off")) {
             return Dropoff;
-        } else if (s.equals("Store")) {
+        } else if (str.equals("STORE")) {
             return Store;
-        } else if (s.equals("Warehouse")) {
-            return Warehouse;
+        } else if (str.equals("WAREHOUSE")) {
+            return WAREHOUSE;
         }
         return null;
     }
+
+    @Override
+    /**
+     * Creates a formated string for location type
+     * @return Dropoff or the first and second char of the name
+     */
     public String toString() {
         if (name().equals("Dropoff")) {
             return "Drop Off";

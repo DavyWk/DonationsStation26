@@ -1,30 +1,33 @@
 package edu.gatech.ds26.model;
 
+/**
+ * This is a enum class that contains the type of each user. Each level has different access to the
+ * application's features
+ */
 public enum AccountType {
     USER,
     LOCATIONEMPLOYEE,
     MANAGER,
     ADMIN;
 
-    public String getLetter(AccountType type) {
-        if (type == USER) {
-            return "U";
-        } else if (type == LOCATIONEMPLOYEE) {
-            return "L";
-        } else if (type == MANAGER) {
-            return "M";
-        } else {
-            return "A";
-        }
-    }
-
+    /**
+     * Returns the type associated with a given user
+     * @param s A string that represents the user's type
+     * @return The enum type of the user
+     */
     public static AccountType get(String s) {
-        if (s.equals("Location Employee")) {
+        if (s.toLowerCase().equals("location employee")) {
             return LOCATIONEMPLOYEE;
         } else {
             return AccountType.valueOf(s.toUpperCase());
         }
     }
+
+    @Override
+    /**
+     * Creates a formatted string for Account Type
+     * @return Location Employee or name's first and substring char
+     */
     public String toString() {
 
         if(name().equalsIgnoreCase("locationemployee")) {

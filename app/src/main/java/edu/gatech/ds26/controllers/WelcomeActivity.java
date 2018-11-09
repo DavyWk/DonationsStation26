@@ -11,9 +11,16 @@ import edu.gatech.ds26.model.UserList;
 
 import edu.gatech.ds26.R;
 
+/**
+ * Introduction to the application where the customer can choose to register or sign in.
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
+    /**
+     * Initialize activity for Welcome Screen.
+     * @param savedInstanceState contains the data most recently supplied in.
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
@@ -35,8 +42,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     /**
-     * Button handler for the register button
-     *
+     * Button handler for the register button.
      * @param view the button pressed
      */
     public void onFirstRegisterPressed(View view) {

@@ -15,12 +15,20 @@ import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 
+/**
+ * This class creates the views for how the donations are show in the view list
+ */
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private List<Donation> mDonations;
+    private final List<Donation> mDonations;
 
     @Override
+    /**
+     * Calls onCreateViewHolder() to create a new RecyclerView.ViewHolder.
+     * @param parent the ViewGroup into which the new View will be added
+     * @param viewType the view type of new View.
+     */
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -31,6 +39,10 @@ public class DonationAdapter extends
         return viewHolder;
     }
 
+    /**
+     * A constructor for creating a list view from a list of donations
+     * @param donations A list donations
+     */
     public DonationAdapter(List<Donation> donations) {
         if(donations == null){
             mDonations = new ArrayList<>();
@@ -40,6 +52,11 @@ public class DonationAdapter extends
     }
 
     @Override
+    /**
+     * Called by RecyclerView to display the data at the specified position.
+     * @param viewHolder updated to represent the contents of the item at the given position in the data set.
+     * @param position the position of the item within the adapter's data set
+     */
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Donation donation = mDonations.get(position);
 
@@ -52,7 +69,7 @@ public class DonationAdapter extends
                 Context context = v.getContext();
                 Log.d("Donation Adapter", "Clicked on " + position);
                 Intent intent = new Intent (context, DonationDetailsActivity.class);
-                intent.putExtra("key", position + 1);
+                intent.putExtra("key", position + 1); //this should use viewHolder.getAdapterPosition()
 
                 context.startActivity(intent);
             }
@@ -60,6 +77,10 @@ public class DonationAdapter extends
     }
 
     @Override
+    /**
+     * Gives the total number of items in the data set held by the adapter.
+     * @return the total number of items
+     */
     public int getItemCount() {
         return mDonations.size();
     }
@@ -68,10 +89,14 @@ public class DonationAdapter extends
         public TextView shortDescriptionTextView;
         public Button detailsButton;
 
+        /**
+         * A constructor for a view holder
+         * @param view The current view
+         */
         public ViewHolder(View view) {
             super(view);
-            shortDescriptionTextView = (TextView) view.findViewById(R.id.text_short_description);
-            detailsButton = (Button) view.findViewById(R.id.button_details);
+            shortDescriptionTextView = view.findViewById(R.id.text_short_description);
+            detailsButton = view.findViewById(R.id.button_details);
         }
     }
 }

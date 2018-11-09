@@ -18,6 +18,9 @@ import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.User;
 import edu.gatech.ds26.model.UserList;
 
+/**
+ * In this class newcomers can register to create their accounts.
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     //TODO: rename unclear elements
@@ -57,7 +60,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     /**
      * Button handler for register
-     *
      * @param view the button
      */
     public void onSecondRegisterPressed(View view) {
@@ -87,7 +89,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     /**
      * Button handler for cancel
-     *
      * @param view the button pressed
      */
     public void onCancelPressed(View view) {

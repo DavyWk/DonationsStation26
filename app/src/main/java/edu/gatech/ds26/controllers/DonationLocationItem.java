@@ -14,29 +14,34 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 
+/**
+ * This class contains the item's by location that were donated.
+ */
 public class DonationLocationItem extends AppCompatActivity {
 
     List<Donation> donations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
     private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_location_items);
-        recyclerView = findViewById(R.id.recyclerViewDonation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewDonation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         donations = DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter(donations);
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Item Location Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);

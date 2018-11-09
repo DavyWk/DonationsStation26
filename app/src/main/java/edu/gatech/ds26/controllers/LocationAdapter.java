@@ -15,6 +15,9 @@ import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Location;
 
+/**
+ * This class updates the list of location as new information comes from the database.
+ */
 public class LocationAdapter extends
         RecyclerView.Adapter<LocationAdapter.ViewHolder> {
 
@@ -27,10 +30,14 @@ public class LocationAdapter extends
 
         View locationView = inflater.inflate(R.layout.location_adapter_recycler_view, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(locationView);
-        return viewHolder;
+
+        return new ViewHolder(locationView);
     }
 
+    /**
+     * A constructor for creating a list view from a list of locations
+     * @param locations A list locations
+     */
     public LocationAdapter(List<Location> locations) {
         if(locations == null){
             mLocations = new ArrayList<>();
@@ -65,7 +72,7 @@ public class LocationAdapter extends
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameTextView;
+        public final TextView nameTextView;
         public Button detailsButton;
 
         public ViewHolder(View view) {

@@ -11,6 +11,9 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
+/**
+ * This class provides the details about the locations.
+ */
 public class LocationDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -34,6 +37,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
         textView.setText(details);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Location Details Screen", "Back Button");
         Intent intent = new Intent(this, LocationListActivity.class);
@@ -41,6 +49,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Button handler for the View Donations.
+     * @param view the button
+     */
     public void onViewDonationsButtonPressed(View view) {
         Log.d("Location Details Screen", "View Donations Button");
         Intent intent = new Intent(this, DonationListActivity.class);

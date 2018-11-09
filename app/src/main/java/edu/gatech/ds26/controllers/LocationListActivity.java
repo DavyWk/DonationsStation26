@@ -22,20 +22,20 @@ import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 import edu.gatech.ds26.model.LocationType;
 
+/**
+ * This class creates the location list within the app.
+ */
 public class LocationListActivity extends AppCompatActivity {
 
     List<Location> locations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_list);
-        recyclerView = findViewById(R.id.recyclerViewLocation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewLocation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         LocationList locList = LocationList.getInstance();
@@ -44,10 +44,15 @@ public class LocationListActivity extends AppCompatActivity {
         }
         locations = locList.get();
 
-        adapter = new LocationAdapter(locations);
+        RecyclerView.Adapter adapter = new LocationAdapter(locations);
         recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Sends the user to the previous screen when the back button is pressed
+     * Automatically runs when the back button is pressed
+     * @param view The current view that the user is in.
+     */
     public void onBackButtonPressed(View view) {
         Log.d("Location List Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
@@ -55,6 +60,9 @@ public class LocationListActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Reads the raw data to obtain the locations.
+     */
     private void readSDFile() {
         LocationList locationList = LocationList.getInstance();
 

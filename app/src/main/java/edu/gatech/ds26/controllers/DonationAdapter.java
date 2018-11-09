@@ -24,11 +24,6 @@ public class DonationAdapter extends
     private final List<Donation> mDonations;
 
     @Override
-    /**
-     * Calls onCreateViewHolder() to create a new RecyclerView.ViewHolder.
-     * @param parent the ViewGroup into which the new View will be added
-     * @param viewType the view type of new View.
-     */
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -52,11 +47,6 @@ public class DonationAdapter extends
     }
 
     @Override
-    /**
-     * Called by RecyclerView to display the data at the specified position.
-     * @param viewHolder updated to represent the contents of the item at the given position in the data set.
-     * @param position the position of the item within the adapter's data set
-     */
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Donation donation = mDonations.get(position);
 
@@ -77,16 +67,12 @@ public class DonationAdapter extends
     }
 
     @Override
-    /**
-     * Gives the total number of items in the data set held by the adapter.
-     * @return the total number of items
-     */
     public int getItemCount() {
         return mDonations.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView shortDescriptionTextView;
+        public final TextView shortDescriptionTextView;
         public Button detailsButton;
 
         /**

@@ -26,10 +26,6 @@ public enum LocationType {
     }
 
     @Override
-    /**
-     * Creates a formated string for location type
-     * @return Dropoff or the first and second char of the name
-     */
     public String toString() {
         if (name().equals("Dropoff")) {
             return "Drop Off";

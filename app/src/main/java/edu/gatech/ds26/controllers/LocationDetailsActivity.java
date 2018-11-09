@@ -17,10 +17,6 @@ import edu.gatech.ds26.model.LocationList;
 public class LocationDetailsActivity extends AppCompatActivity {
 
     @Override
-    /**
-     * Initialize activity for Locations's Details.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_details);

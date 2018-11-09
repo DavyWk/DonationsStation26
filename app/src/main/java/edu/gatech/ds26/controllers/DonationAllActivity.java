@@ -27,19 +27,13 @@ public class DonationAllActivity extends AppCompatActivity {
 
     ArrayList<Donation> donations;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private View view;
     private Donation don;
-    private DonationList donationList = DonationList.getInstance();
     EditText itemName;
     String stringItemName;
 
     @Override
-    /**
-     * Initialize activity for the Donation list.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_all);
@@ -49,7 +43,7 @@ public class DonationAllActivity extends AppCompatActivity {
 
         donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter(donations);
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
 
     }
@@ -71,7 +65,7 @@ public class DonationAllActivity extends AppCompatActivity {
      */
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
-        donationList = DonationList.getInstance();
+        DonationList donationList = DonationList.getInstance();
         List<Donation> result = donationList.searchItem(itemName.getText().toString());
         Log.d("Search screen", result.size() + " donations found");
         recyclerView.setAdapter(new DonationAdapter(result));

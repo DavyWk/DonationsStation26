@@ -28,21 +28,14 @@ import edu.gatech.ds26.model.LocationType;
 public class LocationListActivity extends AppCompatActivity {
 
     List<Location> locations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     @Override
-    /**
-     * Initialize activity for Location List.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_list);
-        recyclerView = findViewById(R.id.recyclerViewLocation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewLocation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         LocationList locList = LocationList.getInstance();
@@ -51,7 +44,7 @@ public class LocationListActivity extends AppCompatActivity {
         }
         locations = locList.get();
 
-        adapter = new LocationAdapter(locations);
+        RecyclerView.Adapter adapter = new LocationAdapter(locations);
         recyclerView.setAdapter(adapter);
     }
 

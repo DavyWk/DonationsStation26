@@ -24,19 +24,14 @@ public class LocationAdapter extends
     private final List<Location> mLocations;
 
     @Override
-    /**
-     * Calls onCreateViewHolder() to create a new RecyclerView.ViewHolder.
-     * @param parent the ViewGroup into which the new View will be added
-     * @param viewType the view type of new View.
-     */
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View locationView = inflater.inflate(R.layout.location_adapter_recycler_view, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(locationView);
-        return viewHolder;
+
+        return new ViewHolder(locationView);
     }
 
     /**
@@ -52,11 +47,6 @@ public class LocationAdapter extends
     }
 
     @Override
-    /**
-     * Called by RecyclerView to display the data at the specified position.
-     * @param viewHolder updated to represent the contents of the item at the given position in the data set.
-     * @param position the position of the item within the adapter's data set
-     */
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Location location = mLocations.get(position);
 
@@ -77,16 +67,12 @@ public class LocationAdapter extends
     }
 
     @Override
-    /**
-     * Gives the total number of items in the data set held by the adapter.
-     * @return the total number of items
-     */
     public int getItemCount() {
         return mLocations.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView nameTextView;
+        public final TextView nameTextView;
         public Button detailsButton;
 
         public ViewHolder(View view) {

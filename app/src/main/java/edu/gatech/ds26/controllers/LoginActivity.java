@@ -23,10 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView text;
 
     @Override
-    /**
-     * Initialize activity for Login.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);

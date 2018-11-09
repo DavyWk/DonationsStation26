@@ -240,10 +240,6 @@ public class Location {
 
     //TODO: toString should not include formatting
     @Override
-    /**
-     * Generates a string.
-     * @return name
-     */
     public String toString() {
         return name;
     }

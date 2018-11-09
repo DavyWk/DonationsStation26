@@ -16,10 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private View view;
 
     @Override
-    /**
-     * Initialize activity for Main Screen.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);

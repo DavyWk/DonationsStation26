@@ -50,10 +50,6 @@ public class Donation {
 
     //TODO: Move formatting to Activity that uses it, replace "\n\n" with ","
     @Override
-    /**
-     * Creates a formatted string for the donations on the database
-     * @return formatted string
-     */
     public String toString() {
         return String.format(" Time Stamp: %s\n\n" + " Location: %s\n\n" +
                         " Short Description: %s\n\n" + " Full Description: %s\n\n" +

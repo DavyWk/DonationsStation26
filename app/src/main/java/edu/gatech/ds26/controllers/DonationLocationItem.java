@@ -20,27 +20,20 @@ import edu.gatech.ds26.model.DonationList;
 public class DonationLocationItem extends AppCompatActivity {
 
     List<Donation> donations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
     private View view;
 
     @Override
-    /**
-     * Initialize activity for Donations by Location.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_location_items);
-        recyclerView = findViewById(R.id.recyclerViewDonation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewDonation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         donations = DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter(donations);
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }
 

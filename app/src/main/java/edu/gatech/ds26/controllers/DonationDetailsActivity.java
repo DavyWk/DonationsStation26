@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
@@ -18,10 +17,6 @@ import edu.gatech.ds26.model.DonationList;
 public class DonationDetailsActivity extends AppCompatActivity {
 
     @Override
-    /**
-     * Initialize activity for Donation Details.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_details);

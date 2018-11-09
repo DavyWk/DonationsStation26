@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.gatech.ds26.R;
@@ -22,28 +21,21 @@ import edu.gatech.ds26.model.Location;
 public class DonationListActivity extends AppCompatActivity {
 
     List<Donation> donations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     @Override
-    /**
-     * Initialize activity for Donation List.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
-        recyclerView = findViewById(R.id.recyclerViewDonation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewDonation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         Intent i = getIntent();
         Location loc = i.getParcelableExtra("Location");
         donations = DonationList.getInstance().getDonations(loc);
 
-        adapter = new DonationAdapter((ArrayList<Donation>) donations);
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }
 

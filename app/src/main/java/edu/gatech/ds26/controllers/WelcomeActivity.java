@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 
 import edu.gatech.ds26.model.Facade;
-import edu.gatech.ds26.model.UserList;
 
 import edu.gatech.ds26.R;
 
@@ -17,10 +16,6 @@ import edu.gatech.ds26.R;
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
-    /**
-     * Initialize activity for Welcome Screen.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);

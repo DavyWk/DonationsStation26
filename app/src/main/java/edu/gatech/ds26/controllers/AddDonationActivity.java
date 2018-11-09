@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-
-import java.sql.Date;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
@@ -36,10 +33,6 @@ public class AddDonationActivity extends AppCompatActivity {
 
 
     @Override
-    /**
-     * Initialize activity for Adding Donation.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_donation);

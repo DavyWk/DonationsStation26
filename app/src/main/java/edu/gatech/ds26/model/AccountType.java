@@ -24,10 +24,6 @@ public enum AccountType {
     }
 
     @Override
-    /**
-     * Creates a formatted string for Account Type
-     * @return Location Employee or name's first and substring char
-     */
     public String toString() {
 
         if(name().equalsIgnoreCase("locationemployee")) {

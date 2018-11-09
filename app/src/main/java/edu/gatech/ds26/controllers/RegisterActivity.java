@@ -32,10 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
     TextView text2;
 
     @Override
-    /**
-     * Initialize activity for Registrating Users.
-     * @param savedInstanceState contains the data most recently supplied in.
-     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_screen);

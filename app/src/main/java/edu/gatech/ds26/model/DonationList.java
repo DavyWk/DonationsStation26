@@ -10,12 +10,16 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
 
+import edu.gatech.ds26.controllers.DonationAdapter;
+
 /**
  * This class gives the access to control the donation's list in the database
  */
 public class DonationList {
     private static final DonationList instance = new DonationList();
     private final Map<Location, List<Donation>> map;
+    private DonationAdapter mDonations;
+
 
     private DonationList() {
         map = new HashMap<>();

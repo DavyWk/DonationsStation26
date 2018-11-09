@@ -57,7 +57,7 @@ public class DonationListActivity extends AppCompatActivity {
      */
     public void onBackButtonPressed(View view) {
         Log.d("Donation List Screen", "Back Button");
-        Intent intent = new Intent(this, LocationDetailsActivity.class);
+        Intent intent = new Intent(this, LocationListActivity.class);
         view.getContext().startActivity(intent);
         finish();
     }

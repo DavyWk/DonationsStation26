@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.text.Editable;
+import android.text.TextWatcher;
+
 
 import java.util.List;
 import java.util.ArrayList;
@@ -30,24 +32,29 @@ public class DonationAllActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private View view;
     private Donation don;
-    EditText itemName;
+    EditText editText;
     String stringItemName;
+    private DonationAdapter mDonations;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_all);
+        buildRecyclerView();
+    }
+
+    /**
+     * The regular recycler view with the donations before a search begins.
+     */
+    private void buildRecyclerView() {
         recyclerView = findViewById(R.id.recyclerViewDonation);
-
-        itemName = findViewById(R.id.itemNameX);
-
         donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
 
         RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
-
     }
-
     /**
      * Sends the user to the previous screen when the back button is pressed
      * Automatically runs when the back button is pressed
@@ -66,7 +73,9 @@ public class DonationAllActivity extends AppCompatActivity {
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
         DonationList donationList = DonationList.getInstance();
-        List<Donation> result = donationList.searchItem(itemName.getText().toString());
+        donationList = DonationList.getInstance();
+        List<Donation> result = donationList.searchItem(editText.getText().toString());
+        mDonations.filterList((ArrayList<Donation>) result);
         Log.d("Search screen", result.size() + " donations found");
         recyclerView.setAdapter(new DonationAdapter(result));
     }

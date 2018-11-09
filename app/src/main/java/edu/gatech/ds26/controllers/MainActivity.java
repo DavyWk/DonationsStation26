@@ -54,16 +54,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    /**
-     * Button handler for Donation's Location.
-     * @param view the button
-     */
-    public void onDonationLocationPressed(View view) {
-        Log.d("Main Screen", "All Donation By Location Button");
-        Intent intent = new Intent(this, DonationLocationItem.class);
-        view.getContext().startActivity(intent);
-        finish();
-    }
 
     /**
      * Button handler for the Categories.

@@ -299,4 +299,12 @@ public class Location {
                 tokens[CITY], tokens[STATE], zip, LocationType.get(tokens[TYPE]), tokens[PHONE],
                 tokens[WEBSITE]);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || !(o instanceof Location)) {
+            return false;
+        }
+        return ((Location)o).getName().equals(this.name);
+    }
 }

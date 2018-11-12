@@ -53,6 +53,9 @@ public class DonationAdapter extends
         TextView shortDescriptionView = viewHolder.shortDescriptionTextView;
         shortDescriptionView.setText(donation.getShortDescription());
         Button moreInfoButton = viewHolder.detailsButton;
+        if (moreInfoButton == null) {
+            return; //TODO: this is terrible
+        }
         moreInfoButton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {

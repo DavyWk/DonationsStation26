@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * This class gives the access to control the location's list in the database
+ * This class manages the Locations objects contained in the app.
  */
 public class LocationList {
     Location current;

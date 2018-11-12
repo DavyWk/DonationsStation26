@@ -30,7 +30,7 @@ public class DonationAllActivity extends AppCompatActivity {
     ArrayList<Donation> donations;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    private View view;
+    //private View view;
     private Donation don;
     EditText editText;
     String stringItemName;
@@ -43,6 +43,7 @@ public class DonationAllActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_all);
         buildRecyclerView();
+        editText = findViewById(R.id.textSearchItem);
     }
 
     /**
@@ -54,6 +55,7 @@ public class DonationAllActivity extends AppCompatActivity {
 
         RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
     /**
      * Sends the user to the previous screen when the back button is pressed
@@ -73,9 +75,8 @@ public class DonationAllActivity extends AppCompatActivity {
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
         DonationList donationList = DonationList.getInstance();
-        donationList = DonationList.getInstance();
         List<Donation> result = donationList.searchItem(editText.getText().toString());
-        mDonations.filterList((ArrayList<Donation>) result);
+        //mDonations.filterList((ArrayList<Donation>) result);
         Log.d("Search screen", result.size() + " donations found");
         recyclerView.setAdapter(new DonationAdapter(result));
     }

@@ -18,6 +18,7 @@ import java.util.List;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
+import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 import edu.gatech.ds26.model.LocationType;
@@ -39,9 +40,7 @@ public class LocationListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         LocationList locList = LocationList.getInstance();
-        if (locList.get().isEmpty()) {
-            readSDFile();
-        }
+        readSDFile();
         locations = locList.get();
 
         RecyclerView.Adapter adapter = new LocationAdapter(locations);

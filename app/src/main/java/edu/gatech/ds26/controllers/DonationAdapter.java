@@ -21,7 +21,7 @@ import edu.gatech.ds26.model.Donation;
 public class DonationAdapter extends
         RecyclerView.Adapter<DonationAdapter.ViewHolder> {
 
-    private final List<Donation> mDonations;
+    private List<Donation> mDonations;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -72,7 +72,7 @@ public class DonationAdapter extends
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView shortDescriptionTextView;
+        public final TextView shortDescriptionTextView;
         public Button detailsButton;
 
         /**
@@ -84,5 +84,9 @@ public class DonationAdapter extends
             shortDescriptionTextView = view.findViewById(R.id.text_short_description);
             detailsButton = view.findViewById(R.id.button_details);
         }
+    }
+    public void filterList(ArrayList<Donation> filteredList) {
+        mDonations = filteredList;
+        notifyDataSetChanged();
     }
 }

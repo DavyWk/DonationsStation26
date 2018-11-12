@@ -7,12 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.List;
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
 
-
+/**
+ * This class provides the details about the donations given the center.
+ */
 public class DonationDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -44,6 +45,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Redirects to the Add Donation Screen.
+     * @param view The current view that the user is in.
+     */
     public void onAddDonationsButtonPressed(View view) {
         Log.d("Location Details Screen", "View Donations Button");
         Intent intent = new Intent(this, DonationDetailsActivity.class);

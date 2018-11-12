@@ -7,10 +7,12 @@ import android.util.Log;
 import android.view.View;
 
 import edu.gatech.ds26.model.Facade;
-import edu.gatech.ds26.model.UserList;
 
 import edu.gatech.ds26.R;
 
+/**
+ * Introduction to the application where the customer can choose to register or sign in.
+ */
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -35,8 +37,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     /**
-     * Button handler for the register button
-     *
+     * Button handler for the register button.
      * @param view the button pressed
      */
     public void onFirstRegisterPressed(View view) {

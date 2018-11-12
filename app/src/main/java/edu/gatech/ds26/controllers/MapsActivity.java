@@ -16,10 +16,10 @@ import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
 
-
+/**
+ * This class shows the map for which locations can be identified in.
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override //does this happen when the activity is loaded, or when the app is loaded.
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
         /* Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
@@ -59,8 +58,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             marker.position(pos);
             marker.title(loc.getName());
             marker.snippet(loc.getPhone());
-            mMap.addMarker(marker);
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
+            googleMap.addMarker(marker);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
         }
     }
 

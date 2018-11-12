@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.text.Editable;
+import android.text.TextWatcher;
+
 
 import java.util.List;
 import java.util.ArrayList;
@@ -27,35 +29,32 @@ public class DonationAllActivity extends AppCompatActivity {
 
     ArrayList<Donation> donations;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private View view;
     private Donation don;
-    private DonationList donationList = DonationList.getInstance();
-    EditText itemName;
+    EditText editText;
     String stringItemName;
-    ImageButton btSearch;
+    private DonationAdapter mDonations;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_all);
-        recyclerView = findViewById(R.id.recyclerViewDonation);
-
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        itemName = findViewById(R.id.itemNameX);
-
-        donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
-
-        adapter = new DonationAdapter(donations);
-        recyclerView.setAdapter(adapter);
-
-        btSearch = findViewById(R.id.buttonSearchDonation);
+        buildRecyclerView();
     }
 
+    /**
+     * The regular recycler view with the donations before a search begins.
+     */
+    private void buildRecyclerView() {
+        recyclerView = findViewById(R.id.recyclerViewDonation);
+        donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
+
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
+        recyclerView.setAdapter(adapter);
+    }
     /**
      * Sends the user to the previous screen when the back button is pressed
      * Automatically runs when the back button is pressed
@@ -73,8 +72,10 @@ public class DonationAllActivity extends AppCompatActivity {
      */
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
+        DonationList donationList = DonationList.getInstance();
         donationList = DonationList.getInstance();
-        List<Donation> result = donationList.searchItem(itemName.getText().toString());
+        List<Donation> result = donationList.searchItem(editText.getText().toString());
+        mDonations.filterList((ArrayList<Donation>) result);
         Log.d("Search screen", result.size() + " donations found");
         recyclerView.setAdapter(new DonationAdapter(result));
     }

@@ -20,23 +20,20 @@ import edu.gatech.ds26.model.DonationList;
 public class DonationCategoryActivity extends AppCompatActivity {
 
     List<Donation> donations;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
     private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_category);
-        recyclerView = findViewById(R.id.recyclerViewDonation);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewDonation);
 
-        layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         donations = DonationList.getInstance().getDonations();
 
-        adapter = new DonationAdapter(donations);
+        RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
     }
 

@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 //TODO: Add comment and Photo
 
 /**
- * This is ab information holder class representing an object that was donated to a center
+ * This is a information holder class representing an object that was donated to a center
  */
 public class Donation {
     private String timeStamp;
@@ -156,6 +156,10 @@ public class Donation {
     /*public void setComment(String comment) { this.comment = comment; }
     public String getComment() { return comment; }*/
 
+    /**
+     * Creates a new file with donation's information.
+     * @param writer writes the file
+     */
     void saveAsText(PrintWriter writer) { //this follows the CSV format, for easy conversion
         writer.println("Donation:" + "\t" + timeStamp + "\t" + location.toStringEx() + "\t"
                 + shortDescription + "\t" + fullDescription + "\t" + value + "\t" + category);

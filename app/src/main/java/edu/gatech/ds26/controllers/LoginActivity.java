@@ -1,9 +1,11 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
@@ -17,10 +19,6 @@ import edu.gatech.ds26.model.UserList;
  * This class is the place where user's go to enter their account's information to gain access.
  */
 public class LoginActivity extends AppCompatActivity {
-
-    private EditText loginId;
-    private EditText password;
-    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +40,25 @@ public class LoginActivity extends AppCompatActivity {
         UserList userList = UserList.getInstance();
 
         //TODO implement auth logic
-        loginId = findViewById(R.id.loginId_input);
-        password = findViewById(R.id.password_input);
-        text = findViewById(R.id.txtInvalid);
+        EditText loginId = findViewById(R.id.loginId_input);
+        EditText password = findViewById(R.id.password_input);
+        TextView text = findViewById(R.id.txtInvalid);
 
-        if (loginId.getText().toString().matches("") ||
-                password.getText().toString().matches("") ||
-                !userList.authenticateUser(loginId.getText().toString(),
-                        password.getText().toString())) {
+        Editable loginIdText = loginId.getText();
+        String loginIdToString = loginIdText.toString();
+
+        Editable passwordText = password.getText();
+        String passwordToString = passwordText.toString();
+
+        if (loginIdToString.matches("") || passwordToString.matches("") ||
+                !userList.authenticateUser(loginIdToString, passwordToString)) {
             text.setVisibility(View.VISIBLE);
         } else {
             Intent intent = new Intent(this, MainActivity.class);
-            view.getContext().startActivity(intent);
+
+            Context viewContext = view.getContext();
+            viewContext.startActivity(intent);
+
             finish();
         }
     }
@@ -64,7 +69,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onFirstRegisterPressed(View view) {
         Log.d("Welcome Screen", "Register");
         Intent intent = new Intent(this, RegisterActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -75,7 +83,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onCancelPressed(View view) {
         Log.d("Login Screen", "Cancel");
         Intent intent = new Intent(this, WelcomeActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

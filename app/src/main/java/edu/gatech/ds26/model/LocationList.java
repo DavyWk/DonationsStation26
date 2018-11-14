@@ -24,7 +24,7 @@ public class LocationList {
      * @return boolean to confirm addition
      */
     public boolean addLocation(Location loc) {
-        if (loc == null || locationList.contains(loc)) {
+        if ((loc == null) || (locationList.contains(loc))) {
             return  false;
         }
         locationList.add(loc);

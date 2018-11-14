@@ -20,7 +20,9 @@ public class Facade {
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(
                     c.getFilesDir(), "users.txt")));
-            UserList.getInstance().loadFromText(br);
+            UserList userListInstance = UserList.getInstance();
+
+            userListInstance.loadFromText(br);
             br.close();
         } catch (FileNotFoundException fne) {
             Log.e("Facade", "No users.txt found");
@@ -37,7 +39,9 @@ public class Facade {
     public static void saveUserList(Context c) {
         try {
             PrintWriter writer = new PrintWriter(new File(c.getFilesDir(), "users.txt"));
-            UserList.getInstance().saveAsText(writer);
+            UserList userListInstance = UserList.getInstance();
+
+            userListInstance.saveAsText(writer);
             writer.close();
         } catch (IOException e) {
             Log.e("Facade", "Error saving user list");
@@ -53,7 +57,9 @@ public class Facade {
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(
                     c.getFilesDir(), "donations.txt")));
-            DonationList.getInstance().loadFromText(br);
+            DonationList donationListInstance = DonationList.getInstance();
+
+            donationListInstance.loadFromText(br);
             br.close();
         } catch (FileNotFoundException fne) {
             Log.e("Facade", "No items.txt found");
@@ -70,7 +76,9 @@ public class Facade {
     public static void saveDonationList(Context c) {
         try {
             PrintWriter writer = new PrintWriter(new File(c.getFilesDir(), "donations.txt"));
-            DonationList.getInstance().saveAsText(writer);
+            DonationList donationListInstance = DonationList.getInstance();
+
+            donationListInstance.saveAsText(writer);
             writer.close();
         } catch (IOException e) {
             Log.e("Facade", "Error saving donation list");

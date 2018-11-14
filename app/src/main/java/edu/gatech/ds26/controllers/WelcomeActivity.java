@@ -1,5 +1,6 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +33,10 @@ public class WelcomeActivity extends AppCompatActivity {
     public void onFirstLoginPressed(View view) {
         Log.d("Welcome Screen", "Login");
         Intent intent = new Intent(this, LoginActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -43,7 +47,10 @@ public class WelcomeActivity extends AppCompatActivity {
     public void onFirstRegisterPressed(View view) {
         Log.d("Welcome Screen", "Register");
         Intent intent = new Intent(this, RegisterActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

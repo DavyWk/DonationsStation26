@@ -1,5 +1,6 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,9 @@ public class LocationDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_details);
 
-        final int key = (int) getIntent().getSerializableExtra("key");
+        Intent intent = getIntent();
+
+        final int key = (int) intent.getSerializableExtra("key");
         getIntent();
         LocationList locationList = LocationList.getInstance();
 
@@ -45,7 +48,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Location Details Screen", "Back Button");
         Intent intent = new Intent(this, LocationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -56,7 +62,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
     public void onViewDonationsButtonPressed(View view) {
         Log.d("Location Details Screen", "View Donations Button");
         Intent intent = new Intent(this, DonationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

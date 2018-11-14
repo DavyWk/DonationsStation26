@@ -18,6 +18,9 @@ public enum AccountState {
 
     @Override
     public String toString() {
-        return name().charAt(0) + name().substring(1).toLowerCase();
+        String name = name();
+        String nameSubstring = name.substring(1);
+
+        return name.charAt(0) + nameSubstring.toLowerCase();
     }
 }

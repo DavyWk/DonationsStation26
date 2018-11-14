@@ -40,7 +40,9 @@ public class DonationList {
         }
 
         map.putIfAbsent(d.getLocation(), new ArrayList<Donation>()) ;
-        map.get(d.getLocation()).add(d);
+
+        List<Donation> l = map.get(d.getLocation());
+        l.add(d);
         return true;
     }
 
@@ -50,9 +52,12 @@ public class DonationList {
      * @return boolean of donation's removal
      */
     public boolean removeDonation(Donation d) {
-        if (d == null) { return false; }
+        if (d == null) {
+            return false;
+        }
+
         List<Donation> l = map.get(d.getLocation());
-        return l != null && l.remove(d);
+        return (l != null) && (l.remove(d));
     }
     /**
      * Acquire donations from the database
@@ -73,7 +78,7 @@ public class DonationList {
      */
     public List<Donation> getDonations(Location l) {
         List<Donation> ret = map.get(l);
-        return ret == null ? new ArrayList<Donation>() : ret;
+        return (ret == null) ? (new ArrayList<Donation>()) : (ret);
     }
 
     /**
@@ -85,7 +90,9 @@ public class DonationList {
         List<Donation> ret = new ArrayList<>();
         for (List<Donation> l : map.values()) {
             for (Donation d : l) {
-                if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
+                String dShortDescription = d.getShortDescription();
+                String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
+                if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
                     ret.add(d);
                 }
             }
@@ -104,7 +111,9 @@ public class DonationList {
     public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
         ArrayList<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
-            if (d.getShortDescription().toLowerCase().contains(itemName.toLowerCase())) {
+            String dShortDescription = d.getShortDescription();
+            String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
+            if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
                 ret.add(d);
             }
         }
@@ -162,7 +171,9 @@ public class DonationList {
             Location dLoc = d.getLocation();
             locList.addLocation(dLoc); //TODO: ideally this would fill up the location list on load
             map.putIfAbsent(dLoc, new ArrayList<Donation>());
-            map.get(dLoc).add(d);
+
+            List<Donation> l = map.get(dLoc);
+            l.add(d);
             line = reader.readLine();
         }
     }

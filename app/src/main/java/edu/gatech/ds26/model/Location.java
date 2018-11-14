@@ -50,12 +50,12 @@ public class Location {
     public Location(){
         this.key = 4;
         this.name = "NotMyName";
-        this.latitude = 500;
+        this.latitude = 5;
         this.longitude = 2;
         this.address = "Georgia Tech Station";
         this.city = "Atlanta";
         this.state = "GA";
-        this.zip = 30332;
+        this.zip = 3;
         this.type = LocationType.Dropoff;
         this.phone = "123456789";
         this.website = "www.lol";
@@ -301,9 +301,12 @@ public class Location {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || !(o instanceof Location)) {
+        if ((o == null) || (!(o instanceof Location))) {
             return false;
         }
-        return ((Location)o).getName().equals(this.name);
+
+        String name = ((Location)o).getName();
+
+        return name.equals(this.name);
     }
 }

@@ -3,6 +3,8 @@ package edu.gatech.ds26.model;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -18,35 +20,38 @@ public class LocationListTest {
     @Before
     public void setUp() {
         locationList = new LocationList();
-        location = new Location();
     }
 
     @Test
     public void addLocation_WhenLocationIsNotNullAndListDoesNotContainLocation_ReturnTrue() {
-        boolean value = locationList.addLocation(location);
+        location = new Location();
 
-        assertTrue(locationList.get().contains(location));
+        boolean value = locationList.addLocation(location);
+        List list = locationList.get();
+
+        assertTrue(list.contains(location));
         assertTrue(value);
     }
 
     @Test
     public void addLocation_WhenLocationIsNullAndListDoesNotContainLocation_ReturnFalse() {
-        location = null;
-
         boolean value = locationList.addLocation(location);
+        List list = locationList.get();
 
-        assertFalse(locationList.get().contains(location));
-        assertTrue(locationList.get().isEmpty());
+        assertFalse(list.contains(location));
+        assertTrue(list.isEmpty());
         assertFalse(value);
     }
 
     @Test
     public void addLocation_WhenLocationIsNotNullAndListContainsLocation_ReturnFalse() {
+        location = new Location();
         locationList.addLocation(location);
 
         boolean value = locationList.addLocation(location);
+        List list = locationList.get();
 
-        assertTrue(locationList.get().contains(location));
+        assertTrue(list.contains(location));
         assertFalse(value);
     }
 }

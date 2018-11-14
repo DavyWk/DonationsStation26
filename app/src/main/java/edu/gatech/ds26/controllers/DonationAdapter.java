@@ -50,7 +50,7 @@ public class DonationAdapter extends
 
     @Override
     @NonNull
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
         Donation donation = mDonations.get(position);
 
         TextView shortDescriptionView = viewHolder.shortDescriptionTextView;
@@ -63,11 +63,11 @@ public class DonationAdapter extends
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Log.d("Donation Adapter", "Clicked on " + position);
+                Log.d("Donation Adapter", "Clicked on " + viewHolder.getAdapterPosition());
                 Intent intent = new Intent (context, DonationDetailsActivity.class);
 
                 //this should use viewHolder.getAdapterPosition()
-                intent.putExtra("key", position + 1);
+                intent.putExtra("key", viewHolder.getAdapterPosition() + 1);
 
                 context.startActivity(intent);
             }

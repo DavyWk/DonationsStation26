@@ -16,7 +16,8 @@ public enum AccountType {
      * @return The enum type of the user
      */
     public static AccountType get(String s) {
-        if (s.toLowerCase().equals("location employee")) {
+        String sLowerCase = s.toLowerCase();
+        if ("location employee".equals(sLowerCase)) {
             return LOCATIONEMPLOYEE;
         } else {
             return AccountType.valueOf(s.toUpperCase());
@@ -25,10 +26,13 @@ public enum AccountType {
 
     @Override
     public String toString() {
+        String name = name();
 
-        if(name().equalsIgnoreCase("locationemployee")) {
+        if("locationemployee".equalsIgnoreCase(name)) {
             return "Location Employee";
         }
-        return name().charAt(0) + name().substring(1).toLowerCase();
+
+        String nameSubstring = name.substring(1);
+        return name.charAt(0) + nameSubstring.toLowerCase();
     }
 }

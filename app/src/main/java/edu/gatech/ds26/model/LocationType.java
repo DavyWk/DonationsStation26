@@ -15,11 +15,11 @@ public enum LocationType {
      */
     public static LocationType get(String s) {
         String str = s.toUpperCase();
-        if (str.equals("Drop Off")) {
+        if ("Drop Off".equals(str)) {
             return Dropoff;
-        } else if (str.equals("STORE")) {
+        } else if ("STORE".equals(str)) {
             return Store;
-        } else if (str.equals("WAREHOUSE")) {
+        } else if ("WAREHOUSE".equals(str)) {
             return WAREHOUSE;
         }
         return null;
@@ -27,9 +27,12 @@ public enum LocationType {
 
     @Override
     public String toString() {
-        if (name().equals("Dropoff")) {
+        String name = name();
+        String nameSubtring = name.substring(1);
+
+        if ("Dropoff".equals(name)) {
             return "Drop Off";
         }
-        return name().charAt(0) + name().substring(1).toLowerCase();
+        return name.charAt(0) + nameSubtring.toLowerCase();
     }
 }

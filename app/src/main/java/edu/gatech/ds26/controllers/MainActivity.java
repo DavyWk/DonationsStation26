@@ -1,5 +1,6 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
     public void onLogoutPressed(View view) {
         Log.d("Main Screen", "Logout Button");
         Intent intent = new Intent(this, WelcomeActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -37,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
     public void onLocationListPressed(View view) {
         Log.d("Main Screen", "Location List Button");
         Intent intent = new Intent(this, LocationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -48,7 +55,10 @@ public class MainActivity extends AppCompatActivity {
     public void onDonationAllPressed(View view) {
         Log.d("Main Screen", "All Donation Button");
         Intent intent = new Intent(this, DonationAllActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -60,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
     public void onCategoryButtonPressed(View view) {
         Log.d("Main Screen", "Category Item Button");
         Intent intent = new Intent(this, DonationCategoryActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -71,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
     public void onOpenMapsButtonPressed(View view) {
         Log.d("Main Screen", "Open Maps Button");
         Intent intent = new Intent(this, MapsActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

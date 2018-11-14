@@ -1,5 +1,6 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +20,6 @@ import edu.gatech.ds26.model.DonationList;
  */
 public class DonationLocationItem extends AppCompatActivity {
 
-    private List<Donation> donations;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +29,8 @@ public class DonationLocationItem extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        donations = DonationList.getInstance().getDonations();
+        DonationList donationListInstance = DonationList.getInstance();
+        List<Donation> donations = donationListInstance.getDonations();
 
         RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
@@ -44,7 +44,10 @@ public class DonationLocationItem extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Item Location Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

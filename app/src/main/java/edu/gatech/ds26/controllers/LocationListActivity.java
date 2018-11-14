@@ -1,6 +1,8 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +26,6 @@ import edu.gatech.ds26.model.LocationList;
  */
 public class LocationListActivity extends AppCompatActivity {
 
-    private List<Location> locations;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class LocationListActivity extends AppCompatActivity {
 
         LocationList locList = LocationList.getInstance();
         readSDFile();
-        locations = locList.get();
+        List<Location> locations = locList.get();
 
         RecyclerView.Adapter adapter = new LocationAdapter(locations);
         recyclerView.setAdapter(adapter);
@@ -51,7 +51,10 @@ public class LocationListActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Location List Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -62,7 +65,8 @@ public class LocationListActivity extends AppCompatActivity {
         LocationList locationList = LocationList.getInstance();
 
         try {
-            InputStream is = getResources().openRawResource(R.raw.location_data);
+             Resources resources = getResources();
+            InputStream is = resources.openRawResource(R.raw.location_data);
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(is, StandardCharsets.UTF_8));
 

@@ -1,10 +1,12 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -22,11 +24,8 @@ import edu.gatech.ds26.model.DonationList;
  */
 public class DonationAllActivity extends AppCompatActivity {
 
-    private ArrayList<Donation> donations;
     private RecyclerView recyclerView;
     private EditText editText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,9 @@ public class DonationAllActivity extends AppCompatActivity {
      */
     private void buildRecyclerView() {
         recyclerView = findViewById(R.id.recyclerViewDonation);
-        donations = (ArrayList<Donation>) DonationList.getInstance().getDonations();
+        DonationList donationListInstance = DonationList.getInstance();
+
+        ArrayList<Donation> donations = (ArrayList<Donation>) donationListInstance.getDonations();
 
         RecyclerView.Adapter adapter = new DonationAdapter(donations);
         recyclerView.setAdapter(adapter);
@@ -55,7 +56,10 @@ public class DonationAllActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Item all Activity Screen", "Back Button");
         Intent intent = new Intent(this, MainActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
     /**
@@ -65,7 +69,10 @@ public class DonationAllActivity extends AppCompatActivity {
     public void onSearchButtonPressed(View view) {
         Log.d("Screen All Screen", "Search All Button");
         DonationList donationList = DonationList.getInstance();
-        List<Donation> result = donationList.searchItem(editText.getText().toString());
+
+        Editable editTextText = editText.getText();
+
+        List<Donation> result = donationList.searchItem(editTextText.toString());
         //mDonations.filterList((ArrayList<Donation>) result);
         Log.d("Search screen", result.size() + " donations found");
         recyclerView.setAdapter(new DonationAdapter(result));

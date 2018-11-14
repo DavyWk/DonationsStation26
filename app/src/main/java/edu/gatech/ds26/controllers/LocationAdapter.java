@@ -30,8 +30,7 @@ public class LocationAdapter extends
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View locationView = inflater.inflate(
-                R.layout.location_adapter_recycler_view, parent, false);
+        View locationView = inflater.inflate(R.layout.location_adapter_recycler_view, parent, false);
 
 
         return new ViewHolder(locationView);
@@ -50,7 +49,7 @@ public class LocationAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int position) {
         Location location = mLocations.get(position);
 
         TextView nameView = viewHolder.nameTextView;
@@ -60,10 +59,9 @@ public class LocationAdapter extends
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Log.d("Location Adapter", "Clicked on " + position);
+                Log.d("Location Adapter", "Clicked on " + viewHolder.getAdapterPosition());
                 Intent intent = new Intent (context, LocationDetailsActivity.class);
-                intent.putExtra("key", position + 1);
-                //this should use viewHolder.getAdapterPosition()
+                intent.putExtra("key", viewHolder.getAdapterPosition() + 1);
                 context.startActivity(intent);
             }
         });

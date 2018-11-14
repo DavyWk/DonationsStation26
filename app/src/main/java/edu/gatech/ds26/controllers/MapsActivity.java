@@ -2,6 +2,7 @@ package edu.gatech.ds26.controllers;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -26,7 +27,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        SupportMapFragment mapFragment = (SupportMapFragment) fragmentManager
                 .findFragmentById(R.id.map);
 
         if (mapFragment != null) {
@@ -53,7 +55,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney)); // moves the camera to
         */
         //where we want to point to (need to pass in a Location)
-        List<Location> locList = LocationList.getInstance().get();
+        LocationList locationListInstance = LocationList.getInstance();
+        List<Location> locList = locationListInstance.get();
+
         for (Location loc : locList) {
             LatLng pos = new LatLng(loc.getLatitude(), loc.getLongitude());
             MarkerOptions marker = new MarkerOptions();

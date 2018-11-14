@@ -1,8 +1,10 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -65,7 +67,10 @@ public class AddDonationActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Add Donation Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -76,18 +81,24 @@ public class AddDonationActivity extends AppCompatActivity {
      */
     public void onAddDonationButtonPressed(View view) {
         Log.d("Add Donation Screen", "Add Donation Button");
-        Donation d = new Donation(timeStamp.getText().toString(),
-                (Location) location.getSelectedItem(),
-                shortDescription.getText().toString(),
-                fullDescription.getText().toString(),
-                Float.parseFloat(value.getText().toString()),
-                (Category) category.getSelectedItem());
+
+        Editable timeStampText = timeStamp.getText();
+        Editable shortDescriptionText = shortDescription.getText();
+        Editable fullDescriptionText = fullDescription.getText();
+        Editable valueText = value.getText();
+
+        Donation d = new Donation(timeStampText.toString(), (Location) location.getSelectedItem(),
+                shortDescriptionText.toString(), fullDescriptionText.toString(),
+                Float.parseFloat(valueText.toString()), (Category) category.getSelectedItem());
 
         donationList.addDonation(d);
         Facade.saveDonationList(this);
 
         Intent intent = new Intent(this, DonationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

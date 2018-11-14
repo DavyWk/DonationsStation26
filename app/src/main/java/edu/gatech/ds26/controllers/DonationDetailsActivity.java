@@ -1,5 +1,6 @@
 package edu.gatech.ds26.controllers;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -41,7 +42,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
     public void onBackButtonPressed(View view) {
         Log.d("Donation Details Screen", "Back Button");
         Intent intent = new Intent(this, DonationListActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 
@@ -52,7 +56,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
     public void onAddDonationsButtonPressed(View view) {
         Log.d("Location Details Screen", "View Donations Button");
         Intent intent = new Intent(this, DonationDetailsActivity.class);
-        view.getContext().startActivity(intent);
+
+        Context viewContext = view.getContext();
+        viewContext.startActivity(intent);
+
         finish();
     }
 }

@@ -21,7 +21,7 @@ public class UserList {
     /**
      * Constructor for UserList
      */
-    private UserList() {
+    public UserList() {
         userList = new ArrayList<>();
         userList.add(new User("user", "user1", "1"));
         userList.add(new Admin("admin", "admin1,", "1"));

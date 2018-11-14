@@ -13,22 +13,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.gatech.ds26.R;
-import edu.gatech.ds26.model.Donation;
-import edu.gatech.ds26.model.Facade;
 import edu.gatech.ds26.model.Location;
 import edu.gatech.ds26.model.LocationList;
-import edu.gatech.ds26.model.LocationType;
 
 /**
  * This class creates the location list within the app.
  */
 public class LocationListActivity extends AppCompatActivity {
 
-    List<Location> locations;
+    private List<Location> locations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +63,8 @@ public class LocationListActivity extends AppCompatActivity {
 
         try {
             InputStream is = getResources().openRawResource(R.raw.location_data);
-            BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(is, StandardCharsets.UTF_8));
 
             String line;
             br.readLine(); //get rid of header line

@@ -18,13 +18,10 @@ import edu.gatech.ds26.controllers.DonationAdapter;
 public class DonationList {
     private static final DonationList instance = new DonationList();
     private final Map<Location, List<Donation>> map;
-    private DonationAdapter mDonations;
 
-
-    private DonationList() {
+    public DonationList() {
         map = new HashMap<>();
     }
-    public int index;
 
     /**
      * Constructor for Donation List
@@ -38,7 +35,9 @@ public class DonationList {
      * @return boolean of donation's addition
      */
     public boolean addDonation(Donation d) {
-        if (d == null) { return false; }
+        if (d == null) {
+            return false;
+        }
 
         map.putIfAbsent(d.getLocation(), new ArrayList<Donation>()) ;
         map.get(d.getLocation()).add(d);
@@ -131,7 +130,7 @@ public class DonationList {
      * @param cat category
      * @return item in search
      */
-    public Collection<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
+    private Collection<Donation> searchItemByCategoryAtLocation(Location loc, Category cat) {
         Collection<Donation> ret = new ArrayList<>();
         for (Donation d : getDonations(loc)) {
             if (d.getCategory() == cat) {

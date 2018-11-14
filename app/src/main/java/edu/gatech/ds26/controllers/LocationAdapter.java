@@ -30,7 +30,8 @@ public class LocationAdapter extends
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View locationView = inflater.inflate(R.layout.location_adapter_recycler_view, parent, false);
+        View locationView = inflater.inflate(
+                R.layout.location_adapter_recycler_view, parent, false);
 
 
         return new ViewHolder(locationView);
@@ -73,9 +74,9 @@ public class LocationAdapter extends
         return mLocations.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView nameTextView;
-        public Button detailsButton;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final TextView nameTextView;
+        final Button detailsButton;
 
         public ViewHolder(View view) {
             super(view);

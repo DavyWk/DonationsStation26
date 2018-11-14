@@ -18,9 +18,9 @@ import edu.gatech.ds26.model.UserList;
  */
 public class LoginActivity extends AppCompatActivity {
 
-    EditText loginId;
-    EditText password;
-    TextView text;
+    private EditText loginId;
+    private EditText password;
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,10 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password_input);
         text = findViewById(R.id.txtInvalid);
 
-        if (loginId.getText().toString().matches("") || password.getText().toString().matches("") || !userList.authenticateUser(loginId.getText().toString(), password.getText().toString())) {
+        if (loginId.getText().toString().matches("") ||
+                password.getText().toString().matches("") ||
+                !userList.authenticateUser(loginId.getText().toString(),
+                        password.getText().toString())) {
             text.setVisibility(View.VISIBLE);
         } else {
             Intent intent = new Intent(this, MainActivity.class);

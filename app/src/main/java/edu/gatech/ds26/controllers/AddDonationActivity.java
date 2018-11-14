@@ -24,12 +24,12 @@ public class AddDonationActivity extends AppCompatActivity {
 
     private final LocationList locationList = LocationList.getInstance();
     private final DonationList donationList = DonationList.getInstance();
-    Spinner location;
-    EditText timeStamp;
-    EditText shortDescription;
-    EditText fullDescription;
-    EditText value;
-    Spinner category;
+    private Spinner location;
+    private EditText timeStamp;
+    private EditText shortDescription;
+    private EditText fullDescription;
+    private EditText value;
+    private Spinner category;
 
 
     @Override

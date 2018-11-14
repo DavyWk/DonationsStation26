@@ -12,19 +12,11 @@ class Admin extends User {
      * @param type admin's type
      * @param state admin's state
      */
-    Admin(String name, String loginId, String password, AccountType type, AccountState state) {
+    private Admin(String name, String loginId, String password, AccountType type,
+                  AccountState state) {
         super(name, loginId, password, type, state);
     }
-    /**
-     * Constructor for admin with the designated user type
-     * @param name admin's name
-     * @param loginId admin's email or ID
-     * @param password admin's password
-     * @param state admin's state
-     */
-    Admin(String name, String loginId, String password, AccountState state) {
-        this(name, loginId, password, AccountType.ADMIN, state);
-    }
+
     /**
      * Constructor for admin's login.
      * @param name admin's name

@@ -31,7 +31,7 @@ public class Location {
      * @param phone location's phone
      * @param website location's website
      */
-    public Location(int key, String name, double longitude, double latitude, String address,
+    private Location(int key, String name, double longitude, double latitude, String address,
                      String city, String state, int zip, LocationType type, String phone,
                      String website) {
         this.key = key;
@@ -52,7 +52,7 @@ public class Location {
         this.name = "NotMyName";
         this.latitude = 500;
         this.longitude = 2;
-        this.address = "GATECH station";
+        this.address = "Georgia Tech Station";
         this.city = "Atlanta";
         this.state = "GA";
         this.zip = 30332;
@@ -261,7 +261,7 @@ public class Location {
 
     /**
      * Creates a formatted string.
-     * @return the formated variable all in caps
+     * @return the formatted variable all in caps
      */
     public String toStringEx() {
         String ret = key + "," + name + "," + latitude + "," + longitude + "," + address + "," +

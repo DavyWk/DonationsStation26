@@ -24,12 +24,12 @@ import edu.gatech.ds26.model.UserList;
 public class RegisterActivity extends AppCompatActivity {
 
     //TODO: rename unclear elements
-    EditText name;
-    EditText loginId;
-    EditText password;
-    Spinner typeSpinner;
-    TextView text1;
-    TextView text2;
+    private EditText name;
+    private EditText loginId;
+    private EditText password;
+    private Spinner typeSpinner;
+    private TextView text1;
+    private TextView text2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
           Set up the adapter to display the allowable account types in the spinner
          */
         //problem here due to how types are translated
-        ArrayAdapter<String> adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, AccountType.values());
+        ArrayAdapter<String> adapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, AccountType.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter);
 
@@ -66,19 +67,23 @@ public class RegisterActivity extends AppCompatActivity {
         Log.d("Register Screen", "Register");
         UserList userList = UserList.getInstance();
 
-        if (name.getText().toString().matches(  "") || loginId.getText().toString().matches("") || password.getText().toString().matches("")) {
+        if (name.getText().toString().matches(  "") ||
+                loginId.getText().toString().matches("") ||
+                password.getText().toString().matches("")) {
             text1.setVisibility(View.VISIBLE);
             text2.setVisibility(View.INVISIBLE);
         } else {
 
-            if (userList.verifyUser(loginId.getText().toString())) { //if there's already a user with this ID
+            if (userList.verifyUser(loginId.getText().toString())) {
                 text2.setVisibility(View.VISIBLE);
                 text1.setVisibility(View.INVISIBLE);
             } else {
                 userList.addUser(new User(name.getText().toString(), loginId.getText().toString(),
-                        password.getText().toString(), (AccountType) typeSpinner.getSelectedItem()));
+                        password.getText().toString(),
+                        (AccountType) typeSpinner.getSelectedItem()));
 
-                Facade.saveUserList(this); //no need to reload data since it's in the current instance of UserList
+                //no need to reload data since it's in the current instance of UserList
+                Facade.saveUserList(this);
 
                 Intent intent = new Intent(this, LoginActivity.class);
                 view.getContext().startActivity(intent);

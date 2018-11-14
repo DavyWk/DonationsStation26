@@ -20,7 +20,7 @@ import edu.gatech.ds26.model.Location;
  */
 public class DonationListActivity extends AppCompatActivity {
 
-    List<Donation> donations;
+    private List<Donation> donations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

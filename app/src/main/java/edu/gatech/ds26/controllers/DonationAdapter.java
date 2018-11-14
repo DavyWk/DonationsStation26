@@ -2,6 +2,7 @@ package edu.gatech.ds26.controllers;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,14 +25,15 @@ public class DonationAdapter extends
     private List<Donation> mDonations;
 
     @Override
+    @NonNull
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View donationView = inflater.inflate(R.layout.donation_adapter_recycler_view, parent, false);
+        View donationView = inflater.inflate(R.layout.donation_adapter_recycler_view, parent,
+                false);
 
-        ViewHolder viewHolder = new ViewHolder(donationView);
-        return viewHolder;
+        return new ViewHolder(donationView);
     }
 
     /**
@@ -47,6 +49,7 @@ public class DonationAdapter extends
     }
 
     @Override
+    @NonNull
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Donation donation = mDonations.get(position);
 
@@ -62,7 +65,9 @@ public class DonationAdapter extends
                 Context context = v.getContext();
                 Log.d("Donation Adapter", "Clicked on " + position);
                 Intent intent = new Intent (context, DonationDetailsActivity.class);
-                intent.putExtra("key", position + 1); //this should use viewHolder.getAdapterPosition()
+
+                //this should use viewHolder.getAdapterPosition()
+                intent.putExtra("key", position + 1);
 
                 context.startActivity(intent);
             }
@@ -74,9 +79,9 @@ public class DonationAdapter extends
         return mDonations.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView shortDescriptionTextView;
-        public Button detailsButton;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final TextView shortDescriptionTextView;
+        final Button detailsButton;
 
         /**
          * A constructor for a view holder
@@ -88,7 +93,7 @@ public class DonationAdapter extends
             detailsButton = view.findViewById(R.id.button_details);
         }
     }
-    public void filterList(ArrayList<Donation> filteredList) {
+    public void filterList(List<Donation> filteredList) {
         mDonations = filteredList;
         notifyDataSetChanged();
     }

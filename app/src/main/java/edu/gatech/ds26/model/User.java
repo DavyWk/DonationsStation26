@@ -21,7 +21,7 @@ public class User {
      * @param type user type
      * @param state user's state
      */
-    public User(String name, String loginId, String password, AccountType type, AccountState state) {
+    User(String name, String loginId, String password, AccountType type, AccountState state) {
         this.name = name;
         this.loginId = loginId;
         this.password = password;
@@ -53,7 +53,7 @@ public class User {
     /**
      * Getter for User.
      */
-    public User() {
+    User() {
         this("Enter name", "Enter login Id", "Enter password");
     }
 

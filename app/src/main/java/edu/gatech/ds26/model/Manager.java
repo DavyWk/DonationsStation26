@@ -12,7 +12,8 @@ class Manager extends LocationEmployee {
      * @param type manager's type
      * @param state manager's state
      */
-    Manager(String name, String loginId, String password, AccountType type, AccountState state) {
+    private Manager(String name, String loginId, String password, AccountType type,
+                    AccountState state) {
         super(name, loginId, password, type, state);
     }
 

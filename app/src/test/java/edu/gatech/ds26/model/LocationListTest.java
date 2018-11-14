@@ -12,8 +12,8 @@ import static org.junit.Assert.assertTrue;
 
 public class LocationListTest {
 
-    LocationList locationList;
-    Location location;
+    private LocationList locationList;
+    private Location location;
 
     @Before
     public void setUp() {

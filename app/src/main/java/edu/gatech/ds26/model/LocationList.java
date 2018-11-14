@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * This class manages the Locations objects contained in the app.
  */
 public class LocationList {
-    Location current;
 
     //Should be a set since locations can't be duplicated
     private static final LocationList _instance = new LocationList();

@@ -4,7 +4,6 @@ package edu.gatech.ds26.model;
  * Creation of a user who is an location employee.
  */
 class LocationEmployee extends User {
-    private Location loc;
 
     /**
      * Constructor for location employee.

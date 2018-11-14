@@ -13,8 +13,6 @@ import edu.gatech.ds26.R;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private View view;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

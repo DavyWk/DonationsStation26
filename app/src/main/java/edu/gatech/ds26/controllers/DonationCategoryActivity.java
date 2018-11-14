@@ -19,8 +19,7 @@ import edu.gatech.ds26.model.DonationList;
  */
 public class DonationCategoryActivity extends AppCompatActivity {
 
-    List<Donation> donations;
-    private View view;
+    private List<Donation> donations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

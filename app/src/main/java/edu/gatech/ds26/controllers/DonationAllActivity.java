@@ -8,18 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.text.Editable;
-import android.text.TextWatcher;
-
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
 
 import edu.gatech.ds26.R;
 import edu.gatech.ds26.model.Donation;
 import edu.gatech.ds26.model.DonationList;
-import edu.gatech.ds26.model.Location;
 
 /**
  * Creates an activity displays all the donations available in a recycler view when the all option
@@ -27,14 +22,9 @@ import edu.gatech.ds26.model.Location;
  */
 public class DonationAllActivity extends AppCompatActivity {
 
-    ArrayList<Donation> donations;
+    private ArrayList<Donation> donations;
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    //private View view;
-    private Donation don;
-    EditText editText;
-    String stringItemName;
-    private DonationAdapter mDonations;
+    private EditText editText;
 
 
 

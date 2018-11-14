@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.io.IOException;
 
+/**
+ * This class is used to implement the database for the project.
+ */
 public class Facade {
 //TODO: Change all hardcoded file names into constants.
 

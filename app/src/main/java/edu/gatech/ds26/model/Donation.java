@@ -57,21 +57,25 @@ public class Donation {
                 timeStamp, location.getName(), shortDescription, fullDescription, value, category);
     }
 
-    /**
-     * A getter for the timestamp
-     * @return A string representing the time it was turned in
-     */
-    public String getTimeStamp() {
-        return timeStamp;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A getter for the timestamp
+//     * @return A string representing the time it was turned in
+//     */
+//    public String getTimeStamp() {
+//        return timeStamp;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * A setter for the timestamp
-     * @param timeStamp A string representing when the object was submitted
-     */
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A setter for the timestamp
+//     * @param timeStamp A string representing when the object was submitted
+//     */
+//    public void setTimeStamp(String timeStamp) {
+//        this.timeStamp = timeStamp;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
     /**
      * A getter for the location
@@ -81,13 +85,15 @@ public class Donation {
         return location;
     }
 
-    /**
-     * A getter for the location
-     * @param location A location object
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A getter for the location
+//     * @param location A location object
+//     */
+//    public void setLocation(Location location) {
+//        this.location = location;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
     /**
      * A getter for the objects display description
@@ -97,45 +103,55 @@ public class Donation {
         return shortDescription;
     }
 
-    /**
-     * A setter for the short description
-     * @param shortDescription A string representing the short description
-     */
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A setter for the short description
+//     * @param shortDescription A string representing the short description
+//     */
+//    public void setShortDescription(String shortDescription) {
+//        this.shortDescription = shortDescription;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * A getter for the full description
-     * @return A string representing the short description
-     */
-    public String getFullDescription() {
-        return fullDescription;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A getter for the full description
+//     * @return A string representing the short description
+//     */
+//    public String getFullDescription() {
+//        return fullDescription;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * A setter for the full description
-     * @param fullDescription A string representing the full description
-     */
-    public void setFullDescription(String fullDescription) {
-        this.fullDescription = fullDescription;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A setter for the full description
+//     * @param fullDescription A string representing the full description
+//     */
+//    public void setFullDescription(String fullDescription) {
+//        this.fullDescription = fullDescription;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * A getter for the monetary value
-     * @return A float for the numeric value
-     */
-    public float getValue() {
-        return value;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A getter for the monetary value
+//     * @return A float for the numeric value
+//     */
+//    public float getValue() {
+//        return value;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * A setter for the monetary value
-     * @param value A float representing the monetary value
-     */
-    public void setValue(float value) {
-        this.value = value;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A setter for the monetary value
+//     * @param value A float representing the monetary value
+//     */
+//    public void setValue(float value) {
+//        this.value = value;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
     /**
      * A getter for the category
@@ -145,14 +161,16 @@ public class Donation {
         return category;
     }
 
-    /**
-     * A setter for the category
-     * @param category A Category enum
-     */
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-  
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * A setter for the category
+//     * @param category A Category enum
+//     */
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
+
     /*public void setComment(String comment) { this.comment = comment; }
     public String getComment() { return comment; }*/
 

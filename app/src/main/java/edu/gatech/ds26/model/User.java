@@ -7,7 +7,7 @@ import java.io.PrintWriter;
  */
 public class User {
 
-    private String name;
+    private final String name;
     private String loginId;
     private String password;
     private AccountType type;
@@ -75,29 +75,25 @@ public class User {
         return this.loginId.equals(id);
     }
 
-    /**
-     * Setter for Name.
-     * @param name user's name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+// --Commented out by Inspection START (11/14/2018 3:06 PM):
+//    /**
+//     * Getter for Name.
+//     * @return name
+//     */
+//    public String getName() {
+//        return name;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:06 PM)
 
-    /**
-     * Getter for Name.
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Setter for LoginID.
-     * @param loginId user's email or ID
-     */
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
-    }
+// --Commented out by Inspection START (11/14/2018 3:06 PM):
+//    /**
+//     * Setter for LoginID.
+//     * @param loginId user's email or ID
+//     */
+//    public void setLoginId(String loginId) {
+//        this.loginId = loginId;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:06 PM)
 
     /**
      * Getter for LoginID.
@@ -107,51 +103,63 @@ public class User {
         return loginId;
     }
 
-    /**
-     * Setter for Password.
-     * @param password user's password.
-     */
-    public void setPassword(String password) {
-        this.password =  password;
-    }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Setter for Password.
+//     * @param password user's password.
+//     */
+//    public void setPassword(String password) {
+//        this.password =  password;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
-    /**
-     * Getter for Password.
-     * @return password
-     */
-    public String getPassword() {
-        return password;
-    }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Getter for Password.
+//     * @return password
+//     */
+//    public String getPassword() {
+//        return password;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
-    /**
-     * Setter for user type.
-     * @param type the user's type
-     */
-    public void setType(AccountType type) {
-        this.type = type;
-    }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Setter for user type.
+//     * @param type the user's type
+//     */
+//    public void setType(AccountType type) {
+//        this.type = type;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
-    /**
-     * Getter for user type.
-     * @return type
-     */
-    public AccountType getType() { return type; }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Getter for user type.
+//     * @return type
+//     */
+//    public AccountType getType() { return type; }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
-    /**
-     * Setter for user state
-     * @param state user's state
-     */
-    public void setState(AccountState state) {
-        this.state = state;
-    }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Setter for user state
+//     * @param state user's state
+//     */
+//    public void setState(AccountState state) {
+//        this.state = state;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
-    /**
-     * Getter for user state
-     * @return state
-     */
-    public AccountState getState() {
-        return state;
-    }
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Getter for user state
+//     * @return state
+//     */
+//    public AccountState getState() {
+//        return state;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
     /**
      * Creates a new file with user's information.

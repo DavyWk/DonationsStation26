@@ -10,16 +10,14 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
 
-import edu.gatech.ds26.controllers.DonationAdapter;
-
 /**
  * This class gives the access to control the donation's list in the database
  */
-public class DonationList {
+public final class DonationList {
     private static final DonationList instance = new DonationList();
     private final Map<Location, List<Donation>> map;
 
-    public DonationList() {
+    private DonationList() {
         map = new HashMap<>();
     }
 
@@ -46,19 +44,21 @@ public class DonationList {
         return true;
     }
 
-    /**
-     * Remove donation from database
-     * @param d donation's name
-     * @return boolean of donation's removal
-     */
-    public boolean removeDonation(Donation d) {
-        if (d == null) {
-            return false;
-        }
-
-        List<Donation> l = map.get(d.getLocation());
-        return (l != null) && (l.remove(d));
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * Remove donation from database
+//     * @param d donation's name
+//     * @return boolean of donation's removal
+//     */
+//    public boolean removeDonation(Donation d) {
+//        if (d == null) {
+//            return false;
+//        }
+//
+//        List<Donation> l = map.get(d.getLocation());
+//        return (l != null) && (l.remove(d));
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
     /**
      * Acquire donations from the database
      * @return list of donations
@@ -102,36 +102,40 @@ public class DonationList {
 
     //This implements the extra credit for partial match
 
-    /**
-     * Search for item by location
-     * @param loc location
-     * @param itemName item's name
-     * @return item in search
-     */
-    public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
-        ArrayList<Donation> ret = new ArrayList<>();
-        for (Donation d : getDonations(loc)) {
-            String dShortDescription = d.getShortDescription();
-            String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
-            if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
-                ret.add(d);
-            }
-        }
-        return ret;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * Search for item by location
+//     * @param loc location
+//     * @param itemName item's name
+//     * @return item in search
+//     */
+//    public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
+//        ArrayList<Donation> ret = new ArrayList<>();
+//        for (Donation d : getDonations(loc)) {
+//            String dShortDescription = d.getShortDescription();
+//            String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
+//            if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
+//                ret.add(d);
+//            }
+//        }
+//        return ret;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
-    /**
-     * Search for an item by category
-     * @param cat category
-     * @return item in search
-     */
-    public List<Donation> searchItemByCategory(Category cat) {
-        List<Donation> ret = new ArrayList<>();
-        for (Location l: map.keySet()) {
-            ret.addAll(searchItemByCategoryAtLocation(l, cat));
-        }
-        return ret;
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    /**
+//     * Search for an item by category
+//     * @param cat category
+//     * @return item in search
+//     */
+//    public List<Donation> searchItemByCategory(Category cat) {
+//        List<Donation> ret = new ArrayList<>();
+//        for (Location l: map.keySet()) {
+//            ret.addAll(searchItemByCategoryAtLocation(l, cat));
+//        }
+//        return ret;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
     /**
      * Search donation by the category in a location

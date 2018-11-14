@@ -9,19 +9,25 @@ import java.util.List;
 /**
  * This class gives the access to control the user's list in the database
  */
-public class UserList {
+public final class UserList {
 
     private static final UserList _instance = new UserList();
-    public static UserList getInstance() { return _instance; }
+
+    /**
+     * Returns an instance of the UserList
+     * @return instance of UserList
+     */
+    public static UserList getInstance() {
+        return _instance;
+    }
 
     /** holds the list of all users */
     private final List<User> userList;
-    private User currentUser;
 
     /**
      * Constructor for UserList
      */
-    public UserList() {
+    private UserList() {
         userList = new ArrayList<>();
         userList.add(new User("user", "user1", "1"));
         userList.add(new Admin("admin", "admin1,", "1"));
@@ -36,7 +42,6 @@ public class UserList {
     public boolean authenticateUser(String loginId, String password) {
         for (User user: userList) {
             if (user.checkID(loginId) && user.login(password)) {
-                currentUser = user;
                 return true;
             }
         }
@@ -68,14 +73,6 @@ public class UserList {
         }
         userList.add(user);
         return true;
-    }
-
-    /**
-     * A getter for Current User
-     * @return current user
-     */
-    public User getCurrentUser() {
-        return currentUser;
     }
 
     /**

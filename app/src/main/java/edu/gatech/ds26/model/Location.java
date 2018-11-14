@@ -47,6 +47,9 @@ public class Location {
         this.website = website;
     }
 
+    /**
+     * Constructor for Location without parameters.
+     */
     public Location(){
         this.key = 4;
         this.name = "NotMyName";
@@ -56,7 +59,7 @@ public class Location {
         this.city = "Atlanta";
         this.state = "GA";
         this.zip = 3;
-        this.type = LocationType.Dropoff;
+        this.type = LocationType.DROPOFF;
         this.phone = "123456789";
         this.website = "www.lol";
     }
@@ -69,13 +72,15 @@ public class Location {
         return key;
     }
 
-    /**
-     * Setter for Key
-     * @param key location's key
-     */
-    public void setKey(int key) {
-        this.key = key;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Key
+//     * @param key location's key
+//     */
+//    public void setKey(int key) {
+//        this.key = key;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
     /**
      * Getter for Name
@@ -85,13 +90,15 @@ public class Location {
         return name;
     }
 
-    /**
-     * Setter for Name
-     * @param name location's name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Name
+//     * @param name location's name
+//     */
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
     /**
      * Getter for Latitude
@@ -101,13 +108,15 @@ public class Location {
         return latitude;
     }
 
-    /**
-     * Setter for Latitude
-     * @param latitude location's latitude
-     */
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Latitude
+//     * @param latitude location's latitude
+//     */
+//    public void setLatitude(double latitude) {
+//        this.latitude = latitude;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
     /**
      * Getter for Longitude
@@ -117,93 +126,115 @@ public class Location {
         return longitude;
     }
 
-    /**
-     * Setter for Longitude
-     * @param longitude location's longitude
-     */
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Longitude
+//     * @param longitude location's longitude
+//     */
+//    public void setLongitude(double longitude) {
+//        this.longitude = longitude;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for Address
-     * @return address
-     */
-    public String getAddress() {
-        return address;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for Address
+//     * @return address
+//     */
+//    public String getAddress() {
+//        return address;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for Address
-     * @param address location's address
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Address
+//     * @param address location's address
+//     */
+//    public void setAddress(String address) {
+//        this.address = address;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for City
-     * @return city
-     */
-    public String getCity() {
-        return city;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for City
+//     * @return city
+//     */
+//    public String getCity() {
+//        return city;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for City
-     * @param city location's city
-     */
-    public void setCity(String city) {
-        this.city = city;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for City
+//     * @param city location's city
+//     */
+//    public void setCity(String city) {
+//        this.city = city;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for State
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for State
+//     * @return state
+//     */
+//    public String getState() {
+//        return state;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for State
-     * @param state location's state
-     */
-    public void setState(String state) {
-        this.state = state;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for State
+//     * @param state location's state
+//     */
+//    public void setState(String state) {
+//        this.state = state;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for Zip
-     * @return zip
-     */
-    public int getZip() {
-        return zip;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for Zip
+//     * @return zip
+//     */
+//    public int getZip() {
+//        return zip;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for Zip
-     * @param zip location's zip
-     */
-    public void setZip(int zip) {
-        this.zip = zip;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Zip
+//     * @param zip location's zip
+//     */
+//    public void setZip(int zip) {
+//        this.zip = zip;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for Type
-     * @return type
-     */
-    public LocationType getType() {
-        return type;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for Type
+//     * @return type
+//     */
+//    public LocationType getType() {
+//        return type;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for Type
-     * @param type location's type
-     */
-    public void setType(LocationType type) {
-        this.type = type;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Type
+//     * @param type location's type
+//     */
+//    public void setType(LocationType type) {
+//        this.type = type;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
     /**
      * Getter for Phone.
@@ -213,29 +244,35 @@ public class Location {
         return phone;
     }
 
-    /**
-     * Setter for Phone
-     * @param phone location's phone
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Phone
+//     * @param phone location's phone
+//     */
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Getter for Website
-     * @return website
-     */
-    public String getWebsite() {
-        return website;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Getter for Website
+//     * @return website
+//     */
+//    public String getWebsite() {
+//        return website;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
-    /**
-     * Setter for Website
-     * @param website location's website
-     */
-    public void setWebsite(String website) {
-        this.website = website;
-    }
+// --Commented out by Inspection START (11/14/2018 3:09 PM):
+//    /**
+//     * Setter for Website
+//     * @param website location's website
+//     */
+//    public void setWebsite(String website) {
+//        this.website = website;
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:09 PM)
 
     //TODO: toString should not include formatting
     @Override

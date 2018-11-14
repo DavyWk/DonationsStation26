@@ -24,9 +24,9 @@ public class DonationAdapter extends
 
     private List<Donation> mDonations;
 
-    @Override
     @NonNull
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
@@ -49,8 +49,7 @@ public class DonationAdapter extends
     }
 
     @Override
-    @NonNull
-    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int position) {
         Donation donation = mDonations.get(position);
 
         TextView shortDescriptionView = viewHolder.shortDescriptionTextView;
@@ -87,14 +86,16 @@ public class DonationAdapter extends
          * A constructor for a view holder
          * @param view The current view
          */
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             shortDescriptionTextView = view.findViewById(R.id.text_short_description);
             detailsButton = view.findViewById(R.id.button_details);
         }
     }
-    public void filterList(List<Donation> filteredList) {
-        mDonations = filteredList;
-        notifyDataSetChanged();
-    }
+// --Commented out by Inspection START (11/14/2018 3:08 PM):
+//    public void filterList(List<Donation> filteredList) {
+//        mDonations = filteredList;
+//        notifyDataSetChanged();
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 }

@@ -48,18 +48,4 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         finish();
     }
-
-    /**
-     * Redirects to the Add Donation Screen.
-     * @param view The current view that the user is in.
-     */
-    public void onAddDonationsButtonPressed(View view) {
-        Log.d("Location Details Screen", "View Donations Button");
-        Intent intent = new Intent(this, DonationDetailsActivity.class);
-
-        Context viewContext = view.getContext();
-        viewContext.startActivity(intent);
-
-        finish();
-    }
 }

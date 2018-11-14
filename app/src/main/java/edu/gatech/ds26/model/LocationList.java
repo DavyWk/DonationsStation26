@@ -10,10 +10,20 @@ public class LocationList {
 
     //Should be a set since locations can't be duplicated
     private static final LocationList _instance = new LocationList();
-    public static LocationList getInstance() { return _instance; }
+
+    /**
+     * Returns an instance of the LocationList
+     * @return instance of LocationList
+     */
+    public static LocationList getInstance() {
+        return _instance;
+    }
 
     private final List<Location> locationList;
 
+    /**
+     * Constructor for LocationList.
+     */
     public LocationList() {
         locationList = new ArrayList<>();
     }
@@ -30,17 +40,20 @@ public class LocationList {
         locationList.add(loc);
         return true;
     }
-    /**
-     * Removing location to the database.
-     * @param loc location
-     * @return boolean to confirm removal
-     */
-    public boolean removeLocation(Location loc) {
-        if (loc == null) {
-            return false;
-        }
-        return locationList.remove(loc);
-    }
+
+// --Commented out by Inspection START (11/14/2018 3:07 PM):
+//    /**
+//     * Removing location to the database.
+//     * @param loc location
+//     * @return boolean to confirm removal
+//     */
+//    public boolean removeLocation(Location loc) {
+//        if (loc == null) {
+//            return false;
+//        }
+//        return locationList.remove(loc);
+//    }
+// --Commented out by Inspection STOP (11/14/2018 3:07 PM)
 
     /**
      * Get location's info.

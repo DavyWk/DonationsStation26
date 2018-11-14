@@ -4,7 +4,7 @@ package edu.gatech.ds26.model;
  * This enum gives the location type and tracks the delivery action.
  */
 public enum LocationType {
-    Dropoff,
+    DROPOFF,
     Store,
     WAREHOUSE;
 
@@ -15,12 +15,13 @@ public enum LocationType {
      */
     public static LocationType get(String s) {
         String str = s.toUpperCase();
-        if ("Drop Off".equals(str)) {
-            return Dropoff;
-        } else if ("STORE".equals(str)) {
-            return Store;
-        } else if ("WAREHOUSE".equals(str)) {
-            return WAREHOUSE;
+        switch (str) {
+            case "Drop Off":
+                return DROPOFF;
+            case "STORE":
+                return Store;
+            case "WAREHOUSE":
+                return WAREHOUSE;
         }
         return null;
     }
@@ -28,11 +29,11 @@ public enum LocationType {
     @Override
     public String toString() {
         String name = name();
-        String nameSubtring = name.substring(1);
+        String nameSubstring = name.substring(1);
 
-        if ("Dropoff".equals(name)) {
+        if ("DROPOFF".equals(name)) {
             return "Drop Off";
         }
-        return name.charAt(0) + nameSubtring.toLowerCase();
+        return name.charAt(0) + nameSubstring.toLowerCase();
     }
 }

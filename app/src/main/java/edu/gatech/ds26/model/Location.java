@@ -47,7 +47,6 @@ public class Location {
         this.website = website;
     }
 
-    /*
     public Location(){
         this.key = 4;
         this.name = "NotMyName";
@@ -60,7 +59,7 @@ public class Location {
         this.type = LocationType.Dropoff;
         this.phone = "123456789";
         this.website = "www.lol";
-    }*/
+    }
 
     /**
      * Getter for Key

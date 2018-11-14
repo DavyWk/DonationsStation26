@@ -15,7 +15,7 @@ public class LocationList {
 
     private final List<Location> locationList;
 
-    private LocationList() {
+    public LocationList() {
         locationList = new ArrayList<>();
     }
 

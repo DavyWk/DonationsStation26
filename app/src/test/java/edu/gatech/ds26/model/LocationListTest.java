@@ -56,7 +56,7 @@ public class LocationListTest {
 
     /**
      * Tests addLocation when the location is not null and when the locationList does already
-     * conation the location that is passed into addLocation.
+     * donation the location that is passed into addLocation.
      */
     @Test
     public void addLocation_WhenLocationIsNotNullAndListContainsLocation_ReturnFalse() {

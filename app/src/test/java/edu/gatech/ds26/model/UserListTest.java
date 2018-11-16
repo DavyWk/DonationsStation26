@@ -22,7 +22,7 @@ public class UserListTest {
     public void setUp() {
         userList = UserList.getInstance();
         user = new User("Bob", "Water1","2340");
-        assertTrue(userList.addUser(user));
+        userList.addUser(user);
     }
 
     /**

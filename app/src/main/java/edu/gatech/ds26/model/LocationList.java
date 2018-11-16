@@ -1,5 +1,6 @@
 package edu.gatech.ds26.model;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class LocationList {
     /**
      * Constructor for LocationList.
      */
-    public LocationList() {
+    private LocationList() {
         locationList = new ArrayList<>();
     }
 
@@ -60,7 +61,7 @@ public class LocationList {
      * @return location list
      */
     public List<Location> get() {
-        return locationList;
+        return Collections.unmodifiableList(locationList);
     }
 
     /*boolean equals(Object o) {

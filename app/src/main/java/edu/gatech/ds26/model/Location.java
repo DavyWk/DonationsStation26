@@ -346,4 +346,9 @@ public class Location {
 
         return name.equals(this.name);
     }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 }

@@ -42,10 +42,9 @@ public class LocationAdapter extends
      * @param locations A list locations
      */
     public LocationAdapter(List<Location> locations) {
-        if(locations == null){
-            mLocations = new ArrayList<>();
-        }else {
-            mLocations = locations;
+        mLocations = new ArrayList<>();
+        if(locations != null){
+            mLocations.addAll(locations);
         }
     }
 

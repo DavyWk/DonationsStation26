@@ -44,7 +44,7 @@ public class DonationAdapter extends
         if(donations == null){
             mDonations = new ArrayList<>();
         }else {
-            mDonations = donations;
+            mDonations.addAll(donations);
         }
     }
 

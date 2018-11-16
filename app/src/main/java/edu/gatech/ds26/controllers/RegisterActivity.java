@@ -53,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
           Set up the adapter to display the allowable account types in the spinner
          */
         //problem here due to how types are translated
-        ArrayAdapter<String> adapter = new ArrayAdapter(this,
+        ArrayAdapter<AccountType> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, AccountType.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter);

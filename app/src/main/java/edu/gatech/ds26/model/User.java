@@ -7,7 +7,7 @@ import java.io.PrintWriter;
  */
 public class User {
 
-    private final String name;
+    private String name;
     private String loginId;
     private String password;
     private AccountType type;

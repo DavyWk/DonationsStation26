@@ -336,14 +336,14 @@ public class Location {
                 tokens[WEBSITE]);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if ((o == null) || (!(o instanceof Location))) {
-            return false;
-        }
-
-        String name = ((Location)o).getName();
-
-        return name.equals(this.name);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if ((o == null) || (!(o instanceof Location))) {
+//            return false;
+//        }
+//
+//        String name = ((Location)o).getName();
+//
+//        return name.equals(this.name);
+//    }
 }

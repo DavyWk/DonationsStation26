@@ -25,7 +25,7 @@ public class LocationList {
     /**
      * Constructor for LocationList.
      */
-    private LocationList() {
+    LocationList() {
         locationList = new ArrayList<>();
     }
 
@@ -63,10 +63,6 @@ public class LocationList {
     public List<Location> get() {
         return Collections.unmodifiableList(locationList);
     }
-
-    /*boolean equals(Object o) {
-        if (o is )
-    }*/
 
 
 

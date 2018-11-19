@@ -31,7 +31,7 @@ public class Location {
      * @param phone location's phone
      * @param website location's website
      */
-    private Location(int key, String name, double longitude, double latitude, String address,
+    Location(int key, String name, double longitude, double latitude, String address,
                      String city, String state, int zip, LocationType type, String phone,
                      String website) {
         this.key = key;
@@ -344,11 +344,6 @@ public class Location {
 
         String name = ((Location)o).getName();
 
-        return name.equals(this.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return name.hashCode();
+        return name.equalsIgnoreCase(this.name);
     }
 }

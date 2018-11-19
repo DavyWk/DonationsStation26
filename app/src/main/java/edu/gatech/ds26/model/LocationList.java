@@ -25,7 +25,7 @@ public class LocationList {
     /**
      * Constructor for LocationList.
      */
-    LocationList() {
+    public LocationList() {
         locationList = new ArrayList<>();
     }
 

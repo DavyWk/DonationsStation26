@@ -64,10 +64,6 @@ public class LocationList {
         return Collections.unmodifiableList(locationList);
     }
 
-    /*boolean equals(Object o) {
-        if (o is )
-    }*/
-
 
 
 }

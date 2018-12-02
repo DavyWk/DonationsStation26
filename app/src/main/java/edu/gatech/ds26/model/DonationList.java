@@ -103,38 +103,38 @@ public final class DonationList {
     //This implements the extra credit for partial match
 
 // --Commented out by Inspection START (11/14/2018 3:08 PM):
-//    /**
-//     * Search for item by location
-//     * @param loc location
-//     * @param itemName item's name
-//     * @return item in search
-//     */
-//    public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
-//        ArrayList<Donation> ret = new ArrayList<>();
-//        for (Donation d : getDonations(loc)) {
-//            String dShortDescription = d.getShortDescription();
-//            String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
-//            if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
-//                ret.add(d);
-//            }
-//        }
-//        return ret;
-//    }
+    /**
+     * Search for item by location
+     * @param loc location
+     * @param itemName item's name
+     * @return item in search
+     */
+    public ArrayList<Donation> searchIemAtLocation(Location loc, String itemName) {
+        ArrayList<Donation> ret = new ArrayList<>();
+        for (Donation d : getDonations(loc)) {
+            String dShortDescription = d.getShortDescription();
+            String dShortDescriptionLowerCase = dShortDescription.toLowerCase();
+            if (dShortDescriptionLowerCase.contains(itemName.toLowerCase())) {
+                ret.add(d);
+            }
+        }
+        return ret;
+    }
 // --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
 // --Commented out by Inspection START (11/14/2018 3:08 PM):
-//    /**
-//     * Search for an item by category
-//     * @param cat category
-//     * @return item in search
-//     */
-//    public List<Donation> searchItemByCategory(Category cat) {
-//        List<Donation> ret = new ArrayList<>();
-//        for (Location l: map.keySet()) {
-//            ret.addAll(searchItemByCategoryAtLocation(l, cat));
-//        }
-//        return ret;
-//    }
+    /**
+     * Search for an item by category
+     * @param cat category
+     * @return item in search
+     */
+    public List<Donation> searchItemByCategory(Category cat) {
+        List<Donation> ret = new ArrayList<>();
+        for (Location l: map.keySet()) {
+            ret.addAll(searchItemByCategoryAtLocation(l, cat));
+        }
+        return ret;
+    }
 // --Commented out by Inspection STOP (11/14/2018 3:08 PM)
 
     /**

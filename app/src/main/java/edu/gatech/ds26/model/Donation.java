@@ -174,6 +174,21 @@ public class Donation {
     /*public void setComment(String comment) { this.comment = comment; }
     public String getComment() { return comment; }*/
 
+    @Override
+    public boolean equals(Object o) {
+        if ((o == null) || (!(o instanceof Donation))) {
+            return false;
+        }
+
+        String shortdes = ((Donation)o).getShortDescription();
+
+        return shortdes.equalsIgnoreCase(this.shortDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return shortDescription.hashCode();
+    }
     /**
      * Creates a new file with donation's information.
      * @param writer writes the file

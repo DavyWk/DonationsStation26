@@ -68,7 +68,7 @@ public final class UserList {
      * @return boolean to ensure addition
      */
     public boolean addUser(User user) {
-        if (verifyUser(user.getLoginId())) {
+       if (verifyUser(user.getLoginId())) {
             return false;
         }
         userList.add(user);

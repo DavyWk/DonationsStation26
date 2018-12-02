@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Login Screen!</h1>
+
+<a href="Welcome.html"><button type="button">Back to Welcome</button></a>
+
+<script>
+        function login()
+            {
+                var usernameInput = document.forms["myform"]["username"].value;
+                var passwordInput = document.forms["myform"]["password"].value;
+
+                if (usernameInput == "user" && passwordInput == "user1")
+                {
+                    window.open("Main.html")
+                }
+                else
+                {
+                    alert("incorrect username or password")
+                }
+            }
+</script>
+
+<form name="myform">
+    <input type="text" name="username" placeholder="Enter Username" required><br>
+    <input type="text" name="password" placeholder="Enter Password" required><br>
+    <input type="submit" value="Login" onclick="login()">
+
+</form>
+</body>
+
+</body>
+</html>

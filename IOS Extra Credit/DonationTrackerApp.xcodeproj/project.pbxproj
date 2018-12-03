@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F1BDD0A9F631151A9FDF3B2 /* Pods_DonationTrackerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9906015F1550199A18F77F /* Pods_DonationTrackerAppUITests.framework */; };
+		C0798B71FCC16190BC079E2C /* Pods_DonationTrackerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C5814729BC5F46F4EBC4BA /* Pods_DonationTrackerApp.framework */; };
+		D57DB6D321ADCF2C00691CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB6D221ADCF2C00691CB7 /* AppDelegate.swift */; };
+		D57DB6D521ADCF2C00691CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB6D421ADCF2C00691CB7 /* ViewController.swift */; };
+		D57DB6DD21ADCF2D00691CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57DB6DB21ADCF2D00691CB7 /* LaunchScreen.storyboard */; };
+		D57DB6E821ADCF2D00691CB7 /* DonationTrackerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB6E721ADCF2D00691CB7 /* DonationTrackerAppTests.swift */; };
+		D57DB6F321ADCF2D00691CB7 /* DonationTrackerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB6F221ADCF2D00691CB7 /* DonationTrackerAppUITests.swift */; };
+		D57DB70121ADCFB200691CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70021ADCFB200691CB7 /* Main.storyboard */; };
+		D57DB70221ADCFB200691CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70021ADCFB200691CB7 /* Main.storyboard */; };
+		D57DB70321ADCFB200691CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70021ADCFB200691CB7 /* Main.storyboard */; };
+		D57DB70521ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70421ADCFC100691CB7 /* RegisterScreenViewController.swift */; };
+		D57DB70621ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70421ADCFC100691CB7 /* RegisterScreenViewController.swift */; };
+		D57DB70721ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70421ADCFC100691CB7 /* RegisterScreenViewController.swift */; };
+		D57DB70921ADCFE400691CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70821ADCFE400691CB7 /* Assets.xcassets */; };
+		D57DB70A21ADCFE400691CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70821ADCFE400691CB7 /* Assets.xcassets */; };
+		D57DB70B21ADCFE400691CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57DB70821ADCFE400691CB7 /* Assets.xcassets */; };
+		D57DB70D21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70C21AE03C300691CB7 /* LoginScreenViewController.swift */; };
+		D57DB70E21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70C21AE03C300691CB7 /* LoginScreenViewController.swift */; };
+		D57DB70F21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57DB70C21AE03C300691CB7 /* LoginScreenViewController.swift */; };
+		D57DB71121AE198000691CB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D57DB71021AE198000691CB7 /* GoogleService-Info.plist */; };
+		E84A0EC20EF74FDA2AE8FD2A /* Pods_DonationTrackerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66167B9BC3F8EBE16CEE92A9 /* Pods_DonationTrackerAppTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D57DB6E421ADCF2D00691CB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D57DB6C721ADCF2C00691CB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D57DB6CE21ADCF2C00691CB7;
+			remoteInfo = DonationTrackerApp;
+		};
+		D57DB6EF21ADCF2D00691CB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D57DB6C721ADCF2C00691CB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D57DB6CE21ADCF2C00691CB7;
+			remoteInfo = DonationTrackerApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A9906015F1550199A18F77F /* Pods_DonationTrackerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonationTrackerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D7553565A8E3B96D1042DA /* Pods-DonationTrackerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerAppTests/Pods-DonationTrackerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		34E5E3DEC248F1A1A65A6113 /* Pods-DonationTrackerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerAppUITests/Pods-DonationTrackerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		66167B9BC3F8EBE16CEE92A9 /* Pods_DonationTrackerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonationTrackerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F3C3965C45431013C6654F4 /* Pods-DonationTrackerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerAppUITests/Pods-DonationTrackerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		81B306B23FEC161A0C5D9802 /* Pods-DonationTrackerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerAppTests/Pods-DonationTrackerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D523511821B46896008237A4 /* DonationTrackerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DonationTrackerApp.entitlements; sourceTree = "<group>"; };
+		D57DB6CF21ADCF2C00691CB7 /* DonationTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonationTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57DB6D221ADCF2C00691CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D57DB6D421ADCF2C00691CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D57DB6DC21ADCF2D00691CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D57DB6DE21ADCF2D00691CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D57DB6E321ADCF2D00691CB7 /* DonationTrackerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonationTrackerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57DB6E721ADCF2D00691CB7 /* DonationTrackerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationTrackerAppTests.swift; sourceTree = "<group>"; };
+		D57DB6E921ADCF2D00691CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D57DB6EE21ADCF2D00691CB7 /* DonationTrackerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonationTrackerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57DB6F221ADCF2D00691CB7 /* DonationTrackerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationTrackerAppUITests.swift; sourceTree = "<group>"; };
+		D57DB6F421ADCF2D00691CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D57DB70021ADCFB200691CB7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D57DB70421ADCFC100691CB7 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
+		D57DB70821ADCFE400691CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Documents/Donation Tracker/Donation Tracker/Assets.xcassets"; sourceTree = "<group>"; };
+		D57DB70C21AE03C300691CB7 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		D57DB71021AE198000691CB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7910925010254E15693F120 /* Pods-DonationTrackerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerApp/Pods-DonationTrackerApp.release.xcconfig"; sourceTree = "<group>"; };
+		D7C5814729BC5F46F4EBC4BA /* Pods_DonationTrackerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonationTrackerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05B7921F0331D337C1B0366 /* Pods-DonationTrackerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonationTrackerApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DonationTrackerApp/Pods-DonationTrackerApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D57DB6CC21ADCF2C00691CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0798B71FCC16190BC079E2C /* Pods_DonationTrackerApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6E021ADCF2D00691CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84A0EC20EF74FDA2AE8FD2A /* Pods_DonationTrackerAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6EB21ADCF2D00691CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F1BDD0A9F631151A9FDF3B2 /* Pods_DonationTrackerAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D57DB6C621ADCF2C00691CB7 = {
+			isa = PBXGroup;
+			children = (
+				D57DB6D121ADCF2C00691CB7 /* DonationTrackerApp */,
+				D57DB6E621ADCF2D00691CB7 /* DonationTrackerAppTests */,
+				D57DB6F121ADCF2D00691CB7 /* DonationTrackerAppUITests */,
+				D57DB6D021ADCF2C00691CB7 /* Products */,
+				DD52FD3449C6097CE7D7D494 /* Pods */,
+				F41D3740E911B52E16F80E1D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D57DB6D021ADCF2C00691CB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D57DB6CF21ADCF2C00691CB7 /* DonationTrackerApp.app */,
+				D57DB6E321ADCF2D00691CB7 /* DonationTrackerAppTests.xctest */,
+				D57DB6EE21ADCF2D00691CB7 /* DonationTrackerAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D57DB6D121ADCF2C00691CB7 /* DonationTrackerApp */ = {
+			isa = PBXGroup;
+			children = (
+				D523511821B46896008237A4 /* DonationTrackerApp.entitlements */,
+				D57DB6D221ADCF2C00691CB7 /* AppDelegate.swift */,
+				D57DB6D421ADCF2C00691CB7 /* ViewController.swift */,
+				D57DB70021ADCFB200691CB7 /* Main.storyboard */,
+				D57DB70821ADCFE400691CB7 /* Assets.xcassets */,
+				D57DB6DB21ADCF2D00691CB7 /* LaunchScreen.storyboard */,
+				D57DB6DE21ADCF2D00691CB7 /* Info.plist */,
+				D57DB71021AE198000691CB7 /* GoogleService-Info.plist */,
+				D57DB70421ADCFC100691CB7 /* RegisterScreenViewController.swift */,
+				D57DB70C21AE03C300691CB7 /* LoginScreenViewController.swift */,
+			);
+			path = DonationTrackerApp;
+			sourceTree = "<group>";
+		};
+		D57DB6E621ADCF2D00691CB7 /* DonationTrackerAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D57DB6E721ADCF2D00691CB7 /* DonationTrackerAppTests.swift */,
+				D57DB6E921ADCF2D00691CB7 /* Info.plist */,
+			);
+			path = DonationTrackerAppTests;
+			sourceTree = "<group>";
+		};
+		D57DB6F121ADCF2D00691CB7 /* DonationTrackerAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D57DB6F221ADCF2D00691CB7 /* DonationTrackerAppUITests.swift */,
+				D57DB6F421ADCF2D00691CB7 /* Info.plist */,
+			);
+			path = DonationTrackerAppUITests;
+			sourceTree = "<group>";
+		};
+		DD52FD3449C6097CE7D7D494 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E05B7921F0331D337C1B0366 /* Pods-DonationTrackerApp.debug.xcconfig */,
+				D7910925010254E15693F120 /* Pods-DonationTrackerApp.release.xcconfig */,
+				81B306B23FEC161A0C5D9802 /* Pods-DonationTrackerAppTests.debug.xcconfig */,
+				23D7553565A8E3B96D1042DA /* Pods-DonationTrackerAppTests.release.xcconfig */,
+				7F3C3965C45431013C6654F4 /* Pods-DonationTrackerAppUITests.debug.xcconfig */,
+				34E5E3DEC248F1A1A65A6113 /* Pods-DonationTrackerAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F41D3740E911B52E16F80E1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7C5814729BC5F46F4EBC4BA /* Pods_DonationTrackerApp.framework */,
+				66167B9BC3F8EBE16CEE92A9 /* Pods_DonationTrackerAppTests.framework */,
+				0A9906015F1550199A18F77F /* Pods_DonationTrackerAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D57DB6CE21ADCF2C00691CB7 /* DonationTrackerApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D57DB6F721ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerApp" */;
+			buildPhases = (
+				0E1F86138A714DBE817345F1 /* [CP] Check Pods Manifest.lock */,
+				D57DB6CB21ADCF2C00691CB7 /* Sources */,
+				D57DB6CC21ADCF2C00691CB7 /* Frameworks */,
+				D57DB6CD21ADCF2C00691CB7 /* Resources */,
+				0950AA29E9AA94D57045674F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DonationTrackerApp;
+			productName = DonationTrackerApp;
+			productReference = D57DB6CF21ADCF2C00691CB7 /* DonationTrackerApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D57DB6E221ADCF2D00691CB7 /* DonationTrackerAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D57DB6FA21ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerAppTests" */;
+			buildPhases = (
+				B4CD30DC7F5977D8DD4FAEBB /* [CP] Check Pods Manifest.lock */,
+				D57DB6DF21ADCF2D00691CB7 /* Sources */,
+				D57DB6E021ADCF2D00691CB7 /* Frameworks */,
+				D57DB6E121ADCF2D00691CB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D57DB6E521ADCF2D00691CB7 /* PBXTargetDependency */,
+			);
+			name = DonationTrackerAppTests;
+			productName = DonationTrackerAppTests;
+			productReference = D57DB6E321ADCF2D00691CB7 /* DonationTrackerAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D57DB6ED21ADCF2D00691CB7 /* DonationTrackerAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D57DB6FD21ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerAppUITests" */;
+			buildPhases = (
+				F119616C8A7ACF3612AD49BF /* [CP] Check Pods Manifest.lock */,
+				D57DB6EA21ADCF2D00691CB7 /* Sources */,
+				D57DB6EB21ADCF2D00691CB7 /* Frameworks */,
+				D57DB6EC21ADCF2D00691CB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D57DB6F021ADCF2D00691CB7 /* PBXTargetDependency */,
+			);
+			name = DonationTrackerAppUITests;
+			productName = DonationTrackerAppUITests;
+			productReference = D57DB6EE21ADCF2D00691CB7 /* DonationTrackerAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D57DB6C721ADCF2C00691CB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Angelik Laboy Torres";
+				TargetAttributes = {
+					D57DB6CE21ADCF2C00691CB7 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					D57DB6E221ADCF2D00691CB7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D57DB6CE21ADCF2C00691CB7;
+					};
+					D57DB6ED21ADCF2D00691CB7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = D57DB6CE21ADCF2C00691CB7;
+					};
+				};
+			};
+			buildConfigurationList = D57DB6CA21ADCF2C00691CB7 /* Build configuration list for PBXProject "DonationTrackerApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D57DB6C621ADCF2C00691CB7;
+			productRefGroup = D57DB6D021ADCF2C00691CB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D57DB6CE21ADCF2C00691CB7 /* DonationTrackerApp */,
+				D57DB6E221ADCF2D00691CB7 /* DonationTrackerAppTests */,
+				D57DB6ED21ADCF2D00691CB7 /* DonationTrackerAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D57DB6CD21ADCF2C00691CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB6DD21ADCF2D00691CB7 /* LaunchScreen.storyboard in Resources */,
+				D57DB71121AE198000691CB7 /* GoogleService-Info.plist in Resources */,
+				D57DB70921ADCFE400691CB7 /* Assets.xcassets in Resources */,
+				D57DB70121ADCFB200691CB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6E121ADCF2D00691CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB70A21ADCFE400691CB7 /* Assets.xcassets in Resources */,
+				D57DB70221ADCFB200691CB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6EC21ADCF2D00691CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB70B21ADCFE400691CB7 /* Assets.xcassets in Resources */,
+				D57DB70321ADCFB200691CB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0950AA29E9AA94D57045674F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DonationTrackerApp/Pods-DonationTrackerApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DonationTrackerApp/Pods-DonationTrackerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E1F86138A714DBE817345F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonationTrackerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4CD30DC7F5977D8DD4FAEBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonationTrackerAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F119616C8A7ACF3612AD49BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonationTrackerAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D57DB6CB21ADCF2C00691CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB70521ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */,
+				D57DB6D521ADCF2C00691CB7 /* ViewController.swift in Sources */,
+				D57DB70D21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */,
+				D57DB6D321ADCF2C00691CB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6DF21ADCF2D00691CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB6E821ADCF2D00691CB7 /* DonationTrackerAppTests.swift in Sources */,
+				D57DB70621ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */,
+				D57DB70E21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D57DB6EA21ADCF2D00691CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57DB6F321ADCF2D00691CB7 /* DonationTrackerAppUITests.swift in Sources */,
+				D57DB70721ADCFC100691CB7 /* RegisterScreenViewController.swift in Sources */,
+				D57DB70F21AE03C300691CB7 /* LoginScreenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D57DB6E521ADCF2D00691CB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D57DB6CE21ADCF2C00691CB7 /* DonationTrackerApp */;
+			targetProxy = D57DB6E421ADCF2D00691CB7 /* PBXContainerItemProxy */;
+		};
+		D57DB6F021ADCF2D00691CB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D57DB6CE21ADCF2C00691CB7 /* DonationTrackerApp */;
+			targetProxy = D57DB6EF21ADCF2D00691CB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D57DB6DB21ADCF2D00691CB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D57DB6DC21ADCF2D00691CB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D57DB6F521ADCF2D00691CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D57DB6F621ADCF2D00691CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D57DB6F821ADCF2D00691CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05B7921F0331D337C1B0366 /* Pods-DonationTrackerApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DonationTrackerApp/DonationTrackerApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CKPM89P2SN;
+				INFOPLIST_FILE = DonationTrackerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D57DB6F921ADCF2D00691CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7910925010254E15693F120 /* Pods-DonationTrackerApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DonationTrackerApp/DonationTrackerApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CKPM89P2SN;
+				INFOPLIST_FILE = DonationTrackerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D57DB6FB21ADCF2D00691CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81B306B23FEC161A0C5D9802 /* Pods-DonationTrackerAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonationTrackerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonationTrackerApp.app/DonationTrackerApp";
+			};
+			name = Debug;
+		};
+		D57DB6FC21ADCF2D00691CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D7553565A8E3B96D1042DA /* Pods-DonationTrackerAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonationTrackerAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonationTrackerApp.app/DonationTrackerApp";
+			};
+			name = Release;
+		};
+		D57DB6FE21ADCF2D00691CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F3C3965C45431013C6654F4 /* Pods-DonationTrackerAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonationTrackerAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonationTrackerApp;
+			};
+			name = Debug;
+		};
+		D57DB6FF21ADCF2D00691CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34E5E3DEC248F1A1A65A6113 /* Pods-DonationTrackerAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonationTrackerAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CS2340.DonationTrackerAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonationTrackerApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D57DB6CA21ADCF2C00691CB7 /* Build configuration list for PBXProject "DonationTrackerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D57DB6F521ADCF2D00691CB7 /* Debug */,
+				D57DB6F621ADCF2D00691CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D57DB6F721ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D57DB6F821ADCF2D00691CB7 /* Debug */,
+				D57DB6F921ADCF2D00691CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D57DB6FA21ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D57DB6FB21ADCF2D00691CB7 /* Debug */,
+				D57DB6FC21ADCF2D00691CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D57DB6FD21ADCF2D00691CB7 /* Build configuration list for PBXNativeTarget "DonationTrackerAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D57DB6FE21ADCF2D00691CB7 /* Debug */,
+				D57DB6FF21ADCF2D00691CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D57DB6C721ADCF2C00691CB7 /* Project object */;
+}

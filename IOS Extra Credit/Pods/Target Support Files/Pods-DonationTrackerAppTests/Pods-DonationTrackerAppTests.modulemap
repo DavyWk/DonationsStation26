@@ -1,0 +1,6 @@
+framework module Pods_DonationTrackerAppTests {
+  umbrella header "Pods-DonationTrackerAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

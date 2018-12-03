@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.1'
+
+target 'DonationTrackerApp' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DonationTrackerApp
+  pod 'Bolts'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'FacebookCore'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'Firebase/Database'
+  
+  target 'DonationTrackerAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'DonationTrackerAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
